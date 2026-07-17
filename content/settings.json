@@ -1,0 +1,19 @@
+{
+  "siteName": "Dataplexor",
+  "tagline": "We bring structure to data, intelligence to decisions.",
+  "description": "Dataplexor is a data & analytics, AI and agentic AI company. We build products, deliver services and provide consulting that turn enterprise data into decisions.",
+  "siteUrl": "https://www.dataplexor.com",
+  "announcement": "New research: The Agentic Enterprise — how autonomous AI is reshaping operating models.",
+  "announcementHref": "/insights/the-agentic-enterprise",
+  "contact": {
+    "email": "hello@dataplexor.com",
+    "phone": "+1 (415) 555-0142",
+    "address": "One Market Plaza, Suite 3600, San Francisco, CA 94105"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/dataplexor",
+    "x": "https://x.com/dataplexor",
+    "github": "https://github.com/dataplexor",
+    "youtube": "https://www.youtube.com/@dataplexor"
+  }
+}

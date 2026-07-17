@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "the-agentic-enterprise",
+    "title": "The Agentic Enterprise: How Autonomous AI Is Reshaping Operating Models",
+    "category": "Agentic AI",
+    "date": "2026-07-02",
+    "author": "Dataplexor Research",
+    "excerpt": "Agentic AI moves organizations from tools that answer to systems that act. We examine what changes when software can plan, decide and execute — and how to govern it.",
+    "body": "Enterprises spent the last decade putting dashboards in front of decisions. The next decade will be about putting decisions inside software.\n\n## From copilots to colleagues\n\nAgentic systems differ from chat assistants in one fundamental way: they pursue goals across multiple steps, tools and systems without a human prompting each action. That shift changes the economics of knowledge work — and the risk profile of automation.\n\n## What leaders should do now\n\n- Inventory the workflows where latency, volume or complexity exceed human capacity\n- Establish an evaluation harness before the first agent ships\n- Treat agent permissions like employee permissions: least privilege, audited, revocable\n- Start with human-in-the-loop checkpoints and graduate to autonomy with evidence\n\n## Governance is the moat\n\nThe winners will not be the companies with the most agents, but the ones whose agents are trusted. Observability, guardrails and clear escalation paths are not compliance overhead — they are the operating system of the agentic enterprise.\n\nDataplexor helps organizations design, build and govern agentic systems that earn that trust in production."
+  },
+  {
+    "slug": "data-products-not-data-projects",
+    "title": "Data Products, Not Data Projects",
+    "category": "Data & Analytics",
+    "date": "2026-06-11",
+    "author": "Dataplexor Research",
+    "excerpt": "Projects end; products compound. Why the operating model around your data matters more than the platform underneath it.",
+    "body": "Most data initiatives fail for organizational reasons, not technical ones. The fix is to manage data like a product: with owners, consumers, SLAs and a roadmap.\n\n## The product mindset\n\nA data product has a named owner, a defined interface, documented quality guarantees and a feedback loop with its consumers. It is versioned, monitored and funded like software — because it is software.\n\n## Practical steps\n\n- Define domains and assign product owners with real authority\n- Publish contracts for every dataset that crosses a team boundary\n- Measure adoption and time-to-insight, not rows ingested\n- Fund platforms centrally, products federally\n\nOrganizations that make this shift see compounding returns: every new use case starts from trusted, discoverable building blocks instead of a blank page."
+  },
+  {
+    "slug": "evaluating-llms-in-production",
+    "title": "Evaluating LLMs in Production: Beyond the Demo",
+    "category": "AI",
+    "date": "2026-05-20",
+    "author": "Dataplexor Research",
+    "excerpt": "A demo proves possibility. An evaluation harness proves reliability. A practical framework for measuring generative AI systems where it counts.",
+    "body": "Generative AI systems are easy to demo and hard to trust. The gap between the two is evaluation.\n\n## The three layers of evaluation\n\n1. Component-level: prompt and retrieval quality, measured with golden datasets\n2. System-level: end-to-end task success, latency and cost envelopes\n3. Business-level: outcome metrics tied to the process the system serves\n\n## Make it continuous\n\nEvaluation is not a launch gate; it is telemetry. Every model upgrade, prompt change and data refresh should run through the same harness that certified the first release.\n\n## What good looks like\n\nTeams we work with maintain regression suites of real, anonymized cases; score outputs with a mix of rules, model graders and human review; and wire results into deployment so a failing eval blocks a release the same way a failing test does."
+  },
+  {
+    "slug": "modern-data-platform-blueprint",
+    "title": "A Blueprint for the Modern Data Platform",
+    "category": "Data & Analytics",
+    "date": "2026-04-14",
+    "author": "Dataplexor Research",
+    "excerpt": "Lakehouse, streaming, governance and semantic layers — how the pieces fit together, and where enterprises overspend.",
+    "body": "The modern data stack grew up. What used to be a zoo of point tools is consolidating into a smaller set of platform capabilities that every enterprise needs.\n\n## The core capabilities\n\n- Ingestion and streaming with schema enforcement at the edge\n- A lakehouse storage layer with open table formats\n- Transformation with software engineering discipline: version control, tests, CI\n- A semantic layer that makes metrics consistent everywhere\n- Governance, lineage and access control as platform features, not afterthoughts\n\n## Where enterprises overspend\n\nDuplication is the silent budget killer: multiple ingestion tools, competing BI platforms and shadow pipelines. Consolidating on a coherent platform typically frees 20–30% of run cost — money better spent on AI-ready data foundations."
+  },
+  {
+    "slug": "consulting-in-the-age-of-ai",
+    "title": "Consulting in the Age of AI: What Clients Should Demand",
+    "category": "Consulting",
+    "date": "2026-03-05",
+    "author": "Dataplexor Research",
+    "excerpt": "AI is changing what good advice looks like. Five things every client should now expect from a consulting partner.",
+    "body": "AI has compressed the cost of analysis. That changes what clients should pay for — and what they should demand.\n\n## Five new expectations\n\n1. Working software, not slideware: recommendations should ship with reference implementations\n2. Evidence over opinion: every claim benchmarked against your data, not industry averages\n3. Skills transfer by default: your teams should be more capable when we leave\n4. Transparent use of AI: know where machine judgment ends and human judgment begins\n5. Outcome-linked engagement models: partners who share delivery risk\n\nAt Dataplexor, consulting and engineering are one practice. Advice that cannot survive contact with production is not advice we give."
+  },
+  {
+    "slug": "governed-autonomy-agent-guardrails",
+    "title": "Governed Autonomy: Designing Guardrails for AI Agents",
+    "category": "Agentic AI",
+    "date": "2026-02-10",
+    "author": "Dataplexor Research",
+    "excerpt": "Autonomy without governance is liability. The architecture patterns that let agents act fast while staying inside the lines.",
+    "body": "The question for agentic systems is not whether they can act autonomously — it is whether you can prove they acted correctly.\n\n## Guardrail patterns that work\n\n- Policy engines that evaluate every tool call against declarative rules\n- Sandboxed execution environments with explicit capability grants\n- Budget and rate limits per agent, per task and per counterparty\n- Full decision logging: inputs, reasoning traces, actions and outcomes\n- Human escalation paths with context-rich handoffs\n\n## Autonomy is earned\n\nWe recommend a graduated autonomy model: agents begin in propose-only mode, earn approval-free execution for low-risk actions through measured reliability, and always retain hard stops for irreversible operations.\n\nDone well, governance does not slow agents down — it is what allows you to let them speed up."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "eyebrow": "Data & Analytics · AI · Agentic AI",
+    "title": "We bring clarity to enterprise data and intelligence",
+    "subtitle": "Dataplexor helps organizations turn fragmented data into trusted analytics, production-grade AI and autonomous agentic systems — through products, services and consulting.",
+    "primaryCta": { "label": "Get in touch", "href": "/company/contact" },
+    "secondaryCta": { "label": "Explore our solutions", "href": "/solutions/data-analytics" },
+    "tertiaryCta": { "label": "View latest research", "href": "/insights" }
+  },
+  "stats": [
+    { "value": "120+", "label": "Enterprise data platforms designed, built and modernized" },
+    { "value": "40+", "label": "Production AI and agentic systems running with our clients" },
+    { "value": "18", "label": "Industries served across four continents" },
+    { "value": "97%", "label": "Client retention across multi-year engagements" }
+  ],
+  "advantage": {
+    "title": "The Dataplexor advantage",
+    "intro": "We work at the crossroads of data engineering, applied AI and business strategy to understand, structure and solve your hardest problems. Our teams combine proprietary accelerators with deep delivery experience across the full data and AI lifecycle.",
+    "items": [
+      {
+        "title": "Breadth and depth",
+        "body": "From data platforms and governance to machine learning and autonomous agents — one partner across the full lifecycle, from strategy to run."
+      },
+      {
+        "title": "Engineering rigor",
+        "body": "Investor-grade methodologies, reproducible pipelines and rigorous evaluation standards so you can trust every number and every model in production."
+      },
+      {
+        "title": "Best-in-class methodologies",
+        "body": "Transparent frameworks for data quality, model governance and agent safety, enhanced by advanced tooling and science-driven delivery playbooks."
+      },
+      {
+        "title": "Holistic ecosystem view",
+        "body": "We serve builders, operators and executives — delivering a broad view of the data and AI ecosystem for durable strategic advantage."
+      }
+    ]
+  }
+}
