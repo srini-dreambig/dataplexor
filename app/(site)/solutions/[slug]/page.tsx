@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SOLUTIONS, PRODUCTS } from "@/lib/site";
 import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
+import { MarkBackdrop } from "@/components/Logo";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -51,8 +52,12 @@ export default async function SolutionPage({
       />
 
       {/* Statement */}
-      <section className="bg-brand-soft">
-        <Container className="py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-brand-soft">
+        <MarkBackdrop
+          className="right-[-6%] top-[-15%] h-[110%] text-brand"
+          opacity={0.06}
+        />
+        <Container className="relative py-20 sm:py-24">
           <h2 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-brand sm:text-4xl">
             {solution.statement}
           </h2>

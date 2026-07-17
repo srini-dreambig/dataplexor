@@ -66,7 +66,7 @@ Static structured content (navigation, products, solutions, services) lives in `
 
 ## Design system
 
-- **Font**: Inter (via `next/font`)
+- **Fonts**: Space Grotesk for headlines and the logo wordmark, Inter for body text (both via `next/font`)
 - **Colors**: brand blue `#2338ec`, ink `#0a0a14`, teal accent `#10dfc2`, mist `#f4f5fb`
-- **Logo**: original SVG plexus mark (`components/Logo.tsx`, `public/logo.svg`, favicon at `app/icon.svg`) — transparent background, renders in any color via `currentColor`
+- **Logo**: brand mark SVG (`components/Logo.tsx`, `public/logo.svg`, favicon at `app/icon.svg`) — transparent background, renders in any color via `currentColor`; `MarkBackdrop` reuses the logo shapes as decorative section backgrounds
 - Shared components in `components/` (header with dropdown menus, footer, hero, stat tiles, cards, CTA banners)

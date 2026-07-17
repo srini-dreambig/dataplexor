@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile } from "@/components/ui";
+import { MarkBackdrop } from "@/components/Logo";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -47,8 +48,12 @@ export default function AboutPage() {
         }
       />
 
-      <section className="bg-brand text-white">
-        <Container className="py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-brand text-white">
+        <MarkBackdrop
+          className="right-[-5%] top-1/2 h-[220%] -translate-y-1/2"
+          opacity={0.08}
+        />
+        <Container className="relative py-20 sm:py-24">
           <Eyebrow dark>Our mission</Eyebrow>
           <p className="mt-6 max-w-4xl text-3xl font-semibold leading-snug tracking-tight sm:text-4xl">
             We unlock the value of data to build products and intelligence that

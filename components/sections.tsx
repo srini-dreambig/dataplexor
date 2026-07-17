@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { PlexusBackground } from "@/components/PlexusBackground";
+import { MarkBackdrop } from "@/components/Logo";
 import type { Post } from "@/lib/content";
 
 export function PageHero({
@@ -55,8 +56,12 @@ export function CtaBanner({
   ctaHref?: string;
 }) {
   return (
-    <section className="bg-brand text-white">
-      <Container className="flex flex-col items-start gap-8 py-16 sm:py-20 lg:flex-row lg:items-center lg:justify-between">
+    <section className="relative overflow-hidden bg-brand text-white">
+      <MarkBackdrop
+        className="right-[-4%] top-1/2 h-[230%] -translate-y-1/2"
+        opacity={0.09}
+      />
+      <Container className="relative flex flex-col items-start gap-8 py-16 sm:py-20 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             {title}

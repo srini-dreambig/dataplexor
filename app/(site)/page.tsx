@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getHomeContent, getPosts } from "@/lib/content";
 import { PlexusBackground } from "@/components/PlexusBackground";
+import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { CtaBanner, InsightCard } from "@/components/sections";
 import { SOLUTIONS, PRODUCTS } from "@/lib/site";
@@ -45,8 +46,12 @@ export default function HomePage() {
       </section>
 
       {/* Advantage — blue band */}
-      <section className="bg-brand text-white">
-        <Container className="py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-brand text-white">
+        <MarkBackdrop
+          className="right-[-8%] top-[-10%] h-[90%]"
+          opacity={0.08}
+        />
+        <Container className="relative py-20 sm:py-24">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             {home.advantage.title}
           </h2>
@@ -113,8 +118,12 @@ export default function HomePage() {
       </section>
 
       {/* Products */}
-      <section className="bg-ink text-white">
-        <Container className="py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-ink text-white">
+        <MarkBackdrop
+          className="left-[-6%] bottom-[-40%] h-[110%]"
+          opacity={0.07}
+        />
+        <Container className="relative py-20 sm:py-24">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <Eyebrow dark>Products</Eyebrow>
