@@ -1,7 +1,4 @@
-import fs from "fs";
-import path from "path";
-
-const CONTENT_DIR = path.join(process.cwd(), "content");
+import { readDoc, writeDoc } from "@/lib/storage";
 
 export type Cta = { label: string; href: string };
 
@@ -53,82 +50,67 @@ export type ContactMessage = {
   receivedAt: string;
 };
 
-function readJson<T>(file: string, fallback: T): T {
-  try {
-    return JSON.parse(
-      fs.readFileSync(path.join(CONTENT_DIR, file), "utf8")
-    ) as T;
-  } catch {
-    return fallback;
-  }
+const DEFAULT_SETTINGS: Settings = {
+  siteName: "Dataplexor",
+  tagline: "",
+  description: "",
+  siteUrl: "https://www.dataplexor.com",
+  announcement: "",
+  announcementHref: "",
+  contact: { email: "", phone: "", address: "" },
+  social: { linkedin: "", x: "", github: "", youtube: "" },
+};
+
+const DEFAULT_HOME: HomeContent = {
+  hero: {
+    eyebrow: "",
+    title: "Dataplexor",
+    subtitle: "",
+    primaryCta: { label: "Get in touch", href: "/company/contact" },
+    secondaryCta: { label: "", href: "" },
+    tertiaryCta: { label: "", href: "" },
+  },
+  stats: [],
+  advantage: { title: "", intro: "", items: [] },
+};
+
+export async function getSettings(): Promise<Settings> {
+  return readDoc<Settings>("settings", DEFAULT_SETTINGS);
 }
 
-function writeJson(file: string, data: unknown) {
-  fs.mkdirSync(CONTENT_DIR, { recursive: true });
-  fs.writeFileSync(
-    path.join(CONTENT_DIR, file),
-    JSON.stringify(data, null, 2) + "\n",
-    "utf8"
-  );
+export async function saveSettings(settings: Settings): Promise<void> {
+  await writeDoc("settings", settings);
 }
 
-export function getSettings(): Settings {
-  return readJson<Settings>("settings.json", {
-    siteName: "Dataplexor",
-    tagline: "",
-    description: "",
-    siteUrl: "https://www.dataplexor.com",
-    announcement: "",
-    announcementHref: "",
-    contact: { email: "", phone: "", address: "" },
-    social: { linkedin: "", x: "", github: "", youtube: "" },
-  });
+export async function getHomeContent(): Promise<HomeContent> {
+  return readDoc<HomeContent>("home", DEFAULT_HOME);
 }
 
-export function saveSettings(settings: Settings) {
-  writeJson("settings.json", settings);
+export async function saveHomeContent(content: HomeContent): Promise<void> {
+  await writeDoc("home", content);
 }
 
-export function getHomeContent(): HomeContent {
-  return readJson<HomeContent>("home.json", {
-    hero: {
-      eyebrow: "",
-      title: "Dataplexor",
-      subtitle: "",
-      primaryCta: { label: "Get in touch", href: "/company/contact" },
-      secondaryCta: { label: "", href: "" },
-      tertiaryCta: { label: "", href: "" },
-    },
-    stats: [],
-    advantage: { title: "", intro: "", items: [] },
-  });
-}
-
-export function saveHomeContent(content: HomeContent) {
-  writeJson("home.json", content);
-}
-
-export function getPosts(): Post[] {
-  const posts = readJson<Post[]>("posts.json", []);
+export async function getPosts(): Promise<Post[]> {
+  const posts = await readDoc<Post[]>("posts", []);
   return [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export function getPost(slug: string): Post | undefined {
-  return getPosts().find((p) => p.slug === slug);
+export async function getPost(slug: string): Promise<Post | undefined> {
+  return (await getPosts()).find((p) => p.slug === slug);
 }
 
-export function savePosts(posts: Post[]) {
-  writeJson("posts.json", posts);
+export async function savePosts(posts: Post[]): Promise<void> {
+  await writeDoc("posts", posts);
 }
 
-export function getMessages(): ContactMessage[] {
-  return readJson<ContactMessage[]>("messages.json", []);
+export async function getMessages(): Promise<ContactMessage[]> {
+  return readDoc<ContactMessage[]>("messages", []);
 }
 
-export function addMessage(msg: ContactMessage) {
-  const messages = getMessages();
+export async function addMessage(msg: ContactMessage): Promise<void> {
+  const messages = await getMessages();
   messages.unshift(msg);
-  writeJson("messages.json", messages);
+  await writeDoc("messages", messages);
 }
 
 export function sanitizePost(data: Partial<Post>): Omit<Post, "slug"> | null {

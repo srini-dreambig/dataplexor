@@ -12,7 +12,7 @@ export async function PUT(request: Request) {
   } catch {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
-  const current = getSettings();
+  const current = await getSettings();
   const next: Settings = {
     ...current,
     ...incoming,
@@ -22,6 +22,13 @@ export async function PUT(request: Request) {
   if (!next.siteName?.trim()) {
     return NextResponse.json({ error: "Site name is required" }, { status: 400 });
   }
-  saveSettings(next);
+  try {
+    await saveSettings(next);
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Storage unavailable" },
+      { status: 503 }
+    );
+  }
   return NextResponse.json({ ok: true });
 }

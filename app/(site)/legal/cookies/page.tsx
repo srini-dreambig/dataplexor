@@ -53,7 +53,7 @@ export default function CookiesPage() {
       <p>
         We may update this policy from time to time; the latest version will
         always be available on this page. Questions can be sent to
-        privacy@dataplexor.com.
+        info@dataplexor.com.
       </p>
     </LegalPage>
   );

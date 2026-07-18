@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getSettings } from "@/lib/content";
 
-export default function robots(): MetadataRoute.Robots {
-  const base = getSettings().siteUrl.replace(/\/$/, "");
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const base = (await getSettings()).siteUrl.replace(/\/$/, "");
   return {
     rules: [
       {

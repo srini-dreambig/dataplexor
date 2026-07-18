@@ -2,12 +2,12 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getSettings } from "@/lib/content";
 
-export default function SiteLayout({
+export default async function SiteLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const settings = getSettings();
+  const settings = await getSettings();
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",

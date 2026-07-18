@@ -2,10 +2,10 @@ import Link from "next/link";
 import { getMessages, getPosts, getSettings } from "@/lib/content";
 import { AdminPageTitle } from "@/components/admin/fields";
 
-export default function AdminDashboard() {
-  const posts = getPosts();
-  const messages = getMessages();
-  const settings = getSettings();
+export default async function AdminDashboard() {
+  const posts = await getPosts();
+  const messages = await getMessages();
+  const settings = await getSettings();
 
   const cards = [
     {

@@ -15,6 +15,13 @@ export async function PUT(request: Request) {
   if (!content?.hero?.title?.trim()) {
     return NextResponse.json({ error: "Hero title is required" }, { status: 400 });
   }
-  saveHomeContent(content);
+  try {
+    await saveHomeContent(content);
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Storage unavailable" },
+      { status: 503 }
+    );
+  }
   return NextResponse.json({ ok: true });
 }

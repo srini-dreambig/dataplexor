@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/insights" },
 };
 
-export default function InsightsPage() {
-  const posts = getPosts();
+export default async function InsightsPage() {
+  const posts = await getPosts();
   const [featured, ...rest] = posts;
 
   return (

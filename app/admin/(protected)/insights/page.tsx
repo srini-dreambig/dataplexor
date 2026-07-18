@@ -2,8 +2,8 @@ import Link from "next/link";
 import { getPosts } from "@/lib/content";
 import { AdminPageTitle } from "@/components/admin/fields";
 
-export default function AdminInsightsPage() {
-  const posts = getPosts();
+export default async function AdminInsightsPage() {
+  const posts = await getPosts();
   return (
     <>
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4">

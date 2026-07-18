@@ -22,13 +22,20 @@ export async function PUT(request: Request, { params }: Ctx) {
       { status: 400 }
     );
   }
-  const posts = getPosts();
+  const posts = await getPosts();
   const index = posts.findIndex((p) => p.slug === slug);
   if (index === -1) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
   posts[index] = { slug, ...clean };
-  savePosts(posts);
+  try {
+    await savePosts(posts);
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Storage unavailable" },
+      { status: 503 }
+    );
+  }
   return NextResponse.json(posts[index]);
 }
 
@@ -37,11 +44,18 @@ export async function DELETE(_request: Request, { params }: Ctx) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const { slug } = await params;
-  const posts = getPosts();
+  const posts = await getPosts();
   const next = posts.filter((p) => p.slug !== slug);
   if (next.length === posts.length) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
-  savePosts(next);
+  try {
+    await savePosts(next);
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Storage unavailable" },
+      { status: 503 }
+    );
+  }
   return NextResponse.json({ ok: true });
 }

@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function HomePage() {
-  const home = getHomeContent();
-  const posts = getPosts().slice(0, 3);
+export default async function HomePage() {
+  const home = await getHomeContent();
+  const posts = (await getPosts()).slice(0, 3);
 
   return (
     <>

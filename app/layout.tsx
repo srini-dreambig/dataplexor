@@ -12,7 +12,7 @@ const googleSans = Google_Sans({
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const settings = getSettings();
+  const settings = await getSettings();
   return {
     metadataBase: new URL(settings.siteUrl),
     title: {
@@ -36,11 +36,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: `${settings.siteName} — Data & Analytics, AI and Agentic AI`,
       description: settings.description,
       url: settings.siteUrl,
+      images: [{ url: "/og.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${settings.siteName} — Data & Analytics, AI and Agentic AI`,
       description: settings.description,
+      images: ["/og.png"],
     },
     robots: { index: true, follow: true },
     icons: { icon: "/icon.svg" },

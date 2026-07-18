@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/company/contact" },
 };
 
-export default function ContactPage() {
-  const settings = getSettings();
+export default async function ContactPage() {
+  const settings = await getSettings();
   return (
     <>
       <PageHero

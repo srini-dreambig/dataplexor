@@ -73,7 +73,7 @@ export default function PrivacyPage() {
         Depending on your location, you may have rights to access, correct,
         delete, restrict or port your personal information, and to object to
         certain processing. To exercise these rights, contact us at
-        privacy@dataplexor.com. You may also lodge a complaint with your local
+        info@dataplexor.com. You may also lodge a complaint with your local
         supervisory authority.
       </p>
 
@@ -85,7 +85,7 @@ export default function PrivacyPage() {
 
       <h2>Contact</h2>
       <p>
-        Questions about this policy can be sent to privacy@dataplexor.com or to
+        Questions about this policy can be sent to info@dataplexor.com or to
         our headquarters address listed on the Contact page. We may update this
         policy from time to time; material changes will be posted on this page.
       </p>

@@ -15,7 +15,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -37,10 +37,10 @@ export default async function InsightPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPost(slug);
   if (!post) notFound();
-  const settings = getSettings();
-  const related = getPosts()
+  const settings = await getSettings();
+  const related = (await getPosts())
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
 

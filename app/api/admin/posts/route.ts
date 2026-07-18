@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       { status: 400 }
     );
   }
-  const posts = getPosts();
+  const posts = await getPosts();
   let slug = slugify(clean.title);
   if (!slug) slug = `post-${Date.now()}`;
   while (posts.some((p) => p.slug === slug)) {
@@ -33,6 +33,13 @@ export async function POST(request: Request) {
   }
   const post: Post = { slug, ...clean };
   posts.push(post);
-  savePosts(posts);
+  try {
+    await savePosts(posts);
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Storage unavailable" },
+      { status: 503 }
+    );
+  }
   return NextResponse.json(post, { status: 201 });
 }

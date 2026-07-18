@@ -1,8 +1,8 @@
 import { getMessages } from "@/lib/content";
 import { AdminPageTitle } from "@/components/admin/fields";
 
-export default function AdminMessagesPage() {
-  const messages = getMessages();
+export default async function AdminMessagesPage() {
+  const messages = await getMessages();
   return (
     <>
       <AdminPageTitle

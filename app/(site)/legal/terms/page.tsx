@@ -67,7 +67,7 @@ export default function TermsPage() {
       <p>
         These Terms are governed by the laws of the State of California, without
         regard to conflict-of-law principles. Questions may be directed to
-        legal@dataplexor.com.
+        info@dataplexor.com.
       </p>
     </LegalPage>
   );

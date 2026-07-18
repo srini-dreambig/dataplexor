@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { getPosts, getSettings } from "@/lib/content";
 import { PRODUCTS, SOLUTIONS } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const base = getSettings().siteUrl.replace(/\/$/, "");
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const base = (await getSettings()).siteUrl.replace(/\/$/, "");
   const now = new Date();
 
   const staticPaths: { path: string; priority: number }[] = [
@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
-    ...getPosts().map((post) => ({
+    ...(await getPosts()).map((post) => ({
       url: `${base}/insights/${post.slug}`,
       lastModified: new Date(post.date),
       changeFrequency: "monthly" as const,

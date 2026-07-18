@@ -26,15 +26,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid email" }, { status: 400 });
   }
 
-  addMessage({
-    id: crypto.randomUUID(),
-    name,
-    email,
-    company,
-    topic,
-    message,
-    receivedAt: new Date().toISOString(),
-  });
+  try {
+    await addMessage({
+      id: crypto.randomUUID(),
+      name,
+      email,
+      company,
+      topic,
+      message,
+      receivedAt: new Date().toISOString(),
+    });
+  } catch (err) {
+    return NextResponse.json(
+      { error: err instanceof Error ? err.message : "Storage unavailable" },
+      { status: 503 }
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }
