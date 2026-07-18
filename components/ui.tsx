@@ -82,8 +82,8 @@ export function SectionTitle({
 
 export function StatTile({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-xl bg-mist p-6 sm:p-8">
-      <p className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+    <div className="rounded-2xl bg-white p-6 ring-1 ring-line sm:p-8">
+      <p className="font-display text-4xl font-bold tabular-nums tracking-tight text-ink sm:text-5xl">
         {value}
       </p>
       <p className="mt-3 text-sm leading-relaxed text-ink-soft">{label}</p>

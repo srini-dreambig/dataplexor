@@ -31,16 +31,21 @@ export default async function HomePage() {
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/80">
             {home.hero.subtitle}
           </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
             <PillButton href={home.hero.primaryCta.href} variant="teal">
               {home.hero.primaryCta.label}
             </PillButton>
             <PillButton href={home.hero.secondaryCta.href} variant="outline">
               {home.hero.secondaryCta.label}
             </PillButton>
-            <PillButton href={home.hero.tertiaryCta.href} variant="outline">
-              {home.hero.tertiaryCta.label}
-            </PillButton>
+            {home.hero.tertiaryCta.label ? (
+              <Link
+                href={home.hero.tertiaryCta.href}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white/75 transition-colors hover:text-white"
+              >
+                {home.hero.tertiaryCta.label} <ArrowIcon />
+              </Link>
+            ) : null}
           </div>
         </Container>
       </section>
@@ -78,12 +83,14 @@ export default async function HomePage() {
             Navigate data and AI with our
             <br className="hidden sm:block" /> solutions built for the enterprise
           </SectionTitle>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {SOLUTIONS.map((solution) => (
+          <div className="mt-12 grid gap-6 lg:grid-cols-6">
+            {SOLUTIONS.map((solution, i) => (
               <Link
                 key={solution.slug}
                 href={`/solutions/${solution.slug}`}
-                className="group flex flex-col rounded-2xl bg-white p-8 shadow-sm ring-1 ring-line transition-shadow hover:shadow-xl"
+                className={`card-hover group flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line ${
+                  i < 3 ? "lg:col-span-2" : "lg:col-span-3"
+                }`}
               >
                 <Eyebrow>{solution.eyebrow}</Eyebrow>
                 <h3 className="mt-3 text-2xl font-bold tracking-tight text-ink group-hover:text-brand">
@@ -121,7 +128,7 @@ export default async function HomePage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex items-start justify-between gap-4 rounded-2xl border border-line p-6 transition-all hover:border-brand hover:shadow-lg"
+                className="group flex items-start justify-between gap-4 rounded-2xl border border-line p-6 card-hover hover:border-brand"
               >
                 <div>
                   <h3 className="font-bold tracking-tight text-ink group-hover:text-brand">

@@ -102,34 +102,28 @@ export default async function IndustryPage({
             {industry.useCases.map((useCase, i) => (
               <article
                 key={useCase.title}
-                className="group flex flex-col rounded-2xl bg-white p-7 ring-1 ring-line transition-shadow hover:shadow-xl"
+                className="card-hover flex flex-col rounded-2xl bg-white p-7 ring-1 ring-line"
               >
-                <div className="flex items-center justify-between">
-                  <span className="font-display text-sm font-bold text-brand">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="rounded-full bg-brand-soft px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand">
-                    Hot in 2026
-                  </span>
-                </div>
-                <h3 className="mt-4 text-lg font-bold tracking-tight text-ink">
+                <span className="font-display text-sm font-bold text-ink-soft/40">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 text-lg font-bold tracking-tight text-ink">
                   {useCase.title}
                 </h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
                   {useCase.body}
                 </p>
-                <div className="mt-4 border-t border-line pt-4">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">
+                <div className="mt-5 border-t border-line pt-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-soft/60">
                     Why now
                   </p>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
                     {useCase.whyNow}
                   </p>
                 </div>
-                <p className="mt-auto pt-5">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-ink px-3.5 py-1.5 text-xs font-bold text-teal">
-                    ▲ {useCase.impact}
-                  </span>
+                <p className="mt-auto flex items-center gap-2.5 pt-5 text-sm font-semibold text-ink">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  {useCase.impact}
                 </p>
               </article>
             ))}
@@ -174,7 +168,7 @@ export default async function IndustryPage({
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl bg-white p-7 ring-1 ring-line transition-shadow hover:shadow-lg"
+                className="group rounded-2xl bg-white p-7 ring-1 ring-line card-hover"
               >
                 <h3 className="text-lg font-bold tracking-tight text-ink group-hover:text-brand">
                   {s.name}

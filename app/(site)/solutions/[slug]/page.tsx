@@ -142,7 +142,7 @@ export default async function SolutionPage({
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl border border-line p-8 transition-shadow hover:shadow-lg"
+                className="group rounded-2xl border border-line p-8 card-hover"
               >
                 <h3 className="text-xl font-bold tracking-tight text-ink group-hover:text-brand">
                   {s.name}

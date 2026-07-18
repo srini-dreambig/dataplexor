@@ -85,7 +85,7 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
   return (
     <Link
       href={`/insights/${post.slug}`}
-      className={`group flex flex-col rounded-2xl border border-line bg-white p-7 transition-shadow hover:shadow-lg ${
+      className={`group flex flex-col rounded-2xl border border-line bg-white p-7 card-hover ${
         featured ? "sm:col-span-2 sm:p-9" : ""
       }`}
     >

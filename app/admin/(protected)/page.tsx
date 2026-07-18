@@ -45,7 +45,7 @@ export default async function AdminDashboard() {
           <Link
             key={card.href}
             href={card.href}
-            className="group rounded-2xl bg-white p-6 ring-1 ring-line transition-shadow hover:shadow-lg"
+            className="group rounded-2xl bg-white p-6 ring-1 ring-line card-hover"
           >
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-bold text-ink group-hover:text-brand">

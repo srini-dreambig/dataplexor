@@ -110,7 +110,7 @@ export default function ProductsPage() {
             <div className="grid content-center gap-4">
               <Link
                 href="/services"
-                className="group flex items-center justify-between rounded-2xl border border-line p-6 hover:shadow-lg"
+                className="card-hover group flex items-center justify-between rounded-2xl border border-line p-6 hover:border-brand"
               >
                 <span className="font-semibold text-ink group-hover:text-brand">
                   Services &amp; Consulting
@@ -119,7 +119,7 @@ export default function ProductsPage() {
               </Link>
               <Link
                 href="/company/contact"
-                className="group flex items-center justify-between rounded-2xl border border-line p-6 hover:shadow-lg"
+                className="card-hover group flex items-center justify-between rounded-2xl border border-line p-6 hover:border-brand"
               >
                 <span className="font-semibold text-ink group-hover:text-brand">
                   Talk to a product specialist

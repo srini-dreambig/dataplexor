@@ -36,7 +36,7 @@ export default function IndustriesPage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line transition-shadow hover:shadow-xl"
+                className="group flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line card-hover"
               >
                 <Eyebrow>Industry</Eyebrow>
                 <h2 className="mt-3 text-xl font-bold tracking-tight text-ink group-hover:text-brand">

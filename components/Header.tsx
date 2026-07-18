@@ -62,10 +62,6 @@ export function Header({ announcement, announcementHref }: {
             <Link href="/company/contact" className="hover:text-white">
               Client Log In
             </Link>
-            <span className="text-white/30">|</span>
-            <Link href="/admin" className="hover:text-white">
-              Admin
-            </Link>
           </nav>
         </Container>
       </div>
