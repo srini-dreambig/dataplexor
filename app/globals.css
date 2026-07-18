@@ -11,10 +11,10 @@
   --color-teal: #10dfc2;
   --color-line: #e3e5f0;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif,
-    system-ui, sans-serif;
+  --font-sans: var(--font-google-sans), ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: var(--font-google-sans), ui-sans-serif, system-ui,
+    sans-serif;
 }
 
 h1,
