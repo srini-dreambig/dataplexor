@@ -4,6 +4,8 @@ import Link from "next/link";
 import { PRODUCTS } from "@/lib/site";
 import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
 import { Container, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
+import { JsonLd, breadcrumbList } from "@/lib/seo";
+import { getSettings } from "@/lib/content";
 
 type Params = { slug: string };
 
@@ -43,11 +45,20 @@ export default async function ProductPage({
     provider: { "@type": "Organization", name: "Dataplexor" },
   };
 
+  const settings = await getSettings();
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <JsonLd
+        data={breadcrumbList(settings.siteUrl, [
+          { name: "Home", path: "/" },
+          { name: "Products", path: "/products" },
+          { name: product.name, path: `/products/${product.slug}` },
+        ])}
       />
       <PageHero
         eyebrow={`Products · ${product.tag}`}

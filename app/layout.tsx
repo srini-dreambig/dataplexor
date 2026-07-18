@@ -45,7 +45,9 @@ export async function generateMetadata(): Promise<Metadata> {
       images: ["/og.png"],
     },
     robots: { index: true, follow: true },
-    icons: { icon: "/icon.svg" },
+    verification: process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : undefined,
   };
 }
 

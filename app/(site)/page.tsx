@@ -8,7 +8,7 @@ import { CtaBanner, InsightCard } from "@/components/sections";
 import { SOLUTIONS, PRODUCTS } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Dataplexor — Data & Analytics, AI and Agentic AI",
+  title: { absolute: "Dataplexor — Data & Analytics, AI and Agentic AI" },
   description:
     "Dataplexor turns enterprise data into decisions: modern data platforms, production AI and governed agentic systems — delivered through products, services and consulting.",
   alternates: { canonical: "/" },

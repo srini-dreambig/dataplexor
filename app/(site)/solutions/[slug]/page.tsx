@@ -4,6 +4,8 @@ import Link from "next/link";
 import { SOLUTIONS, PRODUCTS } from "@/lib/site";
 import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
 import { MarkBackdrop } from "@/components/Logo";
+import { JsonLd, breadcrumbList } from "@/lib/seo";
+import { getSettings } from "@/lib/content";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -33,9 +35,17 @@ export default async function SolutionPage({
   const solution = SOLUTIONS.find((s) => s.slug === slug);
   if (!solution) notFound();
   const product = PRODUCTS.find((p) => p.slug === solution.relatedProduct);
+  const settings = await getSettings();
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbList(settings.siteUrl, [
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions/data-analytics" },
+          { name: solution.name, path: `/solutions/${solution.slug}` },
+        ])}
+      />
       <PageHero
         eyebrow={solution.eyebrow}
         title={solution.headline}

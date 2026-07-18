@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getPost, getPosts, getSettings } from "@/lib/content";
 import { Markdown } from "@/lib/markdown";
 import { Container, ArrowIcon } from "@/components/ui";
+import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { CtaBanner, InsightCard } from "@/components/sections";
 import { PlexusBackground } from "@/components/PlexusBackground";
 
@@ -66,6 +67,13 @@ export default async function InsightPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <JsonLd
+        data={breadcrumbList(settings.siteUrl, [
+          { name: "Home", path: "/" },
+          { name: "Insights", path: "/insights" },
+          { name: post.title, path: `/insights/${post.slug}` },
+        ])}
       />
       <section className="relative isolate text-white">
         <PlexusBackground />

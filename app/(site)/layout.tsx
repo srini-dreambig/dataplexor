@@ -24,11 +24,24 @@ export default async function SiteLayout({
     sameAs: Object.values(settings.social).filter(Boolean),
   };
 
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: settings.siteName,
+    url: settings.siteUrl,
+    description: settings.description,
+    publisher: { "@type": "Organization", name: settings.siteName },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <Header
         announcement={settings.announcement}
