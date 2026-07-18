@@ -1,15 +1,17 @@
 import React from "react";
 
 /**
- * Dataplexor brand mark — two interlocking flow shapes (client-supplied).
- * Rendered with currentColor on a transparent background so it adapts to
- * any surface: ink on light, white on dark, brand blue where accented.
+ * Dataplexor brand mark — a capital "D" split into two interlocking
+ * pieces by a jogged diagonal channel: two data streams multiplexed
+ * through one core. Rendered with currentColor on a transparent
+ * background so it adapts to any surface: ink on light, white on dark,
+ * brand blue where accented.
  */
-export const LOGO_VIEWBOX = "0 0 46 51";
+export const LOGO_VIEWBOX = "0 0 48 48";
 
 export const LOGO_PATHS = [
-  "M35.4 30.5L42.4 23.5C42.4 18.7 41.2 14.1 39 10.1L22.7 25.2V50.3H25.8C36.7 50.3 45.6 41.5 45.6 30.5H35.4Z",
-  "M10.2 19.8L3.2 26.8C3.2 31.6 4.4 36.2 6.6 40.2L22.9 25.1V0H19.8C8.9 0 0 8.8 0 19.8H10.2Z",
+  "M8 7 A3 3 0 0 1 11 4 H26 A20 20 0 0 1 38.56 8.44 L23.5 23.5 L26.5 26.5 L9.0 44 H8 Z",
+  "M42.0 12.0 L25.9 28.1 L28.9 31.1 L16.0 44 H26 A20 20 0 0 0 42.0 12.0 Z",
 ];
 
 export function LogoMark({ className = "h-8 w-8" }: { className?: string }) {
