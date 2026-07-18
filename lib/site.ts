@@ -531,6 +531,7 @@ export type Industry = {
   intro: string;
   challenges: { title: string; body: string }[];
   outcomes: { metric: string; title: string; body: string }[];
+  useCases: { title: string; body: string; whyNow: string; impact: string }[];
   solutions: string[];
 };
 
@@ -572,6 +573,38 @@ export const INDUSTRIES: Industry[] = [
         body: "A governed customer data platform plus real-time recommendations lifted revenue per session 12% — with full consent lineage for privacy teams.",
       },
     ],
+    useCases: [
+      {
+        title: "Agentic shopping assistants",
+        body: "Conversational AI that guides discovery, answers product questions and completes purchases — the Rufus-style assistant is becoming table stakes for large catalogs.",
+        whyNow: "Generative search is resetting how customers find products; retailers without an assistant lose the conversation entirely.",
+        impact: "+8-15% conversion on assisted journeys",
+      },
+      {
+        title: "Autonomous replenishment & allocation",
+        body: "Agents that turn forecasts into draft transfer, reorder and allocation decisions for planner approval — closing the loop between prediction and action.",
+        whyNow: "Planner teams are shrinking while SKU counts grow; prediction without execution leaves the value on the table.",
+        impact: "Hours of planner time returned daily",
+      },
+      {
+        title: "Markdown & dynamic pricing optimization",
+        body: "SKU-store level price and markdown optimization that protects margin in volatile demand — the fastest payback program in most retail portfolios.",
+        whyNow: "Persistent cost pressure and demand volatility make static pricing calendars an annual write-off.",
+        impact: "-15-25% markdown spend",
+      },
+      {
+        title: "Retail media data foundations",
+        body: "Clean-room-ready first-party data products that power the retail media business — audiences, measurement and closed-loop attribution advertisers will pay for.",
+        whyNow: "Retail media is the industry's fastest-growing profit pool, and it runs entirely on governed customer data.",
+        impact: "New high-margin revenue line",
+      },
+      {
+        title: "Computer-vision shrink & shelf intelligence",
+        body: "Vision models on existing camera estates for loss prevention, on-shelf availability and planogram compliance.",
+        whyNow: "Shrink hit historic highs post-pandemic while shelf-edge labor keeps getting scarcer.",
+        impact: "-20-30% preventable shrink",
+      },
+    ],
     solutions: ["data-analytics", "ai", "agentic-ai"],
   },
   {
@@ -609,6 +642,38 @@ export const INDUSTRIES: Industry[] = [
         metric: "8x",
         title: "Faster KYC periodic reviews with governed agents",
         body: "Agentic workflows on AgentMesh assemble evidence and draft assessments for human approval; review cycle time dropped from days to hours with a complete decision log.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Agentic KYC & AML operations",
+        body: "Agents that assemble evidence, screen media, draft risk assessments and route to human approvers — with every step logged for the second line.",
+        whyNow: "Compliance cost per client keeps climbing while regulators demand faster refresh cycles; headcount alone cannot close the gap.",
+        impact: "Days-to-hours review cycles",
+      },
+      {
+        title: "Relationship manager copilots",
+        body: "GenAI briefs that synthesize portfolios, market moves and CRM history into next-best-conversation preparation for bankers.",
+        whyNow: "The productivity gap between AI-equipped and unequipped RMs is now visible in wallet share.",
+        impact: "+30% client-facing time",
+      },
+      {
+        title: "Real-time fraud & scam defense",
+        body: "Behavioral and network models that catch authorized-push-payment scams and mule activity as payments go instant.",
+        whyNow: "Instant payment rails compress the fraud decision window to milliseconds — batch screening is structurally too late.",
+        impact: "-40% false positives at higher catch rates",
+      },
+      {
+        title: "Explainable credit underwriting",
+        body: "ML underwriting with reason codes, bias monitoring and full documentation — built for EU AI Act high-risk obligations and fair-lending scrutiny.",
+        whyNow: "Credit scoring is explicitly high-risk under the EU AI Act, with obligations now in application.",
+        impact: "More approvals at equal risk, audit-ready",
+      },
+      {
+        title: "Regulatory reporting pipelines",
+        body: "Lineage-complete data platforms that assemble BCBS 239-style risk and finance reports as governed pipelines, not quarterly heroics.",
+        whyNow: "Supervisors are probing data lineage directly; manual assembly is now itself a finding.",
+        impact: "-60% report production effort",
       },
     ],
     solutions: ["data-analytics", "agentic-ai", "ai"],
@@ -650,6 +715,38 @@ export const INDUSTRIES: Industry[] = [
         body: "Straight-through processing for low-complexity claims and agent-assisted adjudication elsewhere — customer satisfaction up double digits.",
       },
     ],
+    useCases: [
+      {
+        title: "Submission intake & triage",
+        body: "Document intelligence that reads broker submissions, loss runs and schedules, normalizes them and prioritizes the book for underwriters.",
+        whyNow: "Commercial submission volumes are up while underwriting capacity is flat — triage decides which risks you even get to quote.",
+        impact: "-65% triage time, higher quote ratios",
+      },
+      {
+        title: "Claims straight-through processing",
+        body: "Clean claims settled automatically; complex ones assembled and drafted by agents for adjuster judgment — fraud signals woven throughout.",
+        whyNow: "Claims experience is the #1 driver of retention, and settlement speed is the experience.",
+        impact: "Cycle times cut by half or more",
+      },
+      {
+        title: "Climate & catastrophe analytics",
+        body: "Geospatial and cat-model data fused with portfolio exposure for accumulation control, pricing and climate disclosure.",
+        whyNow: "Secondary perils keep breaking loss records and reinsurers are repricing accordingly — capital costs now track analytics maturity.",
+        impact: "Sharper pricing, defensible disclosures",
+      },
+      {
+        title: "Underwriter & agent copilots",
+        body: "Assistants that surface appetite, guidelines, comparable risks and prior decisions inside the underwriting workbench.",
+        whyNow: "A generation of senior underwriters is retiring; their judgment leaves with them unless it is productized.",
+        impact: "Faster onboarding, consistent decisions",
+      },
+      {
+        title: "Subrogation & recovery detection",
+        body: "NLP over claim files that flags missed recovery opportunities and drafts demand packages.",
+        whyNow: "Recovery leakage is pure margin sitting in unstructured claim notes.",
+        impact: "+2-4pt recovery rate improvement",
+      },
+    ],
     solutions: ["ai", "data-analytics", "agentic-ai"],
   },
   {
@@ -687,6 +784,38 @@ export const INDUSTRIES: Industry[] = [
         metric: "-31%",
         title: "Readmission-risk false alerts",
         body: "Recalibrated risk models with continuous evaluation cut alert fatigue while catching more true high-risk patients.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Ambient clinical documentation",
+        body: "AI that listens to the visit and drafts the note, orders and codes for clinician sign-off — the fastest-adopted clinical AI in a decade.",
+        whyNow: "Documentation burden is the top driver of clinician burnout, and health systems now compete on it in recruiting.",
+        impact: "2+ hours returned per clinician day",
+      },
+      {
+        title: "Prior authorization automation",
+        body: "Agents that assemble clinical evidence, draft prior-auth packages and track payer responses — on both provider and payer sides.",
+        whyNow: "New interoperability and turnaround regulation is forcing payers to modernize exactly as providers automate submissions.",
+        impact: "Days-to-hours approvals, fewer denials",
+      },
+      {
+        title: "Denials & revenue cycle intelligence",
+        body: "Models that predict denials before submission and agents that draft appeals with chart evidence.",
+        whyNow: "Denial rates and administrative cost are rising in tandem — this is the CFO's most requested AI use case.",
+        impact: "-25-40% preventable denials",
+      },
+      {
+        title: "Care-gap & population health analytics",
+        body: "Risk stratification and outreach prioritization on unified clinical and claims data, tuned to value-based contracts.",
+        whyNow: "Value-based revenue now depends on finding and closing gaps proactively, not at year-end reconciliation.",
+        impact: "Higher quality scores, captured incentives",
+      },
+      {
+        title: "Clinical trial matching & RWE",
+        body: "LLM-powered matching of patients to trials and governed real-world-evidence platforms for research partnerships.",
+        whyNow: "Sponsors are paying for sites and data partners that can actually recruit and evidence outcomes.",
+        impact: "Faster accrual, new research revenue",
       },
     ],
     solutions: ["data-analytics", "ai", "agentic-ai"],
@@ -728,6 +857,38 @@ export const INDUSTRIES: Industry[] = [
         body: "Vibration and process-data models with maintenance-workflow integration cut unplanned stoppages nearly in half.",
       },
     ],
+    useCases: [
+      {
+        title: "Predictive maintenance at fleet scale",
+        body: "Vibration, thermal and process-data models that schedule intervention before failure — rolled out as a platform, not pilot-by-asset.",
+        whyNow: "The maintenance workforce is aging out while asset utilization targets keep rising.",
+        impact: "-30-50% unplanned downtime",
+      },
+      {
+        title: "Visual quality inspection",
+        body: "Camera-based defect detection on the line with drift monitoring — catching in-process what end-of-line inspection ships.",
+        whyNow: "Quality escapes now trigger recalls announced on social media the same week.",
+        impact: "-40% escaped defects, less scrap",
+      },
+      {
+        title: "Supply chain digital twin",
+        body: "Live network models for demand sensing, supplier risk and scenario planning that planners run before committing capital.",
+        whyNow: "Tariff volatility and supplier shocks have made static annual network plans obsolete on arrival.",
+        impact: "Days-faster disruption response",
+      },
+      {
+        title: "Frontline knowledge copilots",
+        body: "Assistants that put work instructions, root-cause history and retiring-expert knowledge in front of operators in their language.",
+        whyNow: "Decades of tribal knowledge is walking out the door with retirements — capture windows are closing.",
+        impact: "-50% time-to-competency for new operators",
+      },
+      {
+        title: "Energy & emissions optimization",
+        body: "Process-level energy models that cut consumption and generate audit-ready sustainability reporting from the same data.",
+        whyNow: "Energy is now a top-three cost line and disclosure regulation is tightening around scope reporting.",
+        impact: "-8-15% energy cost",
+      },
+    ],
     solutions: ["data-analytics", "ai", "app-building"],
   },
   {
@@ -765,6 +926,38 @@ export const INDUSTRIES: Industry[] = [
         metric: "55%",
         title: "Of tier-1 support contacts resolved by governed agents",
         body: "Agentic service flows resolve the majority of routine contacts with policy guardrails — CSAT held steady while cost-to-serve fell.",
+      },
+    ],
+    useCases: [
+      {
+        title: "Agentic service containment",
+        body: "AI agents that resolve billing, provisioning and support journeys end-to-end with graceful human handoff — beyond chatbot deflection.",
+        whyNow: "Contact volumes and wage inflation are rising together; deflection that frustrates customers just moves the cost.",
+        impact: "50%+ tier-1 containment at stable CSAT",
+      },
+      {
+        title: "Self-healing network operations",
+        body: "AIOps that detects anomalies, predicts degradations and drafts remediation across the RAN and core.",
+        whyNow: "Network complexity (5G, fiber, edge) has outgrown manual NOC operations economics.",
+        impact: "-30% incident volume, faster MTTR",
+      },
+      {
+        title: "Churn prediction & save journeys",
+        body: "Real-time churn signals wired directly into retention offers and care interactions for high-value subscribers.",
+        whyNow: "Saturated markets mean growth is now net-churn arithmetic — every save is cheaper than any acquisition.",
+        impact: "-15-20% high-value churn",
+      },
+      {
+        title: "Field force optimization",
+        body: "Dispatch optimization and technician copilots that fix first-visit resolution — the most expensive truck roll is the second one.",
+        whyNow: "Fiber build-outs and aging copper coexist, stretching field capacity to its limit.",
+        impact: "+15pt first-visit resolution",
+      },
+      {
+        title: "Content & audience intelligence",
+        body: "Recommendation and engagement analytics that grow watch time, reduce churn and price ad inventory with confidence.",
+        whyNow: "Streaming economics have shifted from subscriber growth to engagement-per-dollar.",
+        impact: "Higher retention and ad yield",
       },
     ],
     solutions: ["ai", "agentic-ai", "data-analytics"],

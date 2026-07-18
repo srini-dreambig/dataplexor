@@ -87,6 +87,56 @@ export default async function IndustryPage({
         </Container>
       </section>
 
+      <section className="bg-mist">
+        <Container className="py-20 sm:py-24">
+          <Eyebrow>Use cases</Eyebrow>
+          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+            The use cases on every {industry.name} agenda right now
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Not a lab wishlist — the initiatives our clients are funding this
+            year, with the reason each one became urgent and the impact on the
+            table.
+          </p>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {industry.useCases.map((useCase, i) => (
+              <article
+                key={useCase.title}
+                className="group flex flex-col rounded-2xl bg-white p-7 ring-1 ring-line transition-shadow hover:shadow-xl"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-display text-sm font-bold text-brand">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="rounded-full bg-brand-soft px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand">
+                    Hot in 2026
+                  </span>
+                </div>
+                <h3 className="mt-4 text-lg font-bold tracking-tight text-ink">
+                  {useCase.title}
+                </h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
+                  {useCase.body}
+                </p>
+                <div className="mt-4 border-t border-line pt-4">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">
+                    Why now
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                    {useCase.whyNow}
+                  </p>
+                </div>
+                <p className="mt-auto pt-5">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-ink px-3.5 py-1.5 text-xs font-bold text-teal">
+                    ▲ {useCase.impact}
+                  </span>
+                </p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-ink text-white">
         <Container className="py-20 sm:py-24">
           <Eyebrow dark>Outcomes</Eyebrow>
