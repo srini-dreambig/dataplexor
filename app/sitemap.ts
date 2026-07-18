@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPosts, getSettings } from "@/lib/content";
-import { PRODUCTS, SOLUTIONS } from "@/lib/site";
+import { INDUSTRIES, PRODUCTS, SOLUTIONS } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = (await getSettings()).siteUrl.replace(/\/$/, "");
@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "", priority: 1 },
     { path: "/products", priority: 0.9 },
     { path: "/services", priority: 0.9 },
+    { path: "/industries", priority: 0.9 },
     { path: "/insights", priority: 0.8 },
     { path: "/company/about", priority: 0.7 },
     { path: "/company/leadership", priority: 0.6 },
@@ -32,6 +33,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: 0.9,
+    })),
+    ...INDUSTRIES.map((i) => ({
+      url: `${base}/industries/${i.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
     })),
     ...PRODUCTS.map((p) => ({
       url: `${base}/products/${p.slug}`,

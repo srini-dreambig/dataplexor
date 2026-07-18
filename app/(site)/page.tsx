@@ -5,7 +5,7 @@ import { PlexusBackground } from "@/components/PlexusBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { CtaBanner, InsightCard } from "@/components/sections";
-import { SOLUTIONS, PRODUCTS } from "@/lib/site";
+import { SOLUTIONS, PRODUCTS, INDUSTRIES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Dataplexor — Data & Analytics, AI and Agentic AI" },
@@ -101,8 +101,45 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* Stats */}
+      {/* Industries */}
       <section>
+        <Container className="py-20 sm:py-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <Eyebrow>Industries</Eyebrow>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+                Deep in your domain,
+                <br className="hidden sm:block" /> not just your data
+              </h2>
+            </div>
+            <PillButton href="/industries" variant="outline-dark">
+              All industries
+            </PillButton>
+          </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {INDUSTRIES.map((industry) => (
+              <Link
+                key={industry.slug}
+                href={`/industries/${industry.slug}`}
+                className="group flex items-start justify-between gap-4 rounded-2xl border border-line p-6 transition-all hover:border-brand hover:shadow-lg"
+              >
+                <div>
+                  <h3 className="font-bold tracking-tight text-ink group-hover:text-brand">
+                    {industry.name}
+                  </h3>
+                  <p className="mt-1.5 line-clamp-2 text-sm text-ink-soft">
+                    {industry.statement}
+                  </p>
+                </div>
+                <ArrowIcon className="mt-1 h-4 w-4 shrink-0 text-brand" />
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-mist">
         <Container className="py-20 sm:py-24">
           <SectionTitle>Proof, not promises</SectionTitle>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">

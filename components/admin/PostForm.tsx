@@ -21,6 +21,12 @@ const CATEGORIES = [
   "Agentic AI",
   "Products",
   "Consulting",
+  "Retail",
+  "Banking",
+  "Insurance",
+  "Healthcare",
+  "Manufacturing",
+  "Telecom & Media",
   "Company news",
 ];
 

@@ -42,7 +42,8 @@ Notes:
 | Area | Routes |
 | --- | --- |
 | Home | `/` |
-| Solutions | `/solutions/data-analytics`, `/solutions/ai`, `/solutions/agentic-ai` |
+| Solutions | `/solutions/data-analytics`, `/solutions/ai`, `/solutions/agentic-ai`, `/solutions/app-building`, `/solutions/product-building` |
+| Industries | `/industries` + retail, banking, insurance, healthcare, manufacturing, telecom-media |
 | Products | `/products`, `/products/plexuscore`, `/products/plexusiq`, `/products/agentmesh` |
 | Services & Consulting | `/services` (Consulting, Engineering, Managed) |
 | Insights (blog) | `/insights`, `/insights/[slug]` |

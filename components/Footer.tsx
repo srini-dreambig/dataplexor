@@ -71,7 +71,7 @@ export function Footer({ settings }: { settings: Settings }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
             {FOOTER_LINKS.map((group) => (
               <div key={group.heading}>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">
