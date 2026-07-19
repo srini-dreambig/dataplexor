@@ -15,6 +15,7 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
+        wave="horizon"
         eyebrow="Industries"
         title="Deep in your domain, not just your data"
         subtitle="Technology only compounds when it meets industry context. Our teams pair data and AI engineering with practitioners who have run the workflows they now transform."

@@ -6,7 +6,7 @@ import { Markdown } from "@/lib/markdown";
 import { Container, ArrowIcon } from "@/components/ui";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { CtaBanner, InsightCard } from "@/components/sections";
-import { PlexusBackground } from "@/components/PlexusBackground";
+import { WaveBackground } from "@/components/WaveBackground";
 
 type Params = { slug: string };
 
@@ -76,7 +76,7 @@ export default async function InsightPage({
         ])}
       />
       <section className="relative isolate text-white">
-        <PlexusBackground />
+        <WaveBackground variant="calm" idPrefix="insight-hero" />
         <Container className="relative py-20 sm:py-28">
           <Link
             href="/insights"

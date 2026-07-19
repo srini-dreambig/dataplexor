@@ -15,6 +15,7 @@ export default function ProductsPage() {
   return (
     <>
       <PageHero
+        wave="orbit"
         eyebrow="Products"
         title="Software that carries our delivery experience inside it"
         subtitle="Every Dataplexor product began as an accelerator on real client engagements. Today they are supported, versioned platforms — deployable on your cloud, with no lock-in."

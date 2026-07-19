@@ -16,6 +16,7 @@ export default async function ContactPage() {
   return (
     <>
       <PageHero
+        wave="aurora"
         compact
         eyebrow="Contact"
         title="Get in touch"

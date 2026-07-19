@@ -47,6 +47,7 @@ export default async function SolutionPage({
         ])}
       />
       <PageHero
+        wave="pulse"
         eyebrow={solution.eyebrow}
         title={solution.headline}
         actions={

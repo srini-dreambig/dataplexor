@@ -33,6 +33,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        wave="aurora"
         eyebrow="Company"
         title="We defy the disciplines to mobilize your data"
         subtitle="Dataplexor works at the crossroads of data engineering, applied AI and business strategy to understand, structure and solve the problems that matter most."

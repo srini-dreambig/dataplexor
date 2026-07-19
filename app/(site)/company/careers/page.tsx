@@ -32,6 +32,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
+        wave="aurora"
         eyebrow="Careers"
         title="Do the best work of your career on problems that matter"
         subtitle="We hire people who cross disciplines: engineers who understand the business, strategists who respect the code, researchers who ship."

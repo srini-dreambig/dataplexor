@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getHomeContent, getPosts } from "@/lib/content";
-import { PlexusBackground } from "@/components/PlexusBackground";
+import { WaveBackground } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { CtaBanner, InsightCard } from "@/components/sections";
@@ -22,7 +22,7 @@ export default async function HomePage() {
     <>
       {/* Hero */}
       <section className="relative isolate text-white">
-        <PlexusBackground />
+        <WaveBackground variant="flow" idPrefix="home-hero" />
         <Container className="relative py-28 sm:py-40">
           <Eyebrow dark>{home.hero.eyebrow}</Eyebrow>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
-import { PlexusBackground } from "@/components/PlexusBackground";
+import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import type { Post } from "@/lib/content";
 
@@ -10,16 +10,18 @@ export function PageHero({
   subtitle,
   actions,
   compact = false,
+  wave = "flow",
 }: {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   actions?: React.ReactNode;
   compact?: boolean;
+  wave?: WaveVariant;
 }) {
   return (
     <section className="relative isolate text-white">
-      <PlexusBackground />
+      <WaveBackground variant={wave} idPrefix={`hero-${wave}`} />
       <Container
         className={`relative ${compact ? "py-20 sm:py-24" : "py-24 sm:py-32"}`}
       >

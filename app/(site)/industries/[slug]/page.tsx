@@ -47,6 +47,7 @@ export default async function IndustryPage({
         ])}
       />
       <PageHero
+        wave="horizon"
         eyebrow="Industries"
         title={industry.headline}
         actions={

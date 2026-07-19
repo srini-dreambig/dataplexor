@@ -17,6 +17,7 @@ export default async function InsightsPage() {
   return (
     <>
       <PageHero
+        wave="calm"
         compact
         eyebrow="Research & Insights"
         title="Stay ahead of changing technology"

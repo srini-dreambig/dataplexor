@@ -61,6 +61,7 @@ export default async function ProductPage({
         ])}
       />
       <PageHero
+        wave="orbit"
         eyebrow={`Products · ${product.tag}`}
         title={product.name}
         subtitle={product.headline}

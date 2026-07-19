@@ -101,6 +101,7 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
+        wave="rise"
         eyebrow="Services & Consulting"
         title="One partner from strategy to run"
         subtitle="Consulting, engineering and managed operations for data, analytics, AI and agentic systems — one accountable team across the whole lifecycle."

@@ -52,6 +52,7 @@ export default function LeadershipPage() {
   return (
     <>
       <PageHero
+        wave="aurora"
         compact
         eyebrow="Company"
         title="Leadership"
