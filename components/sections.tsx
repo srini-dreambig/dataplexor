@@ -12,6 +12,7 @@ export function PageHero({
   actions,
   compact = false,
   wave = "flow",
+  art,
 }: {
   eyebrow?: string;
   title: string;
@@ -19,6 +20,7 @@ export function PageHero({
   actions?: React.ReactNode;
   compact?: boolean;
   wave?: WaveVariant;
+  art?: string;
 }) {
   return (
     <section className="relative isolate text-white">
@@ -26,22 +28,49 @@ export function PageHero({
       <Container
         className={`relative ${compact ? "py-20 sm:py-24" : "py-24 sm:py-32"}`}
       >
-        {eyebrow ? (
-          <div className="mb-5">
-            <Eyebrow dark>{eyebrow}</Eyebrow>
+        <div
+          className={
+            art
+              ? "grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,430px)]"
+              : undefined
+          }
+        >
+          <div>
+            {eyebrow ? (
+              <div className="mb-5">
+                <Eyebrow dark>{eyebrow}</Eyebrow>
+              </div>
+            ) : null}
+            <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
+              {title}
+            </h1>
+            {subtitle ? (
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+                {subtitle}
+              </p>
+            ) : null}
+            {actions ? (
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                {actions}
+              </div>
+            ) : null}
           </div>
-        ) : null}
-        <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-          {title}
-        </h1>
-        {subtitle ? (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
-            {subtitle}
-          </p>
-        ) : null}
-        {actions ? (
-          <div className="mt-9 flex flex-wrap items-center gap-4">{actions}</div>
-        ) : null}
+          {art ? (
+            <div className="relative hidden lg:block" aria-hidden="true">
+              <div className="absolute -inset-6 rounded-[2rem] bg-brand/25 blur-3xl" />
+              <div className="relative rotate-[1.5deg] overflow-hidden rounded-2xl ring-1 ring-white/15 shadow-[0_32px_90px_-30px_rgba(35,56,236,0.7)]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={art}
+                  alt=""
+                  className="aspect-[16/11] w-full object-cover"
+                  loading="eager"
+                  draggable={false}
+                />
+              </div>
+            </div>
+          ) : null}
+        </div>
       </Container>
     </section>
   );

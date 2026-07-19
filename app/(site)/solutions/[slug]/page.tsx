@@ -51,6 +51,8 @@ export default async function SolutionPage({
         wave="pulse"
         eyebrow={solution.eyebrow}
         title={solution.headline}
+        subtitle={solution.heroTagline}
+        art={artForSolution(solution.slug)}
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">

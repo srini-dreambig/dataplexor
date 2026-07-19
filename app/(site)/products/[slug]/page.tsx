@@ -6,6 +6,7 @@ import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
 import { Container, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
+import { artForProduct } from "@/lib/art";
 
 type Params = { slug: string };
 
@@ -65,6 +66,7 @@ export default async function ProductPage({
         eyebrow={`Products · ${product.tag}`}
         title={product.name}
         subtitle={product.headline}
+        art={artForProduct(product.slug)}
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">

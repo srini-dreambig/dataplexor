@@ -250,6 +250,7 @@ export type Solution = {
   name: string;
   eyebrow: string;
   headline: string;
+  heroTagline: string;
   statement: string;
   intro: string;
   pillars: { title: string; body: string }[];
@@ -266,6 +267,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Data & Analytics",
     eyebrow: "Solutions",
     headline: "Data & Analytics",
+    heroTagline: "Open table formats won, semantic layers went mainstream, and AI made trusted data non-negotiable. We build the foundations this new era runs on.",
     statement:
       "Before organizations can act on their data, they must be able to trust it.",
     intro:
@@ -318,6 +320,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Artificial Intelligence",
     eyebrow: "Solutions",
     headline: "Artificial Intelligence",
+    heroTagline: "Foundation models made intelligence abundant; evaluation and governance make it dependable. We engineer AI that survives contact with production.",
     statement:
       "The gap between an AI demo and a production system is where most value is lost.",
     intro:
@@ -370,6 +373,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Agentic AI",
     eyebrow: "Solutions",
     headline: "Agentic AI",
+    heroTagline: "This is the year software stopped waiting for instructions. We build agents that plan, act and execute \u2014 and stay inside the lines while they do.",
     statement:
       "The next advantage is not software that answers — it is software that acts.",
     intro:
@@ -422,6 +426,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Application Building",
     eyebrow: "Solutions",
     headline: "Application Building",
+    heroTagline: "Cloud-native, AI-assisted and shipped weekly \u2014 modern applications are living products, not projects. We build them to keep changing.",
     statement:
       "Great software is not written once — it is engineered to keep changing.",
     intro:
@@ -474,6 +479,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Product Building",
     eyebrow: "Solutions",
     headline: "Product Building",
+    heroTagline: "From validated idea to scaling platform, speed is the moat. We take products zero-to-one and one-to-scale without losing it.",
     statement:
       "From a validated idea to a scaling product — without losing the speed that got you there.",
     intro:
@@ -527,6 +533,7 @@ export type Industry = {
   slug: string;
   name: string;
   headline: string;
+  heroTagline: string;
   statement: string;
   intro: string;
   challenges: { title: string; body: string }[];
@@ -540,6 +547,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "retail",
     name: "Retail & E-commerce",
     headline: "Retail & E-commerce",
+    heroTagline: "Generative search is rewriting discovery, agents are running the aisles, and retail media runs on first-party data. Margin now compounds through data.",
     statement: "Every margin point in retail now runs through data.",
     intro:
       "From demand forecasting and dynamic pricing to personalization and agent-assisted service, we help retailers turn first-party data into the margin and loyalty advantages the market no longer gives away.",
@@ -611,6 +619,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "banking",
     name: "Banking & Financial Services",
     headline: "Banking & Financial Services",
+    heroTagline: "Instant payment rails, real-time fraud defense and agentic operations under model-risk scrutiny \u2014 the next efficiency wave belongs to banks that automate with an audit trail.",
     statement: "In banking, the constraint is not ambition — it is auditability.",
     intro:
       "We build data platforms, AI models and agentic workflows that satisfy model risk management and regulators by design — so banks can automate boldly without ever losing the audit trail.",
@@ -682,6 +691,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "insurance",
     name: "Insurance",
     headline: "Insurance",
+    heroTagline: "Document intelligence is digitizing the submission desk while climate risk reprices the book. Underwriting is becoming a data discipline.",
     statement: "Underwriting is a data business wearing a paper costume.",
     intro:
       "We help insurers digitize the core — underwriting, claims and service — with data platforms and AI that price risk sharper, settle claims faster and keep every decision explainable to regulators and reinsurers.",
@@ -753,6 +763,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "healthcare",
     name: "Healthcare & Life Sciences",
     headline: "Healthcare & Life Sciences",
+    heroTagline: "Ambient AI is giving clinicians their evenings back and prior authorization is finally being automated. Healthcare's data decade has arrived.",
     statement: "In healthcare, trust is the deployment environment.",
     intro:
       "We build interoperable data platforms and clinically-aware AI for providers, payers and life-sciences organizations — engineered for privacy, safety and the scrutiny that patient impact demands.",
@@ -824,6 +835,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "manufacturing",
     name: "Manufacturing & Supply Chain",
     headline: "Manufacturing & Supply Chain",
+    heroTagline: "IT and OT are converging into industrial intelligence \u2014 predictive quality, supply chain digital twins and copilots on the factory floor.",
     statement: "The factory floor is the most underused data center you own.",
     intro:
       "We connect OT and IT data into platforms that power predictive quality, asset reliability and resilient supply chains — turning industrial data exhaust into throughput and uptime.",
@@ -895,6 +907,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "telecom-media",
     name: "Telecom & Media",
     headline: "Telecom & Media",
+    heroTagline: "Network telemetry at 5G scale, agentic service journeys and engagement economics \u2014 operators are turning network data into the product itself.",
     statement: "Networks generate the data; the winners operationalize it.",
     intro:
       "We help operators and media companies monetize network and audience data — churn and ARPU intelligence, network optimization and AI-powered customer operations at telco scale.",
