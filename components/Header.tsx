@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { NAV } from "@/lib/site";
-import { Container } from "@/components/ui";
+import { Container, ArrowIcon } from "@/components/ui";
+import { artForSolution, artForIndustry, artForProduct } from "@/lib/art";
 
 function Chevron({ open = false }: { open?: boolean }) {
   return (
@@ -26,6 +27,23 @@ function Chevron({ open = false }: { open?: boolean }) {
   );
 }
 
+/** Artwork shown in the mega-menu preview panel for a given link. */
+function artForHref(href: string): string {
+  if (href.startsWith("/solutions/")) {
+    return artForSolution(href.split("/")[2]);
+  }
+  if (href.startsWith("/industries/")) {
+    return artForIndustry(href.split("/")[2]);
+  }
+  if (href.startsWith("/products/")) {
+    return artForProduct(href.split("/")[2]);
+  }
+  if (href.startsWith("/industries")) return "/art/plexus-blue.jpg";
+  if (href.startsWith("/products")) return "/art/plexus-blue.jpg";
+  if (href.startsWith("/services")) return "/art/plexus-violet.jpg";
+  return "/art/ribbon-violet.jpg";
+}
+
 export function Header({ announcement, announcementHref }: {
   announcement?: string;
   announcementHref?: string;
@@ -33,11 +51,32 @@ export function Header({ announcement, announcementHref }: {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [hoveredHref, setHoveredHref] = useState<string | null>(null);
 
+  const closeAll = () => {
+    setOpenMenu(null);
+    setHoveredHref(null);
+    setMobileOpen(false);
+    setOpenSection(null);
+  };
+
+  // close on navigation
   useEffect(() => {
+    setOpenMenu(null);
+    setHoveredHref(null);
     setMobileOpen(false);
     setOpenSection(null);
   }, [pathname]);
+
+  // close on Escape
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeAll();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 shadow-[0_1px_0_0_var(--color-line)] backdrop-blur">
@@ -76,37 +115,98 @@ export function Header({ announcement, announcementHref }: {
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
           {NAV.map((item) =>
             item.items ? (
-              <div key={item.label} className="group relative">
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => {
+                  setOpenMenu(item.label);
+                  setHoveredHref(item.items![0].href);
+                }}
+                onMouseLeave={() => {
+                  setOpenMenu((m) => (m === item.label ? null : m));
+                }}
+              >
                 <button
                   type="button"
-                  className="flex items-center gap-1.5 rounded-md px-3.5 py-2 text-[15px] font-medium text-ink hover:text-brand"
+                  aria-expanded={openMenu === item.label}
+                  onClick={() =>
+                    setOpenMenu((m) => (m === item.label ? null : item.label))
+                  }
+                  className={`flex items-center gap-1.5 rounded-md px-3.5 py-2 text-[15px] font-medium transition-colors ${
+                    openMenu === item.label ? "text-brand" : "text-ink hover:text-brand"
+                  }`}
                 >
                   {item.label}
-                  <Chevron />
+                  <Chevron open={openMenu === item.label} />
                 </button>
-                <div className="invisible absolute left-0 top-full z-50 w-80 translate-y-1 rounded-xl border border-line bg-white p-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                  {item.items.map((sub) => (
-                    <Link
-                      key={sub.href}
-                      href={sub.href}
-                      className="block rounded-lg px-4 py-3 hover:bg-brand-soft"
-                    >
-                      <span className="block text-[15px] font-semibold text-ink">
-                        {sub.label}
-                      </span>
-                      {sub.description ? (
-                        <span className="mt-0.5 block text-[13px] text-ink-soft">
-                          {sub.description}
-                        </span>
-                      ) : null}
-                    </Link>
-                  ))}
-                </div>
+
+                {openMenu === item.label ? (
+                  <div className="absolute left-1/2 top-full z-50 w-[640px] -translate-x-1/2 pt-2">
+                    <div className="grid grid-cols-[1fr_250px] gap-2 rounded-2xl border border-line bg-white p-2.5 shadow-xl">
+                      {/* links */}
+                      <div>
+                        {item.items.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={closeAll}
+                            onMouseEnter={() => setHoveredHref(sub.href)}
+                            onFocus={() => setHoveredHref(sub.href)}
+                            className={`block rounded-xl px-4 py-3 transition-colors ${
+                              hoveredHref === sub.href ? "bg-brand-soft" : ""
+                            }`}
+                          >
+                            <span className="block text-[15px] font-semibold text-ink">
+                              {sub.label}
+                            </span>
+                            {sub.description ? (
+                              <span className="mt-0.5 block text-[13px] text-ink-soft">
+                                {sub.description}
+                              </span>
+                            ) : null}
+                          </Link>
+                        ))}
+                      </div>
+                      {/* artwork preview panel */}
+                      {(() => {
+                        const active =
+                          item.items.find((s) => s.href === hoveredHref) ??
+                          item.items[0];
+                        return (
+                          <Link
+                            href={active.href}
+                            onClick={closeAll}
+                            className="group flex flex-col overflow-hidden rounded-xl bg-mist ring-1 ring-line"
+                          >
+                            <div className="relative aspect-[16/10] overflow-hidden">
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={artForHref(active.href)}
+                                alt=""
+                                className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                                draggable={false}
+                              />
+                            </div>
+                            <div className="flex flex-1 flex-col p-4">
+                              <p className="text-sm font-bold text-ink group-hover:text-brand">
+                                {active.label}
+                              </p>
+                              <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-xs font-semibold text-brand">
+                                Explore <ArrowIcon className="h-3 w-3" />
+                              </span>
+                            </div>
+                          </Link>
+                        );
+                      })()}
+                    </div>
+                  </div>
+                ) : null}
               </div>
             ) : (
               <Link
                 key={item.label}
                 href={item.href!}
+                onClick={closeAll}
                 className="rounded-md px-3.5 py-2 text-[15px] font-medium text-ink hover:text-brand"
               >
                 {item.label}
@@ -175,6 +275,7 @@ export function Header({ announcement, announcementHref }: {
                         <Link
                           key={sub.href}
                           href={sub.href}
+                          onClick={closeAll}
                           className="block rounded-md px-3 py-2.5 text-[15px] text-ink-soft hover:bg-brand-soft hover:text-ink"
                         >
                           {sub.label}
@@ -187,6 +288,7 @@ export function Header({ announcement, announcementHref }: {
                 <Link
                   key={item.label}
                   href={item.href!}
+                  onClick={closeAll}
                   className="block border-b border-line/70 py-3.5 text-[15px] font-semibold text-ink"
                 >
                   {item.label}
@@ -195,6 +297,7 @@ export function Header({ announcement, announcementHref }: {
             )}
             <Link
               href="/company/contact"
+              onClick={closeAll}
               className="mt-4 mb-2 inline-flex rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white"
             >
               Get in touch
