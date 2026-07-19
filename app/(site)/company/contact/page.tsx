@@ -24,6 +24,35 @@ export default async function ContactPage() {
       />
       <section className="bg-mist">
         <Container className="py-16 sm:py-20">
+          <div className="mb-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                step: "01",
+                title: "We reply within one business day",
+                body: "A practitioner reads your message — not a sales queue — and comes back with real questions.",
+              },
+              {
+                step: "02",
+                title: "A 30-minute discovery call",
+                body: "You talk to the people who would do the work. We listen first; no slideware, no pressure.",
+              },
+              {
+                step: "03",
+                title: "A written point of view",
+                body: "Within a week: our honest read on your situation and a proposed first step with scope and price.",
+              },
+            ].map((s) => (
+              <div key={s.step} className="rounded-2xl bg-white p-7 ring-1 ring-line">
+                <p className="font-display text-sm font-bold text-brand">{s.step}</p>
+                <h2 className="mt-2 text-lg font-bold tracking-tight text-ink">
+                  {s.title}
+                </h2>
+                <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
           <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
             <div className="rounded-2xl bg-white p-8 ring-1 ring-line sm:p-10">
               <ContactForm />

@@ -141,6 +141,7 @@ export type Product = {
   description: string;
   capabilities: { title: string; body: string }[];
   stats: { value: string; label: string }[];
+  faqs: { q: string; a: string }[];
 };
 
 export const PRODUCTS: Product[] = [
@@ -176,6 +177,20 @@ export const PRODUCTS: Product[] = [
       { value: "30%", label: "Average reduction in platform run cost after consolidation" },
       { value: "100%", label: "Infrastructure as code — portable across AWS, Azure and GCP" },
     ],
+    faqs: [
+      {
+        q: "Where does PlexusCore run?",
+        a: "In your cloud accounts \u2014 AWS, Azure or GCP \u2014 deployed as infrastructure as code you own. Nothing routes through our infrastructure, and your data never leaves your tenancy.",
+      },
+      {
+        q: "How is it licensed?",
+        a: "Annual subscription covering the platform, upgrades and support, typically bundled with a fixed-fee deployment engagement. No consumption surprises; pricing scales with domains, not rows.",
+      },
+      {
+        q: "What if we stop using it?",
+        a: "You keep everything. Storage is open table format, pipelines are standard code in your repositories, and infrastructure is Terraform you control. Exit is a decision, not a project.",
+      },
+    ],
   },
   {
     slug: "plexusiq",
@@ -208,6 +223,20 @@ export const PRODUCTS: Product[] = [
       { value: "10x", label: "Faster time-to-answer for business questions" },
       { value: "1", label: "Definition per metric, everywhere it is consumed" },
       { value: "85%", label: "Of routine reporting questions self-served by business users" },
+    ],
+    faqs: [
+      {
+        q: "Does PlexusIQ replace our BI tools?",
+        a: "No \u2014 it feeds them. The semantic layer serves the same governed metrics to your existing BI, notebooks, APIs and the built-in conversational analytics, so adoption starts from the tools people already use.",
+      },
+      {
+        q: "How does conversational analytics stay trustworthy?",
+        a: "Every answer shows its work: the metric definition used, the generated SQL, the lineage and a confidence signal. Analysts can verify in one click, which is why finance teams sign off on it.",
+      },
+      {
+        q: "What does implementation involve?",
+        a: "A metrics discovery sprint with your analysts, then the semantic layer built over your existing platform \u2014 most clients see their first governed metrics live inside four weeks.",
+      },
     ],
   },
   {
@@ -242,6 +271,20 @@ export const PRODUCTS: Product[] = [
       { value: "70%", label: "Average reduction in manual effort on automated workflows" },
       { value: "0", label: "Irreversible actions without explicit authorization" },
     ],
+    faqs: [
+      {
+        q: "Which model providers does AgentMesh support?",
+        a: "All major providers \u2014 Anthropic, OpenAI, the cloud model platforms \u2014 plus private deployments. Policy, logging and evaluation sit above the model layer, so you can switch or mix providers without rebuilding governance.",
+      },
+      {
+        q: "How does AgentMesh satisfy risk and compliance teams?",
+        a: "Declarative policy rules the second line can read and version, complete decision logs retained as a book of record, graduated autonomy with measured reliability, and hard stops on irreversible actions. It was designed with bank validators in the room.",
+      },
+      {
+        q: "Can we start small?",
+        a: "That is the intended path: one workflow, propose-only mode, four to six weeks to a measured baseline \u2014 then autonomy expands with evidence. The platform grows from one agent to a governed fleet without re-architecture.",
+      },
+    ],
   },
 ];
 
@@ -261,6 +304,12 @@ export type Solution = {
   relatedProduct?: string;
   technologies: string[];
   faqs: { q: string; a: string }[];
+  caseStudy: {
+    client: string;
+    challenge: string;
+    approach: string;
+    results: { metric: string; label: string }[];
+  };
 };
 
 export const SOLUTIONS: Solution[] = [
@@ -315,6 +364,16 @@ export const SOLUTIONS: Solution[] = [
       { value: "18", label: "Industries served across four continents" },
       { value: "6 wks", label: "Fastest strategy-to-production platform delivery" },
     ],
+    caseStudy: {
+      client: "Global 100 consumer goods company",
+      challenge: "Five regional data estates, three warehouse vendors and no shared definition of revenue \u2014 every executive meeting started with reconciliation, and the AI roadmap was stalled behind the platform question.",
+      approach: "PlexusCore lakehouse foundation on open table formats, domain-by-domain migration, one semantic layer for the 40 metrics that run the company, and a data product operating model with named owners.",
+      results: [
+        { metric: "30%", label: "platform run cost freed in year one" },
+        { metric: "6 wks", label: "to first governed domain in production" },
+        { metric: "1", label: "definition of revenue, everywhere" },
+      ],
+    },
     technologies: ["Snowflake", "Databricks", "Apache Iceberg", "dbt", "Apache Kafka", "Apache Spark", "BigQuery", "Microsoft Fabric", "Airflow", "Power BI", "Tableau", "AWS · Azure · GCP"],
     faqs: [
       {
@@ -387,6 +446,16 @@ export const SOLUTIONS: Solution[] = [
       { value: "90%", label: "Of our AI engagements reach production — not just pilots" },
       { value: "24/7", label: "Monitored, evaluated and retrained in operation" },
     ],
+    caseStudy: {
+      client: "Top-10 North American insurer",
+      challenge: "Commercial submissions arriving as PDF mountains; underwriters spending mornings re-keying data while quote-turnaround targets slipped and the best risks went to faster competitors.",
+      approach: "Document-intelligence pipeline with layered extraction models, an evaluation harness built from two thousand labeled real submissions, and confidence-routed human review inside the existing underwriting workbench.",
+      results: [
+        { metric: "-65%", label: "submission triage time" },
+        { metric: "90 days", label: "from kickoff to production" },
+        { metric: "+11pt", label: "quote ratio on target segments" },
+      ],
+    },
     technologies: ["Anthropic Claude", "OpenAI", "AWS Bedrock", "Azure AI Foundry", "Google Vertex AI", "Hugging Face", "PyTorch", "MLflow", "Ray", "LangGraph", "Weights & Biases", "Kubernetes"],
     faqs: [
       {
@@ -459,6 +528,16 @@ export const SOLUTIONS: Solution[] = [
       { value: "100%", label: "Of agent actions policy-checked and auditable" },
       { value: "0", label: "Unsupervised irreversible actions. Ever." },
     ],
+    caseStudy: {
+      client: "European corporate bank",
+      challenge: "KYC periodic reviews consuming analyst-days per case with a growing backlog, while the second line demanded more evidence per decision, not less \u2014 headcount could not close the gap.",
+      approach: "AgentMesh agents assembling evidence, screening media and drafting assessments in propose-only mode first; graduated autonomy earned per action class with a complete decision log the validators helped design.",
+      results: [
+        { metric: "8x", label: "faster review cycle times" },
+        { metric: "100%", label: "of agent actions policy-checked and logged" },
+        { metric: "0", label: "findings on the process in the next exam" },
+      ],
+    },
     technologies: ["AgentMesh", "Anthropic Claude", "Model Context Protocol", "LangGraph", "OpenAI", "AWS Bedrock", "Azure AI Foundry", "Temporal", "Kubernetes", "OpenTelemetry"],
     faqs: [
       {
@@ -531,6 +610,16 @@ export const SOLUTIONS: Solution[] = [
       { value: "99.95%", label: "Median availability across systems we operate" },
       { value: "60%", label: "Typical reduction in change lead time after modernization" },
     ],
+    caseStudy: {
+      client: "National healthcare provider network",
+      challenge: "A patient portal built on a retiring platform, eleven-second page loads, and a two-release-per-year cadence that made every improvement a committee negotiation.",
+      approach: "Strangler-pattern modernization: new cloud-native experience shipped alongside the legacy core, traffic migrated journey by journey, delivery platform with weekly releases and observability from the first sprint.",
+      results: [
+        { metric: "99.95%", label: "availability since cutover" },
+        { metric: "Weekly", label: "release cadence, from twice a year" },
+        { metric: "+38", label: "patient NPS on migrated journeys" },
+      ],
+    },
     technologies: ["TypeScript", "React", "Next.js", "Node.js", "Python", "Go", "PostgreSQL", "Kubernetes", "Terraform", "AWS · Azure · GCP", "GitHub Actions", "Playwright"],
     faqs: [
       {
@@ -603,6 +692,16 @@ export const SOLUTIONS: Solution[] = [
       { value: "3", label: "Products of our own — we practice what we deliver" },
       { value: "$400M+", label: "Follow-on funding raised by products we helped build" },
     ],
+    caseStudy: {
+      client: "Fintech scale-up (Series A)",
+      challenge: "A validated lending concept, a term sheet with milestones attached, and no engineering organization \u2014 nine months of runway to prove a product in market.",
+      approach: "Zero-to-one pod covering product, design and engineering; instrumented MVP in market in eight weeks; then scale hardening \u2014 multi-tenancy, SOC 2 readiness, cost engineering \u2014 as growth arrived.",
+      results: [
+        { metric: "8 wks", label: "kickoff to first funded loans" },
+        { metric: "200k", label: "customers in the first year" },
+        { metric: "Series B", label: "raised on the metrics the product proved" },
+      ],
+    },
     technologies: ["Next.js", "React Native", "PostgreSQL", "Stripe", "Kubernetes", "Terraform", "Anthropic Claude", "OpenAI", "Segment", "Amplitude", "LaunchDarkly", "AWS · Azure · GCP"],
     faqs: [
       {
@@ -1207,5 +1306,85 @@ export const FOOTER_LINKS: { heading: string; links: { label: string; href: stri
       { label: "Careers", href: "/company/careers" },
       { label: "Contact", href: "/company/contact" },
     ],
+  },
+];
+
+export const ENTRY_OFFERS = [
+  {
+    name: "Data & AI Readiness Assessment",
+    duration: "2 weeks · fixed fee",
+    body: "A practitioner team maps your data estate, AI portfolio and operating model against where the value actually is.",
+    deliverables: [
+      "Estate and use-case inventory with honest feasibility scoring",
+      "Value-ranked roadmap with costed next quarter",
+      "Executive readout your board can act on",
+    ],
+    cta: "Book an assessment",
+  },
+  {
+    name: "Proof-to-Production Pilot",
+    duration: "6–10 weeks · milestone priced",
+    body: "One high-value use case taken all the way to production — with the evaluation harness and runbook to operate it.",
+    deliverables: [
+      "Working system in your environment, not a demo",
+      "Evaluation baseline and monitoring wired to release gates",
+      "Skills transfer and a scale plan with real costs",
+    ],
+    cta: "Scope a pilot",
+  },
+  {
+    name: "Architecture & AI Review",
+    duration: "3 weeks · fixed fee",
+    body: "An independent, evidence-based review of your platform or AI portfolio — for leaders who need the unvarnished picture.",
+    deliverables: [
+      "Findings benchmarked against your data, not averages",
+      "Risk register and run-cost savings quantified",
+      "Board-ready report with a sequenced fix plan",
+    ],
+    cta: "Request a review",
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    quote:
+      "They are the first partner whose strategy actually compiled. The roadmap came with running code, and the running code came with our engineers trained to own it.",
+    author: "Chief Technology Officer",
+    org: "Global 500 retailer",
+  },
+  {
+    quote:
+      "Our regulator asked who built the agent audit trail — because it was better evidence than our manual process ever produced. That is a sentence I never expected to say.",
+    author: "Chief Operating Officer",
+    org: "European corporate bank",
+  },
+  {
+    quote:
+      "Half consultancy, half engineering team, fully accountable. Eighteen months later the platform they built is still getting faster and cheaper — and it is our people running it.",
+    author: "Chief Data Officer",
+    org: "Fortune 100 manufacturer",
+  },
+];
+
+export const DELIVERY_PHASES = [
+  {
+    phase: "Weeks 0–2",
+    title: "Discover & design",
+    body: "Practitioners map your estate, workflows and constraints; the target design and first increment are agreed with the people who will live with them.",
+  },
+  {
+    phase: "Weeks 2–6",
+    title: "Build in your environment",
+    body: "Cross-functional pod ships working software into your cloud from the first sprint — your engineers embedded, weekly demos, no surprise reveal.",
+  },
+  {
+    phase: "Weeks 6–10",
+    title: "Production & evidence",
+    body: "The system goes live with evaluation, monitoring and runbooks; results are measured against the baseline we agreed, not asserted.",
+  },
+  {
+    phase: "Week 10+",
+    title: "Scale & transfer",
+    body: "What works is industrialized across domains; skills transfer completes and — where you want it — our managed service takes the pager.",
   },
 ];

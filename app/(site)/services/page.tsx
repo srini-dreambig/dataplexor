@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
+import { PageHero, CtaBanner, FeatureCard, Testimonials, EngageOptions } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -153,6 +153,8 @@ export default function ServicesPage() {
         </section>
       ))}
 
+      <Testimonials />
+
       <section className="bg-ink text-white">
         <Container className="py-20 sm:py-24">
           <SectionTitle className="text-white">How we engage</SectionTitle>
@@ -185,6 +187,8 @@ export default function ServicesPage() {
           </div>
         </Container>
       </section>
+
+      <EngageOptions />
 
       <CtaBanner
         title="Tell us what you're trying to build"

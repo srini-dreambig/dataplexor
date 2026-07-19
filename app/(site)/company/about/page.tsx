@@ -168,6 +168,54 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section>
+        <Container className="py-20 sm:py-24">
+          <div className="grid gap-14 lg:grid-cols-2">
+            <div>
+              <SectionTitle>Responsible AI, by design</SectionTitle>
+              <p className="mt-5 leading-relaxed text-ink-soft">
+                We build systems that make consequential decisions, so we hold
+                ourselves to commitments we are willing to be audited against:
+              </p>
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Every model we ship carries an evaluation baseline, monitoring and documented limitations",
+                  "Agents operate under policy guardrails with complete decision logs — autonomy is earned with evidence",
+                  "Human oversight is real: authority, competence and the practical ability to intervene",
+                  "Bias testing and explainability appropriate to the decision, aligned to the EU AI Act and sector regulation",
+                  "We decline work we believe causes harm — and we have",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 leading-relaxed text-ink-soft">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <SectionTitle>How we handle your data</SectionTitle>
+              <p className="mt-5 leading-relaxed text-ink-soft">
+                Security posture is part of every engagement, not a policy PDF:
+              </p>
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Delivery happens in your cloud tenancy — your data never moves into ours",
+                  "Least-privilege access, granted per engagement and revoked at handover",
+                  "Secure development practice: threat modeling, dependency scanning, audit-ready change history",
+                  "Confidentiality by default — NDAs honored in what we publish, down to anonymized case studies",
+                  "Data residency and regulatory boundaries respected in architecture, not worked around",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 leading-relaxed text-ink-soft">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       <CtaBanner
         title="Work with us — or come work here"
         body="Whether you have a problem to solve or a career to build, we'd like to hear from you."

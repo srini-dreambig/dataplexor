@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SOLUTIONS, PRODUCTS } from "@/lib/site";
-import { PageHero, CtaBanner, FeatureCard, FaqSection, TechStrip } from "@/components/sections";
+import { PageHero, CtaBanner, FeatureCard, FaqSection, TechStrip, CaseStudySnapshot, DeliveryTimeline, EngageOptions } from "@/components/sections";
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
@@ -113,7 +113,11 @@ export default async function SolutionPage({
         </Container>
       </section>
 
+      <CaseStudySnapshot caseStudy={solution.caseStudy} />
+
       <TechStrip technologies={solution.technologies} />
+
+      <DeliveryTimeline title={`Delivering ${solution.name}, week by week`} />
 
       {/* Related product */}
       {product ? (
@@ -176,6 +180,8 @@ export default async function SolutionPage({
           </div>
         </Container>
       </section>
+
+      <EngageOptions />
 
       <FaqSection
         faqs={solution.faqs}

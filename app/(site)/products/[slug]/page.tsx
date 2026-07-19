@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PRODUCTS } from "@/lib/site";
-import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
+import { PageHero, CtaBanner, FeatureCard, FaqSection } from "@/components/sections";
 import { Container, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
@@ -126,6 +126,11 @@ export default async function ProductPage({
           </div>
         </Container>
       </section>
+
+      <FaqSection
+        faqs={product.faqs}
+        title={`${product.name}: your questions, answered`}
+      />
 
       <CtaBanner
         title={`Put ${product.name} to work`}

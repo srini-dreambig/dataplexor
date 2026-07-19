@@ -4,7 +4,7 @@ import { getHomeContent, getPosts } from "@/lib/content";
 import { WaveBackground } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
-import { CtaBanner, InsightCard } from "@/components/sections";
+import { CtaBanner, InsightCard, Testimonials, EngageOptions } from "@/components/sections";
 import { SOLUTIONS, PRODUCTS, INDUSTRIES } from "@/lib/site";
 import { artForSolution, artForProduct, artForIndustry } from "@/lib/art";
 
@@ -188,6 +188,8 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      <Testimonials />
+
       {/* Products */}
       <section className="relative overflow-hidden bg-ink text-white">
         <MarkBackdrop
@@ -243,6 +245,8 @@ export default async function HomePage() {
           </div>
         </Container>
       </section>
+
+      <EngageOptions />
 
       {/* Insights */}
       <section className="bg-mist">

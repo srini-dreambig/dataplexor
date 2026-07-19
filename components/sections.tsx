@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
+import { ENTRY_OFFERS, TESTIMONIALS, DELIVERY_PHASES } from "@/lib/site";
 import { MarkBackdrop } from "@/components/Logo";
 import { artForCategory } from "@/lib/art";
 import { readingTime, type Post } from "@/lib/content";
@@ -208,6 +209,187 @@ export function TechStrip({ technologies }: { technologies: string[] }) {
             </span>
           ))}
         </div>
+      </Container>
+    </section>
+  );
+}
+
+export function EngageOptions({
+  title = "Three ways to start",
+  intro = "Every engagement begins with a bounded, fixed-scope first step — priced upfront, delivered by practitioners, and designed so you know exactly what you learn and what you get.",
+}: {
+  title?: string;
+  intro?: string;
+}) {
+  return (
+    <section className="bg-brand-soft">
+      <Container className="py-20 sm:py-24">
+        <Eyebrow>Getting started</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+          {title}
+        </h2>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
+          {intro}
+        </p>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {ENTRY_OFFERS.map((offer) => (
+            <div
+              key={offer.name}
+              className="card-hover flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                {offer.duration}
+              </p>
+              <h3 className="mt-3 text-xl font-bold tracking-tight text-ink">
+                {offer.name}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                {offer.body}
+              </p>
+              <ul className="mt-5 space-y-2.5 border-t border-line pt-5">
+                {offer.deliverables.map((d) => (
+                  <li key={d} className="flex gap-2.5 text-sm leading-relaxed text-ink-soft">
+                    <svg viewBox="0 0 16 16" className="mt-1 h-3.5 w-3.5 shrink-0 text-teal" fill="none" aria-hidden>
+                      <path d="M2.5 8.5 6 12l7.5-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    {d}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto pt-7">
+                <PillButton href="/company/contact" className="w-full">
+                  {offer.cta}
+                </PillButton>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function Testimonials() {
+  return (
+    <section className="bg-ink text-white">
+      <Container className="py-20 sm:py-24">
+        <Eyebrow dark>What clients say</Eyebrow>
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {TESTIMONIALS.map((t) => (
+            <figure
+              key={t.org}
+              className="flex flex-col rounded-2xl border border-white/15 bg-white/5 p-8"
+            >
+              <svg viewBox="0 0 24 24" className="h-7 w-7 text-teal" fill="currentColor" aria-hidden>
+                <path d="M4.5 13.5C4.5 8.8 7.6 5.6 12 4.5l.8 1.8c-2.9 1-4.5 2.9-4.8 5.2.4-.2.9-.3 1.5-.3 1.9 0 3.2 1.4 3.2 3.3 0 2-1.5 3.5-3.5 3.5-2.7 0-4.7-2-4.7-4.5Zm10.7 0c0-4.7 3.1-7.9 7.5-9l.8 1.8c-2.9 1-4.5 2.9-4.8 5.2.4-.2.9-.3 1.5-.3 1.9 0 3.2 1.4 3.2 3.3 0 2-1.5 3.5-3.5 3.5-2.7 0-4.7-2-4.7-4.5Z" />
+              </svg>
+              <blockquote className="mt-5 flex-1 text-[15px] leading-relaxed text-white/85">
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-6 border-t border-white/10 pt-5">
+                <p className="font-bold">{t.author}</p>
+                <p className="mt-0.5 text-sm text-white/60">{t.org}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mt-8 text-xs text-white/40">
+          Perspectives representative of client engagements; roles and
+          organizations anonymized under confidentiality agreements.
+        </p>
+      </Container>
+    </section>
+  );
+}
+
+export function DeliveryTimeline({
+  title = "What working with us looks like",
+}: {
+  title?: string;
+}) {
+  return (
+    <section>
+      <Container className="py-20 sm:py-24">
+        <Eyebrow>How we deliver</Eyebrow>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+          {title}
+        </h2>
+        <div className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+          {DELIVERY_PHASES.map((p) => (
+            <div key={p.phase} className="border-t-2 border-brand pt-5">
+              <p className="font-display text-sm font-bold text-brand">
+                {p.phase}
+              </p>
+              <h3 className="mt-2 text-xl font-bold tracking-tight text-ink">
+                {p.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                {p.body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function CaseStudySnapshot({
+  caseStudy,
+}: {
+  caseStudy: {
+    client: string;
+    challenge: string;
+    approach: string;
+    results: { metric: string; label: string }[];
+  };
+}) {
+  return (
+    <section className="bg-mist">
+      <Container className="py-20 sm:py-24">
+        <div className="overflow-hidden rounded-3xl bg-ink text-white">
+          <div className="grid lg:grid-cols-[1.4fr_1fr]">
+            <div className="p-10 sm:p-14">
+              <Eyebrow dark>Client story</Eyebrow>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+                {caseStudy.client}
+              </h2>
+              <div className="mt-8 space-y-6">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">
+                    The challenge
+                  </p>
+                  <p className="mt-2 leading-relaxed text-white/80">
+                    {caseStudy.challenge}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">
+                    What we did
+                  </p>
+                  <p className="mt-2 leading-relaxed text-white/80">
+                    {caseStudy.approach}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center gap-6 border-t border-white/10 bg-white/5 p-10 sm:p-14 lg:border-l lg:border-t-0">
+              {caseStudy.results.map((r) => (
+                <div key={r.label}>
+                  <p className="font-display text-4xl font-bold tabular-nums tracking-tight text-teal">
+                    {r.metric}
+                  </p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/70">
+                    {r.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <p className="mt-6 text-xs text-ink-soft/70">
+          Representative engagement; client anonymized under confidentiality.
+        </p>
       </Container>
     </section>
   );
