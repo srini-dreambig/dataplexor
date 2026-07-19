@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
+import { artForCategory } from "@/lib/art";
 import type { Post } from "@/lib/content";
 
 export function PageHero({
@@ -87,30 +88,46 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
   return (
     <Link
       href={`/insights/${post.slug}`}
-      className={`group flex flex-col rounded-2xl border border-line bg-white p-7 card-hover ${
-        featured ? "sm:col-span-2 sm:p-9" : ""
+      className={`card-hover group flex flex-col overflow-hidden rounded-2xl border border-line bg-white ${
+        featured ? "sm:col-span-2" : ""
       }`}
     >
-      <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
-        <span>{post.category}</span>
-        <span className="h-1 w-1 rounded-full bg-line" />
-        <span className="font-medium normal-case tracking-normal text-ink-soft">
-          {date}
-        </span>
-      </div>
-      <h3
-        className={`mt-4 font-bold tracking-tight text-ink group-hover:text-brand ${
-          featured ? "text-2xl sm:text-3xl" : "text-xl"
+      <div
+        className={`relative overflow-hidden ${
+          featured ? "aspect-[24/9]" : "aspect-[16/9]"
         }`}
       >
-        {post.title}
-      </h3>
-      <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
-        {post.excerpt}
-      </p>
-      <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand">
-        Read more <ArrowIcon />
-      </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={artForCategory(post.category)}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+          loading="lazy"
+          draggable={false}
+        />
+      </div>
+      <div className={`flex flex-1 flex-col p-6 ${featured ? "sm:p-8" : "sm:p-7"}`}>
+        <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+          <span>{post.category}</span>
+          <span className="h-1 w-1 rounded-full bg-line" />
+          <span className="font-medium normal-case tracking-normal text-ink-soft">
+            {date}
+          </span>
+        </div>
+        <h3
+          className={`mt-3.5 font-bold tracking-tight text-ink group-hover:text-brand ${
+            featured ? "text-2xl sm:text-3xl" : "text-xl"
+          }`}
+        >
+          {post.title}
+        </h3>
+        <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
+          {post.excerpt}
+        </p>
+        <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand">
+          Read more <ArrowIcon />
+        </span>
+      </div>
     </Link>
   );
 }

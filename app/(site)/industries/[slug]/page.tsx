@@ -7,6 +7,7 @@ import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/compo
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
+import { artForSolution } from "@/lib/art";
 
 type Params = { slug: string };
 
@@ -169,17 +170,29 @@ export default async function IndustryPage({
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl bg-white p-7 ring-1 ring-line card-hover"
+                className="card-hover group overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
-                <h3 className="text-lg font-bold tracking-tight text-ink group-hover:text-brand">
-                  {s.name}
-                </h3>
-                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
-                  {s.intro}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
-                  Explore <ArrowIcon />
-                </span>
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={artForSolution(s.slug)}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <div className="p-7">
+                  <h3 className="text-lg font-bold tracking-tight text-ink group-hover:text-brand">
+                    {s.name}
+                  </h3>
+                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
+                    {s.intro}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+                    Explore <ArrowIcon />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

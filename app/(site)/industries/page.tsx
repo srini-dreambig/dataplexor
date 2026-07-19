@@ -3,6 +3,7 @@ import Link from "next/link";
 import { INDUSTRIES } from "@/lib/site";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
+import { artForIndustry } from "@/lib/art";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -37,21 +38,33 @@ export default function IndustriesPage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line card-hover"
+                className="card-hover group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
-                <Eyebrow>Industry</Eyebrow>
-                <h2 className="mt-3 text-xl font-bold tracking-tight text-ink group-hover:text-brand">
-                  {industry.name}
-                </h2>
-                <p className="mt-2 text-sm font-semibold text-brand">
-                  {industry.statement}
-                </p>
-                <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
-                  {industry.intro}
-                </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand">
-                  Explore {industry.name} <ArrowIcon />
-                </span>
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={artForIndustry(industry.slug)}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-7">
+                  <Eyebrow>Industry</Eyebrow>
+                  <h2 className="mt-3 text-xl font-bold tracking-tight text-ink group-hover:text-brand">
+                    {industry.name}
+                  </h2>
+                  <p className="mt-2 text-sm font-semibold text-brand">
+                    {industry.statement}
+                  </p>
+                  <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
+                    {industry.intro}
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand">
+                    Explore <ArrowIcon />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

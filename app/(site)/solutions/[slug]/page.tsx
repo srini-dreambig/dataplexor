@@ -6,6 +6,7 @@ import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
+import { artForSolution } from "@/lib/art";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -143,17 +144,29 @@ export default async function SolutionPage({
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl border border-line p-8 card-hover"
+                className="card-hover group overflow-hidden rounded-2xl border border-line bg-white"
               >
-                <h3 className="text-xl font-bold tracking-tight text-ink group-hover:text-brand">
-                  {s.name}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {s.intro}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
-                  Learn more <ArrowIcon />
-                </span>
+                <div className="relative aspect-[24/9] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={artForSolution(s.slug)}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-bold tracking-tight text-ink group-hover:text-brand">
+                    {s.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                    {s.intro}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+                    Learn more <ArrowIcon />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

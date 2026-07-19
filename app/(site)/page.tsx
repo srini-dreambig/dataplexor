@@ -6,6 +6,7 @@ import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { CtaBanner, InsightCard } from "@/components/sections";
 import { SOLUTIONS, PRODUCTS, INDUSTRIES } from "@/lib/site";
+import { artForSolution, artForProduct, artForIndustry } from "@/lib/art";
 
 export const metadata: Metadata = {
   title: { absolute: "Dataplexor — Data & Analytics, AI and Agentic AI" },
@@ -88,20 +89,36 @@ export default async function HomePage() {
               <Link
                 key={solution.slug}
                 href={`/solutions/${solution.slug}`}
-                className={`card-hover group flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line ${
+                className={`card-hover group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line ${
                   i < 3 ? "lg:col-span-2" : "lg:col-span-3"
                 }`}
               >
-                <Eyebrow>{solution.eyebrow}</Eyebrow>
-                <h3 className="mt-3 text-2xl font-bold tracking-tight text-ink group-hover:text-brand">
-                  {solution.name}
-                </h3>
-                <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-                  {solution.intro}
-                </p>
-                <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-brand">
-                  Explore {solution.name} <ArrowIcon />
-                </span>
+                <div
+                  className={`relative overflow-hidden ${
+                    i < 3 ? "aspect-[16/9]" : "aspect-[24/9]"
+                  }`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={artForSolution(solution.slug)}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-8">
+                  <Eyebrow>{solution.eyebrow}</Eyebrow>
+                  <h3 className="mt-3 text-2xl font-bold tracking-tight text-ink group-hover:text-brand">
+                    {solution.name}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+                    {solution.intro}
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-brand">
+                    Explore {solution.name} <ArrowIcon />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
@@ -128,17 +145,27 @@ export default async function HomePage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex items-start justify-between gap-4 rounded-2xl border border-line p-6 card-hover hover:border-brand"
+                className="card-hover group flex items-center gap-5 rounded-2xl border border-line p-4 pr-6 hover:border-brand"
               >
-                <div>
+                <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={artForIndustry(industry.slug)}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.06]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
                   <h3 className="font-bold tracking-tight text-ink group-hover:text-brand">
                     {industry.name}
                   </h3>
-                  <p className="mt-1.5 line-clamp-2 text-sm text-ink-soft">
+                  <p className="mt-1 line-clamp-2 text-sm text-ink-soft">
                     {industry.statement}
                   </p>
                 </div>
-                <ArrowIcon className="mt-1 h-4 w-4 shrink-0 text-brand" />
+                <ArrowIcon className="h-4 w-4 shrink-0 text-brand" />
               </Link>
             ))}
           </div>
@@ -185,20 +212,32 @@ export default async function HomePage() {
               <Link
                 key={product.slug}
                 href={`/products/${product.slug}`}
-                className="group rounded-2xl border border-white/15 bg-white/5 p-8 transition-colors hover:border-teal/60 hover:bg-white/10"
+                className="group overflow-hidden rounded-2xl border border-white/15 bg-white/5 transition-colors hover:border-teal/60 hover:bg-white/10"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal">
-                  {product.tag}
-                </p>
-                <h3 className="mt-3 text-2xl font-bold tracking-tight">
-                  {product.name}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/75">
-                  {product.summary}
-                </p>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal">
-                  Learn more <ArrowIcon />
-                </span>
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={artForProduct(product.slug)}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+                    loading="lazy"
+                    draggable={false}
+                  />
+                </div>
+                <div className="p-8">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal">
+                    {product.tag}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-bold tracking-tight">
+                    {product.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/75">
+                    {product.summary}
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-teal">
+                    Learn more <ArrowIcon />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>
