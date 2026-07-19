@@ -7,7 +7,7 @@ import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/compo
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
-import { artForSolution, artForIndustry } from "@/lib/art";
+import { artForSolution, heroArtForIndustry } from "@/lib/art";
 
 type Params = { slug: string };
 
@@ -52,7 +52,7 @@ export default async function IndustryPage({
         eyebrow="Industries"
         title={industry.headline}
         subtitle={industry.heroTagline}
-        art={artForIndustry(industry.slug)}
+        bgImage={heroArtForIndustry(industry.slug)}
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">

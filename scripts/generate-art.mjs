@@ -230,9 +230,10 @@ function render(cfg, W, H, hues) {
   }
 
   if (cfg.kind === 'arcs') {
+    const k = H / 560;
     const cx = W * 0.78, cy = H * 1.25;
     for (let i = 0; i < 22; i++) {
-      const r = 220 + i * 26;
+      const r = (220 + i * 26) * k;
       ctx.globalAlpha = 0.75 - i * 0.02;
       const g = ctx.createLinearGradient(cx - r, cy - r, cx + r*0.4, cy);
       g.addColorStop(0, mid); g.addColorStop(0.6, light); g.addColorStop(1, mid);
@@ -250,8 +251,9 @@ function render(cfg, W, H, hues) {
         u*u*u*p0[1] + 3*u*u*t*p1[1] + 3*u*t*t*p2[1] + t*t*t*p3[1],
       ];
     };
-    const railA = [[-40, 420], [260, 180], [620, 560], [960, 160]];
-    const railB = [[-40, 620], [300, 420], [660, 740], [960, 380]];
+    const kx = W / 900, ky = H / 560;
+    const railA = [[-40*kx, 420*ky], [260*kx, 180*ky], [620*kx, 560*ky], [960*kx, 160*ky]];
+    const railB = [[-40*kx, 620*ky], [300*kx, 420*ky], [660*kx, 740*ky], [960*kx, 380*ky]];
     const g = ctx.createLinearGradient(0, H, W, 0);
     g.addColorStop(0, mid); g.addColorStop(0.55, light); g.addColorStop(1, mid);
     ctx.strokeStyle = g; ctx.lineWidth = 1.3;
@@ -278,6 +280,7 @@ const page = await browser.newPage();
 await page.setContent('<body></body>');
 await page.addScriptTag({ content: script });
 
+const WAVES = new URL('../public/waves', import.meta.url).pathname;
 for (const scene of SCENES) {
   const dataUrl = await page.evaluate(
     ([cfg, W, H, hues]) => render(cfg, W, H, hues),
@@ -285,6 +288,13 @@ for (const scene of SCENES) {
   );
   const buf = Buffer.from(dataUrl.split(',')[1], 'base64');
   writeFileSync(`${OUT}/${scene.name}.jpg`, buf);
-  console.log(scene.name, Math.round(buf.length / 1024) + 'KB');
+  // hero-resolution version used as full hero background on detail pages
+  const heroUrl = await page.evaluate(
+    ([cfg, W, H, hues]) => render(cfg, W, H, hues),
+    [scene, 2400, 1100, HUES[scene.hue]]
+  );
+  const heroBuf = Buffer.from(heroUrl.split(',')[1], 'base64');
+  writeFileSync(`${WAVES}/hero-${scene.name}.jpg`, heroBuf);
+  console.log(scene.name, Math.round(buf.length / 1024) + 'KB card /', Math.round(heroBuf.length / 1024) + 'KB hero');
 }
 await browser.close();

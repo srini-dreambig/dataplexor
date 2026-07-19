@@ -23,6 +23,20 @@ export function artForCategory(category: string): string {
   return `/art/${CATEGORY_ART[category] ?? "plexus-blue"}.jpg`;
 }
 
+/** Hero-resolution (2400x1100) version of a subject's artwork, used as
+ *  the full hero background on detail pages. */
+export function heroArtForSolution(slug: string): string {
+  return `/waves/hero-${SOLUTION_ART[slug] ?? "sphere-blue"}.jpg`;
+}
+
+export function heroArtForIndustry(slug: string): string {
+  return `/waves/hero-${INDUSTRY_ART[slug] ?? "plexus-blue"}.jpg`;
+}
+
+export function heroArtForProduct(slug: string): string {
+  return `/waves/hero-${PRODUCT_ART[slug] ?? "plexus-blue"}.jpg`;
+}
+
 const INDUSTRY_ART: Record<string, string> = {
   retail: "columns-violet",
   banking: "arcs-teal",

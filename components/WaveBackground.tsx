@@ -20,8 +20,12 @@ export type WaveVariant =
 
 export function WaveBackground({
   variant = "flow",
+  image,
 }: {
   variant?: WaveVariant;
+  /** full-bleed background override (e.g. a subject's hero artwork);
+   *  takes precedence over the variant's wave image */
+  image?: string;
   /** kept for call-site compatibility; unused by the image renderer */
   idPrefix?: string;
 }) {
@@ -32,7 +36,7 @@ export function WaveBackground({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`/waves/${variant}.jpg`}
+        src={image ?? `/waves/${variant}.jpg`}
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
         loading="eager"

@@ -6,7 +6,7 @@ import { PageHero, CtaBanner, FeatureCard, FaqSection, TechStrip } from "@/compo
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
-import { artForSolution } from "@/lib/art";
+import { artForSolution, heroArtForSolution } from "@/lib/art";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -52,7 +52,7 @@ export default async function SolutionPage({
         eyebrow={solution.eyebrow}
         title={solution.headline}
         subtitle={solution.heroTagline}
-        art={artForSolution(solution.slug)}
+        bgImage={heroArtForSolution(solution.slug)}
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">
