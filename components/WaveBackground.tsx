@@ -39,12 +39,24 @@ export function WaveBackground({
         fetchPriority="high"
         draggable={false}
       />
-      {/* keep the copy zone readable on short viewports */}
+      {/* diagonal scrim over the copy column */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(105deg, rgba(5,5,15,0.55) 0%, rgba(5,5,15,0.25) 40%, rgba(5,5,15,0) 65%)",
+            "linear-gradient(100deg, rgba(5,5,15,0.68) 0%, rgba(5,5,15,0.42) 38%, rgba(5,5,15,0.08) 62%, rgba(5,5,15,0) 75%)",
+        }}
+      />
+      {/* feathered depth-of-field pocket: blurs + dims the artwork
+          directly behind the copy, fading out with no visible edge */}
+      <div
+        className="absolute inset-0 backdrop-blur-[7px]"
+        style={{
+          backgroundColor: "rgba(5,5,15,0.38)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 88% at 27% 54%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 74%)",
+          maskImage:
+            "radial-gradient(ellipse 60% 88% at 27% 54%, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 74%)",
         }}
       />
       {/* seam into the next section */}
