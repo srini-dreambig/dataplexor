@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SOLUTIONS, PRODUCTS } from "@/lib/site";
-import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
+import { PageHero, CtaBanner, FeatureCard, FaqSection, TechStrip } from "@/components/sections";
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
@@ -113,6 +113,8 @@ export default async function SolutionPage({
         </Container>
       </section>
 
+      <TechStrip technologies={solution.technologies} />
+
       {/* Related product */}
       {product ? (
         <section className="bg-mist">
@@ -174,6 +176,11 @@ export default async function SolutionPage({
           </div>
         </Container>
       </section>
+
+      <FaqSection
+        faqs={solution.faqs}
+        title={`${solution.name}: your questions, answered`}
+      />
 
       <CtaBanner
         title={`Let's talk about ${solution.name}`}

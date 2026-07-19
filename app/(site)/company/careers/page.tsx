@@ -91,6 +91,34 @@ export default function CareersPage() {
         </Container>
       </section>
 
+      <section>
+        <Container className="py-20 sm:py-24">
+          <SectionTitle>How we hire</SectionTitle>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Four steps, two to three weeks end to end, and feedback at every
+            stage — because how a company hires is how it works.
+          </p>
+          <div className="mt-12 grid gap-10 md:grid-cols-4">
+            {[
+              { step: "01", title: "Intro conversation", body: "Thirty minutes with the hiring lead about your work, your goals and whether the role fits. No trick questions." },
+              { step: "02", title: "Craft session", body: "A working session in your discipline — real problems from our practice, done together, not on a whiteboard from memory." },
+              { step: "03", title: "Team round", body: "Meet the people you would work with, including someone outside your discipline. You interview us as much as we interview you." },
+              { step: "04", title: "Offer & onboarding", body: "A clear offer with compensation transparency, and a first-quarter plan that puts you on real client work with a dedicated buddy." },
+            ].map((s) => (
+              <div key={s.step}>
+                <p className="text-sm font-bold text-brand">{s.step}</p>
+                <h3 className="mt-2 text-xl font-bold tracking-tight text-ink">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <CtaBanner
         title="Ready to apply?"
         body="Tell us about yourself and the work you're proudest of. A human reads every application."

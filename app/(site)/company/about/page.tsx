@@ -100,6 +100,58 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <section className="bg-ink text-white">
+        <Container className="py-20 sm:py-24">
+          <Eyebrow dark>Milestones</Eyebrow>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            A decade of compounding capability
+          </h2>
+          <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { year: "2016", event: "Founded in San Francisco by data engineers and strategists who kept meeting the same gap between advice and delivery." },
+              { year: "2019", event: "First productized accelerator ships — the platform blueprints that would become PlexusCore." },
+              { year: "2022", event: "European delivery hub opens in London; PlexusIQ launches the decision-intelligence practice." },
+              { year: "2024", event: "AgentMesh enters production with first regulated-industry agentic deployments." },
+              { year: "2026", event: "150+ specialists across four continents; agentic systems running in six industries." },
+            ].map((m) => (
+              <div key={m.year} className="border-t-2 border-teal pt-5">
+                <p className="font-display text-2xl font-bold text-teal">
+                  {m.year}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-white/75">
+                  {m.event}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section>
+        <Container className="py-20 sm:py-24">
+          <SectionTitle>Where we are</SectionTitle>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              { city: "San Francisco", role: "Headquarters", detail: "One Market Plaza, Suite 3600 — product engineering and AI research." },
+              { city: "New York", role: "East Coast hub", detail: "Financial services and consulting practices for the Americas." },
+              { city: "London", role: "European hub", detail: "EMEA delivery, EU AI Act advisory and regulated-industry work." },
+            ].map((o) => (
+              <div key={o.city} className="rounded-2xl border border-line p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
+                  {o.role}
+                </p>
+                <h3 className="mt-2 text-2xl font-bold tracking-tight text-ink">
+                  {o.city}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {o.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="bg-mist">
         <Container className="py-20 sm:py-24">
           <SectionTitle>What we believe</SectionTitle>

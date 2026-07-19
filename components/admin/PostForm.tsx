@@ -96,6 +96,19 @@ export function PostForm({ initial }: { initial?: Post }) {
         <Field label="Body (markdown: ## headings, - lists, **bold**)">
           <textarea required rows={16} className={`${fieldCls} font-mono text-[13px]`} value={post.body} onChange={(e) => set("body", e.target.value)} />
         </Field>
+        <Field label="Key takeaways (one per line, shown in a highlight box)">
+          <textarea
+            rows={4}
+            className={fieldCls}
+            value={(post.takeaways ?? []).join("\n")}
+            onChange={(e) =>
+              set(
+                "takeaways",
+                e.target.value.split("\n").map((t) => t.trim()).filter(Boolean)
+              )
+            }
+          />
+        </Field>
         {isEdit ? (
           <p className="text-xs text-ink-soft">
             URL: /insights/{post.slug}

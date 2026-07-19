@@ -38,7 +38,12 @@ export type Post = {
   author: string;
   excerpt: string;
   body: string;
+  takeaways?: string[];
 };
+
+export function readingTime(body: string): number {
+  return Math.max(2, Math.round(body.split(/\s+/).length / 220));
+}
 
 export type ContactMessage = {
   id: string;
@@ -121,6 +126,9 @@ export function sanitizePost(data: Partial<Post>): Omit<Post, "slug"> | null {
   if (!title || !excerpt || !body || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     return null;
   }
+  const takeaways = Array.isArray(data.takeaways)
+    ? data.takeaways.map((t) => String(t).trim()).filter(Boolean).slice(0, 8)
+    : undefined;
   return {
     title,
     excerpt,
@@ -128,6 +136,7 @@ export function sanitizePost(data: Partial<Post>): Omit<Post, "slug"> | null {
     date,
     category: String(data.category || "General").trim(),
     author: String(data.author || "Dataplexor").trim(),
+    ...(takeaways && takeaways.length ? { takeaways } : {}),
   };
 }
 

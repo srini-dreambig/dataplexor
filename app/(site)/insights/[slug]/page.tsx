@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPost, getPosts, getSettings } from "@/lib/content";
+import { getPost, getPosts, getSettings, readingTime } from "@/lib/content";
 import { Markdown } from "@/lib/markdown";
 import { Container, ArrowIcon } from "@/components/ui";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
@@ -94,7 +94,7 @@ export default async function InsightPage({
             {post.title}
           </h1>
           <p className="mt-6 text-sm text-white/70">
-            {post.author} · {date}
+            {post.author} · {date} · {readingTime(post.body)} min read
           </p>
         </Container>
       </section>
@@ -105,8 +105,35 @@ export default async function InsightPage({
             <p className="text-xl font-medium leading-relaxed text-ink">
               {post.excerpt}
             </p>
+            {post.takeaways?.length ? (
+              <aside className="mt-10 rounded-2xl border-l-4 border-brand bg-brand-soft p-7 sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand">
+                  Key takeaways
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {post.takeaways.map((t) => (
+                    <li key={t} className="flex gap-3 text-[15px] leading-relaxed text-ink">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </aside>
+            ) : null}
             <div className="prose-dpx mt-8">
               <Markdown text={post.body} />
+            </div>
+            <div className="mt-12 flex items-center gap-4 rounded-2xl bg-mist p-6">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand font-display text-sm font-bold text-white">
+                DR
+              </span>
+              <div>
+                <p className="font-bold text-ink">{post.author}</p>
+                <p className="mt-0.5 text-sm text-ink-soft">
+                  Research and field perspectives from the practitioners who
+                  design, build and run these systems for our clients.
+                </p>
+              </div>
             </div>
           </div>
         </Container>

@@ -46,6 +46,23 @@ export default async function ContactPage() {
                   {settings.contact.phone}
                 </p>
               </div>
+              <div className="rounded-2xl bg-white p-8 ring-1 ring-line">
+                <h2 className="text-lg font-bold text-ink">Global offices</h2>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-soft">
+                  <li>
+                    <span className="font-semibold text-ink">San Francisco</span>{" "}
+                    — headquarters
+                  </li>
+                  <li>
+                    <span className="font-semibold text-ink">New York</span> —
+                    Americas consulting hub
+                  </li>
+                  <li>
+                    <span className="font-semibold text-ink">London</span> —
+                    EMEA delivery hub
+                  </li>
+                </ul>
+              </div>
               <div className="rounded-2xl bg-brand p-8 text-white">
                 <h2 className="text-lg font-bold">Looking for a career?</h2>
                 <p className="mt-3 text-sm leading-relaxed text-white/85">

@@ -259,6 +259,8 @@ export type Solution = {
   capabilities: { title: string; body: string }[];
   stats: { value: string; label: string }[];
   relatedProduct?: string;
+  technologies: string[];
+  faqs: { q: string; a: string }[];
 };
 
 export const SOLUTIONS: Solution[] = [
@@ -313,6 +315,25 @@ export const SOLUTIONS: Solution[] = [
       { value: "18", label: "Industries served across four continents" },
       { value: "6 wks", label: "Fastest strategy-to-production platform delivery" },
     ],
+    technologies: ["Snowflake", "Databricks", "Apache Iceberg", "dbt", "Apache Kafka", "Apache Spark", "BigQuery", "Microsoft Fabric", "Airflow", "Power BI", "Tableau", "AWS · Azure · GCP"],
+    faqs: [
+      {
+        q: "How long does it take to stand up a modern data platform?",
+        a: "With our PlexusCore accelerator, a governed production platform typically lands in six to eight weeks for the first domain \u2014 ingestion, lakehouse storage, transformation and governance included. Full estate migration then proceeds domain by domain, funded by the run-cost savings consolidation frees.",
+      },
+      {
+        q: "We already have a warehouse. Do we need a lakehouse?",
+        a: "Usually you need convergence, not replacement. Open table formats let your existing warehouse and new workloads share one governed copy of the data, so we typically enable interoperability first and migrate opportunistically \u2014 no big-bang rebuild.",
+      },
+      {
+        q: "How do you approach data governance without slowing teams down?",
+        a: "By making it a platform feature instead of a committee: contracts enforced in pipelines, PII classification and access control automated, lineage captured as a by-product. Teams move faster because trust is default, not negotiated per dataset.",
+      },
+      {
+        q: "Can you work with our existing data team rather than replacing it?",
+        a: "That is the only way we work. Our pods embed with your engineers, the platform is built in your cloud accounts under your standards, and skills transfer is an explicit deliverable \u2014 success is your team running the platform without us.",
+      },
+    ],
     relatedProduct: "plexuscore",
   },
   {
@@ -365,6 +386,25 @@ export const SOLUTIONS: Solution[] = [
       { value: "3x", label: "Median ROI on AI portfolios we have rationalized" },
       { value: "90%", label: "Of our AI engagements reach production — not just pilots" },
       { value: "24/7", label: "Monitored, evaluated and retrained in operation" },
+    ],
+    technologies: ["Anthropic Claude", "OpenAI", "AWS Bedrock", "Azure AI Foundry", "Google Vertex AI", "Hugging Face", "PyTorch", "MLflow", "Ray", "LangGraph", "Weights & Biases", "Kubernetes"],
+    faqs: [
+      {
+        q: "How do you decide which AI use cases are worth building?",
+        a: "We score candidate use cases on value, feasibility and time-to-production against your actual data and systems \u2014 not industry averages. The output is a ranked portfolio where the top items have committed owners, measurable outcome metrics and a realistic path to production.",
+      },
+      {
+        q: "What makes your AI systems production-grade rather than demos?",
+        a: "Evaluation harnesses built before launch, golden datasets from real cases, monitoring wired to release gates, and MLOps discipline throughout. Around a quarter of our engineering effort goes into evaluation \u2014 which is precisely why our systems reach and survive production.",
+      },
+      {
+        q: "How do you handle AI regulation like the EU AI Act?",
+        a: "Compliance evidence is generated as a by-product of the engineering: model registries, evaluation reports, lineage and human-oversight design map directly onto the Act's obligations. We build the documentation into the pipeline so it never goes stale.",
+      },
+      {
+        q: "Which models and vendors do you work with?",
+        a: "We are vendor-neutral across the major model providers and clouds. Model choice follows the use case \u2014 quality, latency, cost and data-residency requirements \u2014 and our architectures keep model swaps cheap, because the frontier moves quarterly.",
+      },
     ],
     relatedProduct: "plexusiq",
   },
@@ -419,6 +459,25 @@ export const SOLUTIONS: Solution[] = [
       { value: "100%", label: "Of agent actions policy-checked and auditable" },
       { value: "0", label: "Unsupervised irreversible actions. Ever." },
     ],
+    technologies: ["AgentMesh", "Anthropic Claude", "Model Context Protocol", "LangGraph", "OpenAI", "AWS Bedrock", "Azure AI Foundry", "Temporal", "Kubernetes", "OpenTelemetry"],
+    faqs: [
+      {
+        q: "How is agentic AI different from the copilots we already deployed?",
+        a: "Copilots draft; agents execute. An agentic system pursues a goal across multiple steps, tools and systems \u2014 assembling evidence, taking actions, escalating exceptions \u2014 without a human prompting each step. That changes the value equation and the governance requirements simultaneously.",
+      },
+      {
+        q: "How do you keep autonomous agents safe in production?",
+        a: "Governed autonomy: deterministic policy engines checking every action, sandboxed execution with least-privilege capabilities, budgets and rate limits, complete decision logging, and human hard stops on irreversible operations. Autonomy is earned per action class with measured reliability, never assumed.",
+      },
+      {
+        q: "Where should an enterprise deploy its first agents?",
+        a: "Workflows with high volume, high reversibility and codifiable judgment: service recovery, evidence assembly, reconciliation, triage. We deliberately avoid irreversible or customer-visible actions until the evaluation baseline proves reliability.",
+      },
+      {
+        q: "Will agents work with our existing systems and permissions?",
+        a: "Yes \u2014 that is most of the engineering. Agents integrate through your existing APIs and access-control model, holding scoped credentials like any other principal. If your identity and permission hygiene needs work first, we will tell you, because agent safety inherits it.",
+      },
+    ],
     relatedProduct: "agentmesh",
   },
   {
@@ -471,6 +530,25 @@ export const SOLUTIONS: Solution[] = [
       { value: "<1 wk", label: "From commit to production on our delivery platforms" },
       { value: "99.95%", label: "Median availability across systems we operate" },
       { value: "60%", label: "Typical reduction in change lead time after modernization" },
+    ],
+    technologies: ["TypeScript", "React", "Next.js", "Node.js", "Python", "Go", "PostgreSQL", "Kubernetes", "Terraform", "AWS · Azure · GCP", "GitHub Actions", "Playwright"],
+    faqs: [
+      {
+        q: "Do you take over legacy systems or only build new ones?",
+        a: "Both, and usually together. Our modernization work uses strangler-pattern migrations: new capabilities ship alongside the legacy core, traffic moves incrementally, and the business never bets on a big-bang cutover.",
+      },
+      {
+        q: "How fast do you ship?",
+        a: "Working software in the first weeks, production releases weekly thereafter. Our delivery platforms include CI/CD, infrastructure as code and observability from day one, so speed comes from engineering discipline rather than corner-cutting.",
+      },
+      {
+        q: "How do you handle security and compliance in delivery?",
+        a: "Threat modeling at design time, automated security testing in the pipeline, least-privilege infrastructure by default, and audit-ready change management. For regulated clients we build to your control framework and document as we go.",
+      },
+      {
+        q: "What happens after launch?",
+        a: "Your choice: full handover to your teams with skills transfer, or our managed service running the application under SLAs with a continuous improvement roadmap. Most clients choose a transition period between the two.",
+      },
     ],
     relatedProduct: "plexuscore",
   },
@@ -525,6 +603,25 @@ export const SOLUTIONS: Solution[] = [
       { value: "3", label: "Products of our own — we practice what we deliver" },
       { value: "$400M+", label: "Follow-on funding raised by products we helped build" },
     ],
+    technologies: ["Next.js", "React Native", "PostgreSQL", "Stripe", "Kubernetes", "Terraform", "Anthropic Claude", "OpenAI", "Segment", "Amplitude", "LaunchDarkly", "AWS · Azure · GCP"],
+    faqs: [
+      {
+        q: "Who do you build products for?",
+        a: "Three profiles: startups taking a validated idea to market, corporates launching ventures outside the core stack, and product companies scaling past their first architecture. The method adapts; the product discipline is constant.",
+      },
+      {
+        q: "How quickly can we get to first users?",
+        a: "Six to ten weeks from kickoff to a launched, instrumented product is typical \u2014 including onboarding, pricing and analytics, not just features. Speed comes from ruthless scope discipline in discovery, which is where we spend the first two weeks.",
+      },
+      {
+        q: "Can you make our product AI-native rather than AI-sprinkled?",
+        a: "Yes \u2014 it is our specialty. AI-native means the data model, evaluation loops and agentic capabilities are designed in from the start, so intelligence compounds with usage instead of being a feature bolted to a finished roadmap.",
+      },
+      {
+        q: "Do you work for equity or outcomes?",
+        a: "For ventures we believe in, engagement models can include outcome linkage and, selectively, equity components. We will always be straight about which model fits \u2014 and when a fixed-scope build is simply the right answer.",
+      },
+    ],
     relatedProduct: "plexusiq",
   },
 ];
@@ -539,6 +636,7 @@ export type Industry = {
   challenges: { title: string; body: string }[];
   outcomes: { metric: string; title: string; body: string }[];
   useCases: { title: string; body: string; whyNow: string; impact: string }[];
+  faqs: { q: string; a: string }[];
   solutions: string[];
 };
 
@@ -613,6 +711,20 @@ export const INDUSTRIES: Industry[] = [
         impact: "-20-30% preventable shrink",
       },
     ],
+    faqs: [
+      {
+        q: "Where should a retailer start with AI if margins are tight?",
+        a: "Start where margin leaks fastest: SKU-store forecasting and markdown optimization. They pay back inside a season, fund the roadmap, and force the product and inventory data cleanup every later initiative depends on.",
+      },
+      {
+        q: "Can you work with our existing commerce and ERP stack?",
+        a: "Yes. We integrate with the major commerce, ERP and POS platforms rather than replacing them \u2014 the intelligence layer reads from and writes back to the systems your operations already run on.",
+      },
+      {
+        q: "How do you handle customer data privacy in personalization?",
+        a: "Consent-aware customer data platforms with lineage on every attribute, so personalization and retail media run on data you can defend \u2014 to regulators and to customers. Privacy engineering is part of the build, not a review at the end.",
+      },
+    ],
     solutions: ["data-analytics", "ai", "agentic-ai"],
   },
   {
@@ -683,6 +795,20 @@ export const INDUSTRIES: Industry[] = [
         body: "Lineage-complete data platforms that assemble BCBS 239-style risk and finance reports as governed pipelines, not quarterly heroics.",
         whyNow: "Supervisors are probing data lineage directly; manual assembly is now itself a finding.",
         impact: "-60% report production effort",
+      },
+    ],
+    faqs: [
+      {
+        q: "Will your AI systems pass our model risk management review?",
+        a: "They are designed for it: documented development evidence, evaluation harnesses, monitoring, explainability appropriate to the model class, and complete decision logs. We work with your second line from the first sprint, not the last.",
+      },
+      {
+        q: "How do you deploy agents in a regulated environment?",
+        a: "Graduated autonomy under a policy engine: propose-only until reliability is proven, approval-free execution earned per action class, hard stops on irreversible actions permanently. Every action is policy-checked and logged as a book of record.",
+      },
+      {
+        q: "Can you work within our on-premise and data residency constraints?",
+        a: "Yes. Our architectures deploy in your cloud tenancy or on-premise estate, respect data residency boundaries, and use models available within your approved perimeter \u2014 including private model deployments where required.",
       },
     ],
     solutions: ["data-analytics", "agentic-ai", "ai"],
@@ -757,6 +883,20 @@ export const INDUSTRIES: Industry[] = [
         impact: "+2-4pt recovery rate improvement",
       },
     ],
+    faqs: [
+      {
+        q: "How quickly can document intelligence improve our submission flow?",
+        a: "Triage automation on submissions, loss runs and schedules typically shows measurable cycle-time reduction within a quarter \u2014 extraction models reach useful accuracy fast, and underwriters feel the difference immediately in how their day starts.",
+      },
+      {
+        q: "Does claims automation risk our customer relationships?",
+        a: "Done properly it improves them: clean claims settle in hours instead of weeks, and adjusters concentrate on the complex cases where empathy and judgment matter. We instrument satisfaction alongside cycle time so the trade-off is measured, not assumed.",
+      },
+      {
+        q: "How do you keep AI underwriting explainable for regulators and reinsurers?",
+        a: "Reason codes on every recommendation, documented data lineage, bias monitoring and human authority over the final decision. The underwriting workbench shows its evidence \u2014 which underwriters demand anyway before they trust it.",
+      },
+    ],
     solutions: ["ai", "data-analytics", "agentic-ai"],
   },
   {
@@ -827,6 +967,20 @@ export const INDUSTRIES: Industry[] = [
         body: "LLM-powered matching of patients to trials and governed real-world-evidence platforms for research partnerships.",
         whyNow: "Sponsors are paying for sites and data partners that can actually recruit and evidence outcomes.",
         impact: "Faster accrual, new research revenue",
+      },
+    ],
+    faqs: [
+      {
+        q: "How do you protect PHI in AI systems?",
+        a: "HIPAA-aligned architectures: de-identification and consent management in the data layer, PHI-scoped access for every model and agent, audit logging throughout, and deployment inside your compliance boundary. Privacy is a design input, not a review gate.",
+      },
+      {
+        q: "Do clinicians actually adopt ambient documentation?",
+        a: "When it is deployed with clinician champions, tuned to specialty workflows and measured on time returned \u2014 yes, faster than any clinical software we have seen. Adoption is led, not mandated; the tool earns its place by giving hours back.",
+      },
+      {
+        q: "Can you integrate with our EHR?",
+        a: "Yes \u2014 we build on FHIR-based integration with the major EHR platforms, working within your vendor's approved integration frameworks and your interface engine standards.",
       },
     ],
     solutions: ["data-analytics", "ai", "agentic-ai"],
@@ -901,6 +1055,20 @@ export const INDUSTRIES: Industry[] = [
         impact: "-8-15% energy cost",
       },
     ],
+    faqs: [
+      {
+        q: "Our OT data is messy and siloed. Is predictive maintenance still feasible?",
+        a: "Yes \u2014 messy OT data is the normal starting point, not a blocker. We land sensor, MES and ERP data into a unified namespace first; useful predictive models typically follow within one to two quarters on the assets that matter most.",
+      },
+      {
+        q: "How do you deploy AI on the factory floor without disrupting production?",
+        a: "Shadow-mode first: models run alongside operations, predictions are compared against outcomes, and only proven models graduate to advisory and then automated roles. Production continuity is a design constraint from day one.",
+      },
+      {
+        q: "What is the realistic payback on industrial AI?",
+        a: "Predictive maintenance and quality programs on well-chosen assets typically pay back within twelve months through downtime and scrap reduction \u2014 we scope the first deployment against your loss data so the business case is yours, not an industry average.",
+      },
+    ],
     solutions: ["data-analytics", "ai", "app-building"],
   },
   {
@@ -971,6 +1139,20 @@ export const INDUSTRIES: Industry[] = [
         body: "Recommendation and engagement analytics that grow watch time, reduce churn and price ad inventory with confidence.",
         whyNow: "Streaming economics have shifted from subscriber growth to engagement-per-dollar.",
         impact: "Higher retention and ad yield",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can agentic service really handle telco complexity?",
+        a: "The majority of tier-1 contacts \u2014 billing, provisioning, order status \u2014 are agent-resolvable end-to-end with policy guardrails. Complexity lives in the integration layer, which is exactly where we do the engineering; containment is earned journey by journey.",
+      },
+      {
+        q: "How do you use network data without breaching subscriber privacy?",
+        a: "Aggregation, purpose-binding and consent lineage in the data platform, so network intelligence and customer value management run on defensible data. Privacy engineering is part of the architecture, audited like any other control.",
+      },
+      {
+        q: "Where does AI pay fastest for an operator?",
+        a: "High-value churn prevention and tier-1 service containment usually pay first \u2014 both show results within two quarters. Network optimization compounds larger over time but has a longer data-foundation runway.",
       },
     ],
     solutions: ["ai", "agentic-ai", "data-analytics"],

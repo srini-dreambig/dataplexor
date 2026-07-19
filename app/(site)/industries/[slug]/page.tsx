@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { INDUSTRIES, SOLUTIONS } from "@/lib/site";
-import { PageHero, CtaBanner, FeatureCard } from "@/components/sections";
+import { PageHero, CtaBanner, FeatureCard, FaqSection } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
@@ -200,6 +200,11 @@ export default async function IndustryPage({
           </div>
         </Container>
       </section>
+
+      <FaqSection
+        faqs={industry.faqs}
+        title={`${industry.name}: your questions, answered`}
+      />
 
       <CtaBanner
         title={`Let's talk ${industry.name}`}

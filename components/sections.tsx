@@ -3,7 +3,7 @@ import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { artForCategory } from "@/lib/art";
-import type { Post } from "@/lib/content";
+import { readingTime, type Post } from "@/lib/content";
 
 export function PageHero({
   eyebrow,
@@ -140,7 +140,7 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
           <span>{post.category}</span>
           <span className="h-1 w-1 rounded-full bg-line" />
           <span className="font-medium normal-case tracking-normal text-ink-soft">
-            {date}
+            {date} · {readingTime(post.body)} min read
           </span>
         </div>
         <h3
@@ -158,6 +158,84 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
         </span>
       </div>
     </Link>
+  );
+}
+
+export function FaqSection({
+  faqs,
+  title = "Frequently asked questions",
+}: {
+  faqs: { q: string; a: string }[];
+  title?: string;
+}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+  return (
+    <section className="bg-mist">
+      <Container className="py-20 sm:py-24">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <h2 className="text-3xl font-bold tracking-tight text-brand sm:text-4xl">
+          {title}
+        </h2>
+        <div className="mt-10 max-w-4xl divide-y divide-line overflow-hidden rounded-2xl bg-white ring-1 ring-line">
+          {faqs.map((f) => (
+            <details key={f.q} className="group">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 p-6 text-left font-bold text-ink transition-colors hover:text-brand [&::-webkit-details-marker]:hidden">
+                {f.q}
+                <span
+                  className="shrink-0 text-brand transition-transform duration-200 group-open:rotate-45"
+                  aria-hidden="true"
+                >
+                  <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none">
+                    <path
+                      d="M8 2v12M2 8h12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </summary>
+              <p className="px-6 pb-6 text-[15px] leading-relaxed text-ink-soft">
+                {f.a}
+              </p>
+            </details>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+export function TechStrip({ technologies }: { technologies: string[] }) {
+  return (
+    <section className="border-y border-line">
+      <Container className="py-12">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-soft">
+          Technologies we work with
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2.5">
+          {technologies.map((t) => (
+            <span
+              key={t}
+              className="rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-ink-soft"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </Container>
+    </section>
   );
 }
 
