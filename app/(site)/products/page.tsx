@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getProducts } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
-import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
+import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
 import { ProductMark, hasProductMark } from "@/components/ProductLogo";
 import { IllustrationCard } from "@/components/ConceptArt";
 
@@ -97,6 +97,61 @@ export default async function ProductsPage() {
               </div>
             </div>
           ))}
+        </Container>
+      </section>
+
+      <section className="bg-mist">
+        <Container className="py-20 sm:py-24">
+          <SectionTitle>
+            One family, from raw data to autonomous action
+          </SectionTitle>
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
+            You don&apos;t have to adopt everything at once. Most teams start
+            with a single product and grow into the others as their data and
+            ambitions mature — each layer building on the trust established by
+            the one beneath it.
+          </p>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                step: "01",
+                name: "PlexusCore",
+                role: "Build the data",
+                body: "Agentic data engineering stands up the pipelines, models and quality monitors on your warehouse — governed and reviewable from day one.",
+              },
+              {
+                step: "02",
+                name: "PlexusIQ",
+                role: "Turn it into decisions",
+                body: "A decision-intelligence layer defines metrics once and answers questions from that governed data — with the query, lineage and confidence shown.",
+              },
+              {
+                step: "03",
+                name: "AgentMesh",
+                role: "Put decisions into action",
+                body: "A runtime for fleets of agents that act on those decisions under policy guardrails, full observability and human oversight.",
+              },
+            ].map((s) => (
+              <div
+                key={s.name}
+                className="flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line"
+              >
+                <div className="flex items-center gap-3">
+                  <ProductMark slug={s.name.toLowerCase()} className="h-8 w-8 text-brand" />
+                  <span className="font-display text-sm font-bold text-brand/40">
+                    {s.step}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-xl font-bold tracking-tight text-ink">
+                  {s.name}
+                </h3>
+                <p className="mt-1 text-sm font-semibold text-brand">{s.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 

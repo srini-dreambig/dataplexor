@@ -98,6 +98,12 @@ export default async function HomePage() {
             Navigate data and AI with our
             <br className="hidden sm:block" /> solutions built for the enterprise
           </SectionTitle>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            From trusted analytics foundations to production AI and governed
+            agents, our practices span the full journey from raw data to
+            autonomous action — each led by senior practitioners and
+            productized so your teams can own what we build.
+          </p>
           <div className="mt-12 grid gap-6 lg:grid-cols-6">
             {SOLUTIONS.map((solution, i) => (
               <Link
@@ -150,6 +156,12 @@ export default async function HomePage() {
               All industries
             </PillButton>
           </div>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Technology only compounds when it meets domain context. In each
+            sector we pair data and AI engineering with people who have run the
+            workflows they now transform — so the work lands on the metrics,
+            regulations and margins that actually decide your P&amp;L.
+          </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {INDUSTRIES.map((industry) => (
               <Link
@@ -216,6 +228,13 @@ export default async function HomePage() {
               View all products
             </PillButton>
           </div>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
+            Every product packages patterns our founders proved across a
+            hundred-plus builds — supported, versioned platforms you deploy on
+            your own cloud. They compound as a family: PlexusCore builds the
+            data, PlexusIQ turns it into decisions, and AgentMesh puts those
+            decisions into action.
+          </p>
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {PRODUCTS.map((product) => (
               <Link
@@ -269,6 +288,11 @@ export default async function HomePage() {
               Stay ahead of changing technology
             </span>
           </SectionTitle>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            Field notes, benchmarks and points of view from the practitioners
+            who design, build and run these systems — written to be useful to
+            the people doing the work, not to chase a news cycle.
+          </p>
           <div className="mt-8">
             <PillButton href="/insights">Explore all insights</PillButton>
           </div>

@@ -71,6 +71,12 @@ export default async function IndustriesPage() {
       <section>
         <Container className="py-20 sm:py-24">
           <SectionTitle>One method, tuned per domain</SectionTitle>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
+            We don&apos;t arrive with a generic playbook. Every engagement
+            starts from your industry&apos;s economics and regulations, then
+            reuses proven, sector-specific reference architectures — so
+            delivery begins from experience, not a blank page.
+          </p>
           <div className="mt-12 grid gap-10 md:grid-cols-3">
             {[
               {
