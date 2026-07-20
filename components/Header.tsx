@@ -7,6 +7,14 @@ import { Logo } from "@/components/Logo";
 import { NAV } from "@/lib/site";
 import { Container, ArrowIcon } from "@/components/ui";
 import { artForSolution, artForIndustry, artForProduct } from "@/lib/art";
+import { ProductMark, hasProductMark } from "@/components/ProductLogo";
+
+/** Product slug for a menu href, when it points at a product with a mark. */
+function productMarkSlug(href: string): string | null {
+  if (!href.startsWith("/products/")) return null;
+  const slug = href.split("/")[2];
+  return slug && hasProductMark(slug) ? slug : null;
+}
 
 function Chevron({ open = false }: { open?: boolean }) {
   return (
@@ -145,27 +153,37 @@ export function Header({ announcement, announcementHref }: {
                     <div className="grid grid-cols-[1fr_250px] gap-2 rounded-2xl border border-line bg-white p-2.5 shadow-xl">
                       {/* links */}
                       <div>
-                        {item.items.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            onClick={closeAll}
-                            onMouseEnter={() => setHoveredHref(sub.href)}
-                            onFocus={() => setHoveredHref(sub.href)}
-                            className={`block rounded-xl px-4 py-3 transition-colors ${
-                              hoveredHref === sub.href ? "bg-brand-soft" : ""
-                            }`}
-                          >
-                            <span className="block text-[15px] font-semibold text-ink">
-                              {sub.label}
-                            </span>
-                            {sub.description ? (
-                              <span className="mt-0.5 block text-[13px] text-ink-soft">
-                                {sub.description}
+                        {item.items.map((sub) => {
+                          const markSlug = productMarkSlug(sub.href);
+                          return (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={closeAll}
+                              onMouseEnter={() => setHoveredHref(sub.href)}
+                              onFocus={() => setHoveredHref(sub.href)}
+                              className={`flex items-start gap-3 rounded-xl px-4 py-3 transition-colors ${
+                                hoveredHref === sub.href ? "bg-brand-soft" : ""
+                              }`}
+                            >
+                              {markSlug ? (
+                                <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-soft text-brand ring-1 ring-brand/10">
+                                  <ProductMark slug={markSlug} className="h-6 w-6" />
+                                </span>
+                              ) : null}
+                              <span className="min-w-0">
+                                <span className="block text-[15px] font-semibold text-ink">
+                                  {sub.label}
+                                </span>
+                                {sub.description ? (
+                                  <span className="mt-0.5 block text-[13px] text-ink-soft">
+                                    {sub.description}
+                                  </span>
+                                ) : null}
                               </span>
-                            ) : null}
-                          </Link>
-                        ))}
+                            </Link>
+                          );
+                        })}
                       </div>
                       {/* artwork preview panel */}
                       {(() => {
@@ -188,7 +206,13 @@ export function Header({ announcement, announcementHref }: {
                               />
                             </div>
                             <div className="flex flex-1 flex-col p-4">
-                              <p className="text-sm font-bold text-ink group-hover:text-brand">
+                              <p className="flex items-center gap-2 text-sm font-bold text-ink group-hover:text-brand">
+                                {productMarkSlug(active.href) ? (
+                                  <ProductMark
+                                    slug={productMarkSlug(active.href)!}
+                                    className="h-5 w-5 shrink-0 text-brand"
+                                  />
+                                ) : null}
                                 {active.label}
                               </p>
                               <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-xs font-semibold text-brand">
@@ -271,16 +295,22 @@ export function Header({ announcement, announcementHref }: {
                   </button>
                   {openSection === item.label ? (
                     <div className="pb-3">
-                      {item.items.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          onClick={closeAll}
-                          className="block rounded-md px-3 py-2.5 text-[15px] text-ink-soft hover:bg-brand-soft hover:text-ink"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
+                      {item.items.map((sub) => {
+                        const markSlug = productMarkSlug(sub.href);
+                        return (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            onClick={closeAll}
+                            className="flex items-center gap-2.5 rounded-md px-3 py-2.5 text-[15px] text-ink-soft hover:bg-brand-soft hover:text-ink"
+                          >
+                            {markSlug ? (
+                              <ProductMark slug={markSlug} className="h-5 w-5 shrink-0 text-brand" />
+                            ) : null}
+                            {sub.label}
+                          </Link>
+                        );
+                      })}
                     </div>
                   ) : null}
                 </div>
