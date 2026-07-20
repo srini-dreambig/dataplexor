@@ -250,10 +250,10 @@ export async function EngageOptions({
               key={offer.name}
               className="card-hover flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
             >
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div className="relative flex h-32 items-center justify-center overflow-hidden bg-gradient-to-b from-white to-[#f3f5ff] sm:h-36">
                 <ConceptArt
                   label={offer.name}
-                  className="absolute inset-0 h-full w-full"
+                  className="h-full w-full"
                 />
               </div>
               <div className="flex flex-1 flex-col p-8">
@@ -346,7 +346,6 @@ export async function DeliveryTimeline({
               title={p.title}
               body={p.body}
               label={p.title}
-              aspect="aspect-[16/9]"
             />
           ))}
         </div>

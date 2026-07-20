@@ -166,8 +166,8 @@ export function ProductRichPage({ product }: { product: Product }) {
                 key={g.label}
                 className="card-hover group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <ConceptArt label={g.label} className="absolute inset-0 h-full w-full" />
+                <div className="relative flex h-32 items-center justify-center overflow-hidden bg-gradient-to-b from-white to-[#f3f5ff] sm:h-36">
+                  <ConceptArt label={g.label} className="h-full w-full" />
                 </div>
                 <div className="p-7">
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
@@ -227,7 +227,6 @@ export function ProductRichPage({ product }: { product: Product }) {
                 title={a.role}
                 body={a.body}
                 label={a.role}
-                aspect="aspect-[16/10]"
               />
             ))}
           </div>

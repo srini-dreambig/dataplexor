@@ -90,7 +90,6 @@ export default async function ProductsPage() {
                     title={cap.title}
                     body={cap.body}
                     label={cap.title}
-                    aspect="aspect-[16/9]"
                     dark={i % 2 !== 0}
                   />
                 ))}

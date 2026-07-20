@@ -112,10 +112,10 @@ export default async function IndustryPage({
                 key={useCase.title}
                 className="card-hover flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
-                <div className="relative aspect-[16/9] overflow-hidden">
+                <div className="relative flex h-32 items-center justify-center overflow-hidden bg-gradient-to-b from-white to-[#f3f5ff] sm:h-36">
                   <ConceptArt
                     icon={iconForTitleBody(useCase.title, useCase.body)}
-                    className="absolute inset-0 h-full w-full"
+                    className="h-full w-full"
                   />
                   <span className="absolute right-4 top-3 font-display text-sm font-bold text-ink-soft/50">
                     {String(i + 1).padStart(2, "0")}

@@ -91,7 +91,6 @@ export default async function CareersPage() {
                 title={s.title}
                 body={s.body}
                 label={s.title}
-                aspect="aspect-[16/9]"
               />
             ))}
           </div>

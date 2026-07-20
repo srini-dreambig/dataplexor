@@ -279,13 +279,14 @@ function iconScene(p: string, iconKey: string, dark = false): string {
     ? `fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.14"`
     : `fill="#ffffff" filter="url(#${p}s)"`;
   const stroke = dark ? "#7ff0df" : `url(#${p}b)`;
-  return frame(
-    p,
-    glow,
-    `<rect x="134" y="64" width="132" height="132" rx="30" ${tile}/>` +
-      `<g transform="translate(164 94) scale(3)" fill="none" stroke="${stroke}" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">${inner}</g>` +
-      `<path d="M256 74 l2.4 6 l6 2.4 l-6 2.4 l-2.4 6 l-2.4 -6 l-6 -2.4 l6 -2.4 Z" fill="#10dfc2"/>`,
-    dark,
+  // Transparent background: the card supplies it, and the scene is rendered
+  // "contained" so the illustration stays a modest, consistent size.
+  return (
+    defs(p, glow) +
+    `<ellipse cx="200" cy="130" rx="128" ry="96" fill="url(#${p}g)"/>` +
+    `<rect x="147" y="77" width="106" height="106" rx="26" ${tile}/>` +
+    `<g transform="translate(171 101) scale(2.42)" fill="none" stroke="${stroke}" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">${inner}</g>` +
+    `<path d="M248 82 l2.2 5.4 l5.4 2.2 l-5.4 2.2 l-2.2 5.4 l-2.2 -5.4 l-5.4 -2.2 l5.4 -2.2 Z" fill="#10dfc2"/>`
   );
 }
 
@@ -337,7 +338,6 @@ export function IllustrationCard({
   eyebrow,
   concept,
   label,
-  aspect = "aspect-[16/10]",
   href,
   cta,
   dark = false,
@@ -348,7 +348,6 @@ export function IllustrationCard({
   eyebrow?: string;
   concept?: string;
   label?: string;
-  aspect?: string;
   href?: string;
   cta?: string;
   dark?: boolean;
@@ -356,13 +355,17 @@ export function IllustrationCard({
 }) {
   const inner = (
     <>
-      <div className={`relative ${aspect} overflow-hidden`}>
+      <div
+        className={`relative flex h-32 items-center justify-center overflow-hidden sm:h-36 ${
+          dark ? "" : "bg-gradient-to-b from-white to-[#f3f5ff]"
+        }`}
+      >
         <ConceptArt
           concept={concept}
           icon={concept ? undefined : iconForTitleBody(label ?? title, body)}
           label={label ?? title}
           dark={dark}
-          className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
+          className="h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
         />
       </div>
       <div className="flex flex-1 flex-col p-7">
@@ -432,9 +435,10 @@ export function ConceptArt({
   className?: string;
 }) {
   let markup: string;
-  if (concept && concept in SCENES) {
+  const bespoke = Boolean(concept && concept in SCENES);
+  if (bespoke) {
     // Bespoke scene, ids prefixed per concept (identical duplicates are safe).
-    markup = SCENES[concept](`c${concept.replace(/[^a-z]/g, "")}${dark ? "d" : ""}_`);
+    markup = SCENES[concept!](`c${concept!.replace(/[^a-z]/g, "")}${dark ? "d" : ""}_`);
     if (dark) {
       // Drop the opaque light background so the dark card shows through.
       markup = markup.replace(/<rect width="400" height="260"[^>]*\/>/, "");
@@ -447,7 +451,9 @@ export function ConceptArt({
   return (
     <svg
       viewBox={VB}
-      preserveAspectRatio="xMidYMid slice"
+      // Bespoke scenes fill the cover; generic icon scenes are contained so
+      // the illustration stays a modest, consistent size on any card width.
+      preserveAspectRatio={bespoke ? "xMidYMid slice" : "xMidYMid meet"}
       className={className}
       aria-hidden="true"
       dangerouslySetInnerHTML={{ __html: markup }}

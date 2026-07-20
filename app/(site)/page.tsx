@@ -83,7 +83,6 @@ export default async function HomePage() {
                 title={item.title}
                 body={item.body}
                 label={item.title}
-                aspect="aspect-[24/9]"
                 dark
               />
             ))}
