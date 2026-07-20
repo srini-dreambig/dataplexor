@@ -111,7 +111,7 @@ export default async function AboutPage() {
       <section className="bg-mist">
         <Container className="py-20 sm:py-24">
           <SectionTitle>What we believe</SectionTitle>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {about.values.map((value) => (
               <IllustrationCard
                 key={value.title}

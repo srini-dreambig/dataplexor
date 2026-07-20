@@ -76,7 +76,7 @@ export default async function HomePage() {
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85">
             {home.advantage.intro}
           </p>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {home.advantage.items.map((item) => (
               <IllustrationCard
                 key={item.title}

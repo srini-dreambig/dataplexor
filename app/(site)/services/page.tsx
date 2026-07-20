@@ -145,7 +145,7 @@ export default function ServicesPage() {
             <p className="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
               {service.intro}
             </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {service.offerings.map((o) => (
                 <FeatureCard key={o.title} title={o.title} body={o.body} />
               ))}

@@ -107,7 +107,7 @@ export default async function SolutionPage({
               <StatTile key={stat.label} value={stat.value} label={stat.label} />
             ))}
           </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {solution.capabilities.map((cap) => (
               <FeatureCard key={cap.title} title={cap.title} body={cap.body} />
             ))}

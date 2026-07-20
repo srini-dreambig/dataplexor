@@ -87,7 +87,7 @@ export default async function IndustryPage({
       <section>
         <Container className="py-20 sm:py-24">
           <SectionTitle>What we solve</SectionTitle>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {industry.challenges.map((c) => (
               <FeatureCard key={c.title} title={c.title} body={c.body} />
             ))}
