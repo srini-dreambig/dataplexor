@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getProducts, getProduct } from "@/lib/sitecontent";
 import { PageHero, CtaBanner, FeatureCard, FaqSection } from "@/components/sections";
 import { Container, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
+import { ProductMark, hasProductMark } from "@/components/ProductLogo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
 import { heroArtForProduct } from "@/lib/art";
@@ -82,6 +83,14 @@ export default async function ProductPage({
 
       <section className="bg-brand-soft">
         <Container className="py-20 sm:py-24">
+          {hasProductMark(product.slug) ? (
+            <div className="mb-8 inline-flex items-center gap-3 rounded-full bg-white px-5 py-2.5 ring-1 ring-line">
+              <ProductMark slug={product.slug} className="h-7 w-7 shrink-0 text-brand" />
+              <span className="font-display text-lg font-bold tracking-tight text-ink">
+                {product.name}
+              </span>
+            </div>
+          ) : null}
           <p className="max-w-4xl text-2xl font-semibold leading-snug tracking-tight text-brand sm:text-3xl">
             {product.summary}
           </p>

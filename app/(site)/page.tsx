@@ -7,6 +7,7 @@ import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } fro
 import { CtaBanner, InsightCard, Testimonials, EngageOptions } from "@/components/sections";
 import { getSolutions, getProducts, getIndustries } from "@/lib/sitecontent";
 import { artForSolution, artForProduct, artForIndustry } from "@/lib/art";
+import { ProductMark, hasProductMark } from "@/components/ProductLogo";
 
 export const metadata: Metadata = {
   title: { absolute: "Dataplexor — Data & Analytics, AI and Agentic AI" },
@@ -236,9 +237,17 @@ export default async function HomePage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal">
                     {product.tag}
                   </p>
-                  <h3 className="mt-3 text-2xl font-bold tracking-tight">
-                    {product.name}
-                  </h3>
+                  <div className="mt-3 flex items-center gap-2.5">
+                    {hasProductMark(product.slug) ? (
+                      <ProductMark
+                        slug={product.slug}
+                        className="h-8 w-8 shrink-0 text-teal"
+                      />
+                    ) : null}
+                    <h3 className="text-2xl font-bold tracking-tight">
+                      {product.name}
+                    </h3>
+                  </div>
                   <p className="mt-3 text-sm leading-relaxed text-white/75">
                     {product.summary}
                   </p>

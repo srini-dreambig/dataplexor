@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getProducts } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
+import { ProductMark, hasProductMark } from "@/components/ProductLogo";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -42,10 +43,22 @@ export default async function ProductsPage() {
               }`}
             >
               <div>
-                <Eyebrow dark={i % 2 !== 0}>{product.tag}</Eyebrow>
-                <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                  {product.name}
-                </h2>
+                <div className="flex items-center gap-4">
+                  {hasProductMark(product.slug) ? (
+                    <ProductMark
+                      slug={product.slug}
+                      className={`h-12 w-12 shrink-0 ${
+                        i % 2 === 0 ? "text-brand" : "text-teal"
+                      }`}
+                    />
+                  ) : null}
+                  <div>
+                    <Eyebrow dark={i % 2 !== 0}>{product.tag}</Eyebrow>
+                    <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+                      {product.name}
+                    </h2>
+                  </div>
+                </div>
                 <p
                   className={`mt-3 text-xl font-semibold ${
                     i % 2 === 0 ? "text-brand" : "text-teal"
