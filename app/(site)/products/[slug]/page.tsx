@@ -108,7 +108,7 @@ export default async function ProductPage({
       <section>
         <Container className="py-20 sm:py-24">
           <SectionTitle>Capabilities</SectionTitle>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {product.capabilities.map((cap) => (
               <FeatureCard key={cap.title} title={cap.title} body={cap.body} />
             ))}
