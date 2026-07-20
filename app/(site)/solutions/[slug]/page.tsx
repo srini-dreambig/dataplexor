@@ -8,6 +8,7 @@ import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
 import { heroArtForSolution } from "@/lib/art";
 import { ConceptArt, conceptForSolution } from "@/components/ConceptArt";
+import { ConceptIcon } from "@/components/ConceptIcon";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -85,6 +86,7 @@ export default async function SolutionPage({
           <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-3">
             {solution.pillars.map((pillar) => (
               <div key={pillar.title}>
+                <ConceptIcon label={`${pillar.title} ${pillar.body}`} className="mb-4" />
                 <h3 className="text-xl font-bold tracking-tight text-ink">
                   {pillar.title}
                 </h3>

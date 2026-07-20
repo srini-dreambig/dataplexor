@@ -7,7 +7,9 @@ import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/compo
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
-import { artForSolution, heroArtForIndustry } from "@/lib/art";
+import { heroArtForIndustry } from "@/lib/art";
+import { ConceptArt, conceptForSolution } from "@/components/ConceptArt";
+import { ConceptIcon } from "@/components/ConceptIcon";
 
 type Params = { slug: string };
 
@@ -110,10 +112,13 @@ export default async function IndustryPage({
                 key={useCase.title}
                 className="card-hover flex flex-col rounded-2xl bg-white p-7 ring-1 ring-line"
               >
-                <span className="font-display text-sm font-bold text-ink-soft/40">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 text-lg font-bold tracking-tight text-ink">
+                <div className="flex items-center justify-between">
+                  <ConceptIcon label={`${useCase.title} ${useCase.body}`} />
+                  <span className="font-display text-sm font-bold text-ink-soft/40">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-4 text-lg font-bold tracking-tight text-ink">
                   {useCase.title}
                 </h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
@@ -149,6 +154,7 @@ export default async function IndustryPage({
                 key={o.title}
                 className="rounded-2xl border border-white/15 bg-white/5 p-8"
               >
+                <ConceptIcon label={o.title} dark className="mb-5" />
                 <p className="text-5xl font-bold tracking-tight text-teal">
                   {o.metric}
                 </p>
@@ -177,13 +183,9 @@ export default async function IndustryPage({
                 className="card-hover group overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={artForSolution(s.slug)}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                    loading="lazy"
-                    draggable={false}
+                  <ConceptArt
+                    concept={conceptForSolution(s.slug)}
+                    className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="p-7">

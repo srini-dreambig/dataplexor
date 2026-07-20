@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero, CtaBanner, FeatureCard, Testimonials, EngageOptions } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile } from "@/components/ui";
+import { ConceptIcon } from "@/components/ConceptIcon";
 
 export const metadata: Metadata = {
   title: "Services & Consulting",
@@ -177,6 +178,7 @@ export default function ServicesPage() {
               },
             ].map((phase) => (
               <div key={phase.step}>
+                <ConceptIcon label={`${phase.title} ${phase.body}`} dark className="mb-5" />
                 <p className="text-sm font-bold text-teal">{phase.step}</p>
                 <h3 className="mt-2 text-2xl font-bold tracking-tight">
                   {phase.title}

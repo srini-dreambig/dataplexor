@@ -4,6 +4,7 @@ import { getIndustries } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
 import { ConceptArt, conceptForIndustry } from "@/components/ConceptArt";
+import { ConceptIcon } from "@/components/ConceptIcon";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -90,6 +91,7 @@ export default async function IndustriesPage() {
               },
             ].map((phase) => (
               <div key={phase.step}>
+                <ConceptIcon label={`${phase.title} ${phase.body}`} className="mb-4" />
                 <p className="text-sm font-bold text-brand">{phase.step}</p>
                 <h3 className="mt-2 text-2xl font-bold tracking-tight text-ink">
                   {phase.title}

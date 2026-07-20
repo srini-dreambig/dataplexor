@@ -4,6 +4,7 @@ import { getProducts } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { ProductMark, hasProductMark } from "@/components/ProductLogo";
+import { ConceptIcon } from "@/components/ConceptIcon";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -92,6 +93,11 @@ export default async function ProductsPage() {
                         : "border border-white/15 bg-white/5"
                     }`}
                   >
+                    <ConceptIcon
+                      label={`${cap.title} ${cap.body}`}
+                      dark={i % 2 !== 0}
+                      className="mb-3"
+                    />
                     <h3 className="text-sm font-bold">{cap.title}</h3>
                     <p
                       className={`mt-2 text-[13px] leading-relaxed ${

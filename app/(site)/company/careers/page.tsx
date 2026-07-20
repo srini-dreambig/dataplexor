@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, SectionTitle, ArrowIcon } from "@/components/ui";
 import { getCareers } from "@/lib/sitecontent";
+import { ConceptIcon } from "@/components/ConceptIcon";
 
 export const metadata: Metadata = {
   title: "Careers",
@@ -28,6 +29,7 @@ export default async function CareersPage() {
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((b) => (
               <div key={b.title} className="rounded-2xl border border-line p-7">
+                <ConceptIcon label={`${b.title} ${b.body}`} className="mb-5" />
                 <h3 className="text-lg font-bold tracking-tight text-ink">
                   {b.title}
                 </h3>
@@ -92,6 +94,7 @@ export default async function CareersPage() {
           <div className="mt-12 grid gap-10 md:grid-cols-4">
             {hiringProcess.map((s) => (
               <div key={s.step}>
+                <ConceptIcon label={`${s.title} ${s.body}`} className="mb-4" />
                 <p className="text-sm font-bold text-brand">{s.step}</p>
                 <h3 className="mt-2 text-xl font-bold tracking-tight text-ink">
                   {s.title}

@@ -3,6 +3,7 @@ import type { Product } from "@/lib/site";
 import { WaveBackground } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { ProductMark } from "@/components/ProductLogo";
+import { ConceptIcon } from "@/components/ConceptIcon";
 import { FeatureCard, FaqSection } from "@/components/sections";
 import {
   Container,
@@ -90,8 +91,11 @@ export function ProductRichPage({ product }: { product: Product }) {
                 key={s.step}
                 className="rounded-2xl bg-white p-7 ring-1 ring-line"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-soft font-display text-sm font-bold text-brand">
-                  {s.step}
+                <div className="flex items-center justify-between">
+                  <ConceptIcon label={s.title} />
+                  <span className="font-display text-sm font-bold text-brand/40">
+                    {s.step}
+                  </span>
                 </div>
                 <h3 className="mt-5 text-xl font-bold tracking-tight text-ink">
                   {s.title}
@@ -138,6 +142,7 @@ export function ProductRichPage({ product }: { product: Product }) {
                 className="grid gap-6 border-t border-white/10 pt-10 md:grid-cols-[300px_1fr]"
               >
                 <div>
+                  <ConceptIcon label={`${d.eyebrow} ${d.heading}`} dark className="mb-4" />
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal">
                     {d.eyebrow}
                   </p>
@@ -170,6 +175,7 @@ export function ProductRichPage({ product }: { product: Product }) {
                 key={g.label}
                 className="rounded-2xl border border-line p-7"
               >
+                <ConceptIcon label={g.label} className="mb-4" />
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
                   {g.label}
                 </p>
@@ -205,6 +211,7 @@ export function ProductRichPage({ product }: { product: Product }) {
                 key={item.label}
                 className="rounded-2xl bg-white p-7 ring-1 ring-line"
               >
+                <ConceptIcon label={`${item.label} ${item.body}`} className="mb-4" />
                 <h3 className="text-base font-bold tracking-tight text-ink">
                   {item.label}
                 </h3>
@@ -230,7 +237,7 @@ export function ProductRichPage({ product }: { product: Product }) {
                 key={a.role}
                 className="flex gap-4 rounded-2xl border border-line p-7"
               >
-                <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand" />
+                <ConceptIcon label={a.role} />
                 <div>
                   <h3 className="text-lg font-bold tracking-tight text-ink">
                     {a.role}

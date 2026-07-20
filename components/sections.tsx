@@ -4,6 +4,7 @@ import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
 import { getSections } from "@/lib/sitecontent";
 import { MarkBackdrop } from "@/components/Logo";
 import { ConceptArt, conceptForCategory } from "@/components/ConceptArt";
+import { ConceptIcon } from "@/components/ConceptIcon";
 import { readingTime, type Post } from "@/lib/content";
 
 export function PageHero({
@@ -250,6 +251,7 @@ export async function EngageOptions({
               key={offer.name}
               className="card-hover flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line"
             >
+              <ConceptIcon label={`${offer.name} ${offer.body}`} className="mb-5" />
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
                 {offer.duration}
               </p>
@@ -333,6 +335,7 @@ export async function DeliveryTimeline({
         <div className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
           {DELIVERY_PHASES.map((p) => (
             <div key={p.phase} className="border-t-2 border-brand pt-5">
+              <ConceptIcon label={`${p.title} ${p.body}`} className="mb-4" />
               <p className="font-display text-sm font-bold text-brand">
                 {p.phase}
               </p>
@@ -414,6 +417,7 @@ export function CaseStudySnapshot({
 export function FeatureCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-2xl border border-line bg-white p-7">
+      <ConceptIcon label={title} className="mb-5" />
       <h3 className="text-lg font-bold tracking-tight text-ink">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-ink-soft">{body}</p>
     </div>
