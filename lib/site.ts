@@ -1601,9 +1601,9 @@ export const ABOUT: AboutContent = {
     "We unlock the value of data to build products and intelligence that move enterprises — from insight to decision to autonomous action.",
   story: {
     paragraphs: [
-      "Dataplexor is new. The people behind it are not. We spent the last two decades inside global consultancies, technology companies and enterprise data teams — designing platforms for banks, shipping AI for retailers and insurers, running transformation programs across every industry we now serve.",
+      "Dataplexor is built on decades of practice. We spent the last two decades inside global consultancies, technology companies and enterprise data teams — designing platforms for banks, shipping AI for retailers and insurers, running transformation programs across every industry we now serve.",
       "We also spent those decades watching the same failure repeat: strategy sold by partners and delivered by juniors, platforms built to bill hours rather than to be owned, AI programs that demo well and die quietly. We founded Dataplexor in 2026 to do this work the way we always argued it should be done — senior people, working software, evidence over tenure.",
-      "So we are deliberately building a different kind of firm: the founders who scope your engagement deliver it, every method we use was proven somewhere real before we productized it, and the measure of success is what your team can run without us. New company. Decades deep. Nothing to unlearn.",
+      "So we are deliberately building a different kind of firm: the founders who scope your engagement deliver it, every method we use was proven somewhere real before we productized it, and the measure of success is what your team can run without us. Decades deep. Nothing to unlearn.",
     ],
   },
   stats: [
@@ -1673,7 +1673,7 @@ export const LEADERSHIP: LeadershipContent = {
   hero: {
     title: "The founding team",
     subtitle:
-      "A new company built by people with decades in the field. Everyone who leads at Dataplexor still works the craft they lead — on your engagement, not from a corner office.",
+      "A team built by people with decades in the field. Everyone who leads at Dataplexor still works the craft they lead — on your engagement, not from a corner office.",
   },
   leaders: [
     { name: "Srinivas Rao", role: "Co-founder & Chief Executive Officer", bio: "Two decades in enterprise data and analytics. Srinivas founded Dataplexor to close the gap between data strategy and the systems that deliver it.", photo: "", linkedin: "" },
@@ -1702,7 +1702,7 @@ export const CAREERS: CareersContent = {
   hero: {
     title: "Do the best work of your career on problems that matter",
     subtitle:
-      "We are a founding team hiring our first colleagues. Join people with decades in the field, at the moment everything is still being shaped — and shape it with us.",
+      "Join a team of people with decades in the field, at a moment when everything is still being shaped — and shape it with us.",
   },
   benefits: [
     { title: "Work on the frontier", body: "Ship production AI and agentic systems most engineers only read about — with the guardrails to do it responsibly." },

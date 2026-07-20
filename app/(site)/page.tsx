@@ -84,6 +84,7 @@ export default async function HomePage() {
                 body={item.body}
                 label={item.title}
                 aspect="aspect-[24/9]"
+                dark
               />
             ))}
           </div>
@@ -180,11 +181,11 @@ export default async function HomePage() {
       {/* Stats */}
       <section className="bg-mist">
         <Container className="py-20 sm:py-24">
-          <SectionTitle>The company is new. The experience is not.</SectionTitle>
+          <SectionTitle>Decades of this work, in every engagement.</SectionTitle>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Dataplexor launched in 2026 — built by practitioners who spent
-            their careers delivering exactly this work. Judge us on the track
-            records of the people in the room.
+            Dataplexor is built by practitioners who spent their careers
+            delivering exactly this work. Judge us on the track records of the
+            people in the room.
           </p>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {home.stats.map((stat) => (
@@ -225,6 +226,7 @@ export default async function HomePage() {
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <ConceptArt
                     concept={conceptForProduct(product.slug)}
+                    dark
                     className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>

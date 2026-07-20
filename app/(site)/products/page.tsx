@@ -91,6 +91,7 @@ export default async function ProductsPage() {
                     body={cap.body}
                     label={cap.title}
                     aspect="aspect-[16/9]"
+                    dark={i % 2 !== 0}
                   />
                 ))}
               </div>

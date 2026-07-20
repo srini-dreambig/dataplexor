@@ -183,6 +183,7 @@ export default function ServicesPage() {
                 title={phase.title}
                 body={phase.body}
                 label={phase.title}
+                dark
               />
             ))}
           </div>

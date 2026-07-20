@@ -30,10 +30,11 @@ function defs(p: string, glow: string): string {
   );
 }
 
-function frame(p: string, glow: string, body: string): string {
+function frame(p: string, glow: string, body: string, dark = false): string {
   return (
     defs(p, glow) +
-    `<rect width="400" height="260" fill="url(#${p}bg)"/>` +
+    // On dark surfaces the card supplies the background; keep it transparent.
+    (dark ? "" : `<rect width="400" height="260" fill="url(#${p}bg)"/>`) +
     `<ellipse cx="200" cy="134" rx="150" ry="106" fill="url(#${p}g)"/>` +
     body
   );
@@ -267,15 +268,24 @@ const TEAL_ICONS = new Set([
 
 /** Generic scene for any label — the concept icon floating in a soft white
  * tile over the brand/teal glow, matching the bespoke illustrations. */
-function iconScene(p: string, iconKey: string): string {
+function iconScene(p: string, iconKey: string, dark = false): string {
   const inner = ICONS[iconKey] ?? ICONS.sparkle;
-  const glow = TEAL_ICONS.has(iconKey) ? "#10dfc2" : "#2338ec";
+  const glow = TEAL_ICONS.has(iconKey)
+    ? "#10dfc2"
+    : dark
+      ? "#5b6bff"
+      : "#2338ec";
+  const tile = dark
+    ? `fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.14"`
+    : `fill="#ffffff" filter="url(#${p}s)"`;
+  const stroke = dark ? "#7ff0df" : `url(#${p}b)`;
   return frame(
     p,
     glow,
-    `<rect x="134" y="64" width="132" height="132" rx="30" fill="#ffffff" filter="url(#${p}s)"/>` +
-      `<g transform="translate(164 94) scale(3)" fill="none" stroke="url(#${p}b)" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">${inner}</g>` +
+    `<rect x="134" y="64" width="132" height="132" rx="30" ${tile}/>` +
+      `<g transform="translate(164 94) scale(3)" fill="none" stroke="${stroke}" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round">${inner}</g>` +
       `<path d="M256 74 l2.4 6 l6 2.4 l-6 2.4 l-2.4 6 l-2.4 -6 l-6 -2.4 l6 -2.4 Z" fill="#10dfc2"/>`,
+    dark,
   );
 }
 
@@ -330,6 +340,7 @@ export function IllustrationCard({
   aspect = "aspect-[16/10]",
   href,
   cta,
+  dark = false,
   children,
 }: {
   title: string;
@@ -340,6 +351,7 @@ export function IllustrationCard({
   aspect?: string;
   href?: string;
   cta?: string;
+  dark?: boolean;
   children?: React.ReactNode;
 }) {
   const inner = (
@@ -349,32 +361,54 @@ export function IllustrationCard({
           concept={concept}
           icon={concept ? undefined : iconForTitleBody(label ?? title, body)}
           label={label ?? title}
+          dark={dark}
           className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
         />
       </div>
       <div className="flex flex-1 flex-col p-7">
-        {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+        {eyebrow ? (
+          <p
+            className={`text-xs font-semibold uppercase tracking-[0.18em] ${
+              dark ? "text-teal" : "text-brand"
+            }`}
+          >
+            {eyebrow}
+          </p>
+        ) : null}
         <h3
-          className={`text-lg font-bold tracking-tight text-ink ${
-            eyebrow ? "mt-2" : ""
-          } ${href ? "group-hover:text-brand" : ""}`}
+          className={`text-lg font-bold tracking-tight ${
+            dark ? "text-white" : "text-ink"
+          } ${eyebrow ? "mt-2" : ""} ${
+            href ? (dark ? "group-hover:text-teal" : "group-hover:text-brand") : ""
+          }`}
         >
           {title}
         </h3>
         {body ? (
-          <p className="mt-3 text-sm leading-relaxed text-ink-soft">{body}</p>
+          <p
+            className={`mt-3 text-sm leading-relaxed ${
+              dark ? "text-white/70" : "text-ink-soft"
+            }`}
+          >
+            {body}
+          </p>
         ) : null}
         {children}
         {cta ? (
-          <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand">
+          <span
+            className={`mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold ${
+              dark ? "text-teal" : "text-brand"
+            }`}
+          >
             {cta} <ArrowIcon />
           </span>
         ) : null}
       </div>
     </>
   );
-  const cls =
-    "card-hover group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line";
+  const cls = `card-hover group flex flex-col overflow-hidden rounded-2xl ${
+    dark ? "bg-white/5 ring-1 ring-white/12" : "bg-white ring-1 ring-line"
+  }`;
   return href ? (
     <Link href={href} className={cls}>
       {inner}
@@ -388,21 +422,27 @@ export function ConceptArt({
   concept,
   label,
   icon,
+  dark = false,
   className = "",
 }: {
   concept?: string;
   label?: string;
   icon?: string;
+  dark?: boolean;
   className?: string;
 }) {
   let markup: string;
   if (concept && concept in SCENES) {
     // Bespoke scene, ids prefixed per concept (identical duplicates are safe).
-    markup = SCENES[concept](`c${concept.replace(/[^a-z]/g, "")}_`);
+    markup = SCENES[concept](`c${concept.replace(/[^a-z]/g, "")}${dark ? "d" : ""}_`);
+    if (dark) {
+      // Drop the opaque light background so the dark card shows through.
+      markup = markup.replace(/<rect width="400" height="260"[^>]*\/>/, "");
+    }
   } else {
     // Generic icon scene: an explicit icon, else resolved from the label.
     const iconKey = icon ?? iconForLabel(label ?? concept ?? "");
-    markup = iconScene(`i${iconKey}_`, iconKey);
+    markup = iconScene(`i${iconKey}${dark ? "d" : ""}_`, iconKey, dark);
   }
   return (
     <svg
