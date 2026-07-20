@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { SOLUTIONS, PRODUCTS } from "@/lib/site";
+import { getSolutions, getSolution, getProduct } from "@/lib/sitecontent";
 import { PageHero, CtaBanner, FeatureCard, FaqSection, TechStrip, CaseStudySnapshot, DeliveryTimeline, EngageOptions } from "@/components/sections";
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
@@ -17,7 +17,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const solution = SOLUTIONS.find((s) => s.slug === slug);
+  const solution = await getSolution(slug);
   if (!solution) return {};
   return {
     title: `${solution.name} Solutions`,
@@ -33,10 +33,13 @@ export default async function SolutionPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const solution = SOLUTIONS.find((s) => s.slug === slug);
+  const solution = await getSolution(slug);
   if (!solution) notFound();
-  const product = PRODUCTS.find((p) => p.slug === solution.relatedProduct);
+  const product = solution.relatedProduct
+    ? await getProduct(solution.relatedProduct)
+    : undefined;
   const settings = await getSettings();
+  const SOLUTIONS = await getSolutions();
 
   return (
     <>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { INDUSTRIES } from "@/lib/site";
+import { getIndustries } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
 import { artForIndustry } from "@/lib/art";
@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industries" },
 };
 
-export default function IndustriesPage() {
+export default async function IndustriesPage() {
+  const INDUSTRIES = await getIndustries();
   return (
     <>
       <PageHero

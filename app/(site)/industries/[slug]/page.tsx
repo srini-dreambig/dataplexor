@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { INDUSTRIES, SOLUTIONS } from "@/lib/site";
+import { getIndustry, getSolutions } from "@/lib/sitecontent";
 import { PageHero, CtaBanner, FeatureCard, FaqSection } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
 import { MarkBackdrop } from "@/components/Logo";
@@ -17,7 +17,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const industry = INDUSTRIES.find((i) => i.slug === slug);
+  const industry = await getIndustry(slug);
   if (!industry) return {};
   return {
     title: `${industry.name} — Data & AI Solutions`,
@@ -33,10 +33,12 @@ export default async function IndustryPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const industry = INDUSTRIES.find((i) => i.slug === slug);
+  const industry = await getIndustry(slug);
   if (!industry) notFound();
   const settings = await getSettings();
-  const related = SOLUTIONS.filter((s) => industry.solutions.includes(s.slug));
+  const related = (await getSolutions()).filter((s) =>
+    industry.solutions.includes(s.slug)
+  );
 
   return (
     <>

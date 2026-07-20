@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
-import { ENTRY_OFFERS, TESTIMONIALS, DELIVERY_PHASES } from "@/lib/site";
+import { getSections } from "@/lib/sitecontent";
 import { MarkBackdrop } from "@/components/Logo";
 import { artForCategory } from "@/lib/art";
 import { readingTime, type Post } from "@/lib/content";
@@ -214,13 +214,14 @@ export function TechStrip({ technologies }: { technologies: string[] }) {
   );
 }
 
-export function EngageOptions({
+export async function EngageOptions({
   title = "Three ways to start",
   intro = "Every engagement begins with a bounded, fixed-scope first step — priced upfront, delivered by practitioners, and designed so you know exactly what you learn and what you get.",
 }: {
   title?: string;
   intro?: string;
 }) {
+  const { entryOffers: ENTRY_OFFERS } = await getSections();
   return (
     <section className="bg-brand-soft">
       <Container className="py-20 sm:py-24">
@@ -269,7 +270,8 @@ export function EngageOptions({
   );
 }
 
-export function Testimonials() {
+export async function Testimonials() {
+  const { testimonials: TESTIMONIALS } = await getSections();
   return (
     <section className="bg-ink text-white">
       <Container className="py-20 sm:py-24">
@@ -303,11 +305,12 @@ export function Testimonials() {
   );
 }
 
-export function DeliveryTimeline({
+export async function DeliveryTimeline({
   title = "What working with us looks like",
 }: {
   title?: string;
 }) {
+  const { deliveryPhases: DELIVERY_PHASES } = await getSections();
   return (
     <section>
       <Container className="py-20 sm:py-24">

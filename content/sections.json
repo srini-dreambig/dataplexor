@@ -1,0 +1,76 @@
+{
+  "testimonials": [
+    {
+      "quote": "They are the first team whose strategy actually compiled. The roadmap came with running code, and the running code came with our engineers trained to own it.",
+      "author": "Chief Technology Officer",
+      "org": "Global 500 retailer"
+    },
+    {
+      "quote": "Our regulator asked who built the agent audit trail — because it was better evidence than our manual process ever produced. That is a sentence I never expected to say.",
+      "author": "Chief Operating Officer",
+      "org": "European corporate bank"
+    },
+    {
+      "quote": "Half consultancy, half engineering team, fully accountable. Eighteen months later the platform they built is still getting faster and cheaper — and it is our people running it.",
+      "author": "Chief Data Officer",
+      "org": "Fortune 100 manufacturer"
+    }
+  ],
+  "entryOffers": [
+    {
+      "name": "Data & AI Readiness Assessment",
+      "duration": "2 weeks · fixed fee",
+      "body": "A practitioner team maps your data estate, AI portfolio and operating model against where the value actually is.",
+      "deliverables": [
+        "Estate and use-case inventory with honest feasibility scoring",
+        "Value-ranked roadmap with costed next quarter",
+        "Executive readout your board can act on"
+      ],
+      "cta": "Book an assessment"
+    },
+    {
+      "name": "Proof-to-Production Pilot",
+      "duration": "6–10 weeks · milestone priced",
+      "body": "One high-value use case taken all the way to production — with the evaluation harness and runbook to operate it.",
+      "deliverables": [
+        "Working system in your environment, not a demo",
+        "Evaluation baseline and monitoring wired to release gates",
+        "Skills transfer and a scale plan with real costs"
+      ],
+      "cta": "Scope a pilot"
+    },
+    {
+      "name": "Architecture & AI Review",
+      "duration": "3 weeks · fixed fee",
+      "body": "An independent, evidence-based review of your platform or AI portfolio — for leaders who need the unvarnished picture.",
+      "deliverables": [
+        "Findings benchmarked against your data, not averages",
+        "Risk register and run-cost savings quantified",
+        "Board-ready report with a sequenced fix plan"
+      ],
+      "cta": "Request a review"
+    }
+  ],
+  "deliveryPhases": [
+    {
+      "phase": "Weeks 0–2",
+      "title": "Discover & design",
+      "body": "Practitioners map your estate, workflows and constraints; the target design and first increment are agreed with the people who will live with them."
+    },
+    {
+      "phase": "Weeks 2–6",
+      "title": "Build in your environment",
+      "body": "Cross-functional pod ships working software into your cloud from the first sprint — your engineers embedded, weekly demos, no surprise reveal."
+    },
+    {
+      "phase": "Weeks 6–10",
+      "title": "Production & evidence",
+      "body": "The system goes live with evaluation, monitoring and runbooks; results are measured against the baseline we agreed, not asserted."
+    },
+    {
+      "phase": "Week 10+",
+      "title": "Scale & transfer",
+      "body": "What works is industrialized across domains; skills transfer completes and — where you want it — our managed service takes the pager."
+    }
+  ]
+}

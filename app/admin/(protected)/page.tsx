@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { getMessages, getPosts, getSettings } from "@/lib/content";
+import { getIndustries, getProducts, getSolutions } from "@/lib/sitecontent";
 import { AdminPageTitle } from "@/components/admin/fields";
 
 export default async function AdminDashboard() {
-  const posts = await getPosts();
-  const messages = await getMessages();
-  const settings = await getSettings();
+  const [posts, messages, settings, solutions, industries, products] =
+    await Promise.all([
+      getPosts(),
+      getMessages(),
+      getSettings(),
+      getSolutions(),
+      getIndustries(),
+      getProducts(),
+    ]);
 
   const cards = [
     {
@@ -19,6 +26,30 @@ export default async function AdminDashboard() {
       href: "/admin/home",
       body: "Hero headline, calls to action, stats and the advantage section.",
       stat: "Hero + stats",
+    },
+    {
+      title: "Solutions",
+      href: "/admin/pages/solutions",
+      body: "Solution pages — hero copy, pillars, capabilities, case studies, technologies and FAQs.",
+      stat: `${solutions.length} pages`,
+    },
+    {
+      title: "Industries",
+      href: "/admin/pages/industries",
+      body: "Industry pages — challenges, burning use cases, outcomes and FAQs per domain.",
+      stat: `${industries.length} pages`,
+    },
+    {
+      title: "Products",
+      href: "/admin/pages/products",
+      body: "Product pages — positioning, capabilities, stats and FAQs.",
+      stat: `${products.length} pages`,
+    },
+    {
+      title: "Shared sections",
+      href: "/admin/pages/sections",
+      body: "Testimonials, entry offers and the delivery timeline reused across the site.",
+      stat: "3 blocks",
     },
     {
       title: "Insights",

@@ -5,7 +5,7 @@ import { WaveBackground } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { CtaBanner, InsightCard, Testimonials, EngageOptions } from "@/components/sections";
-import { SOLUTIONS, PRODUCTS, INDUSTRIES } from "@/lib/site";
+import { getSolutions, getProducts, getIndustries } from "@/lib/sitecontent";
 import { artForSolution, artForProduct, artForIndustry } from "@/lib/art";
 
 export const metadata: Metadata = {
@@ -18,6 +18,11 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const home = await getHomeContent();
   const posts = (await getPosts()).slice(0, 3);
+  const [SOLUTIONS, PRODUCTS, INDUSTRIES] = await Promise.all([
+    getSolutions(),
+    getProducts(),
+    getIndustries(),
+  ]);
 
   return (
     <>

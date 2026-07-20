@@ -70,7 +70,7 @@ export function PostForm({ initial }: { initial?: Post }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="max-w-3xl space-y-6">
+    <form onSubmit={onSubmit} className="space-y-6">
       <div className="space-y-5 rounded-2xl bg-white p-6 ring-1 ring-line">
         <Field label="Title">
           <input required className={fieldCls} value={post.title} onChange={(e) => set("title", e.target.value)} />

@@ -30,7 +30,7 @@ export function SettingsForm({ initial }: { initial: Settings }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="max-w-3xl space-y-6">
+    <form onSubmit={onSubmit} className="space-y-6">
       <div className="grid gap-5 rounded-2xl bg-white p-6 ring-1 ring-line sm:grid-cols-2">
         <Field label="Site name">
           <input className={fieldCls} value={settings.siteName} onChange={(e) => set("siteName", e.target.value)} />

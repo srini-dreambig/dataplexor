@@ -18,7 +18,7 @@ export default async function AdminInsightsPage() {
           + New post
         </Link>
       </div>
-      <div className="max-w-4xl divide-y divide-line overflow-hidden rounded-2xl bg-white ring-1 ring-line">
+      <div className="divide-y divide-line overflow-hidden rounded-2xl bg-white ring-1 ring-line">
         {posts.map((post) => (
           <div
             key={post.slug}

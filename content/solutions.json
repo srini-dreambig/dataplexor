@@ -1,0 +1,565 @@
+[
+  {
+    "slug": "data-analytics",
+    "name": "Data & Analytics",
+    "eyebrow": "Solutions",
+    "headline": "Data & Analytics",
+    "heroTagline": "Open table formats won, semantic layers went mainstream, and AI made trusted data non-negotiable. We build the foundations this new era runs on.",
+    "statement": "Before organizations can act on their data, they must be able to trust it.",
+    "intro": "We design, build and run modern data platforms and analytics capabilities — from lakehouse foundations and governance to semantic layers and self-service BI — so every decision in your organization starts from the same trusted numbers.",
+    "pillars": [
+      {
+        "title": "Modern data platforms",
+        "body": "Cloud-native lakehouse architectures with streaming ingestion, open formats and infrastructure as code — built for AI from day one."
+      },
+      {
+        "title": "Governance you can prove",
+        "body": "Data contracts, lineage, quality monitoring and access control designed as platform features, giving auditors and analysts the same confidence."
+      },
+      {
+        "title": "Analytics that get used",
+        "body": "Semantic layers, self-service BI and embedded analytics that meet people inside the tools and workflows where they already work."
+      }
+    ],
+    "capabilitiesTitle": "Features and capabilities",
+    "capabilitiesIntro": "We bring blueprints and delivery playbooks proven across a hundred-plus platform engagements in our team's careers — productized so you get the experience without the big-firm overhead.",
+    "capabilities": [
+      {
+        "title": "Platform strategy & architecture",
+        "body": "Target-state architecture, tooling rationalization and migration roadmaps grounded in your workloads and economics."
+      },
+      {
+        "title": "Data engineering",
+        "body": "Batch and streaming pipelines built with software engineering discipline: version control, testing, CI/CD and observability."
+      },
+      {
+        "title": "Data governance & quality",
+        "body": "Catalogs, contracts, PII controls and quality SLAs that make trusted data the default, not the exception."
+      },
+      {
+        "title": "BI & decision support",
+        "body": "Metrics layers, executive reporting and self-service analytics adopted because they answer real questions faster."
+      }
+    ],
+    "stats": [
+      {
+        "value": "120+",
+        "label": "Data platforms delivered across our team's careers"
+      },
+      {
+        "value": "30%",
+        "label": "Typical run-cost reduction from consolidations we have led"
+      },
+      {
+        "value": "18",
+        "label": "Industries served across our careers"
+      },
+      {
+        "value": "6 wks",
+        "label": "Fastest strategy-to-production delivery we have led"
+      }
+    ],
+    "caseStudy": {
+      "client": "Global 100 consumer goods company",
+      "challenge": "Five regional data estates, three warehouse vendors and no shared definition of revenue — every executive meeting started with reconciliation, and the AI roadmap was stalled behind the platform question.",
+      "approach": "PlexusCore lakehouse foundation on open table formats, domain-by-domain migration, one semantic layer for the 40 metrics that run the company, and a data product operating model with named owners.",
+      "results": [
+        {
+          "metric": "30%",
+          "label": "platform run cost freed in year one"
+        },
+        {
+          "metric": "6 wks",
+          "label": "to first governed domain in production"
+        },
+        {
+          "metric": "1",
+          "label": "definition of revenue, everywhere"
+        }
+      ]
+    },
+    "technologies": [
+      "Snowflake",
+      "Databricks",
+      "Apache Iceberg",
+      "dbt",
+      "Apache Kafka",
+      "Apache Spark",
+      "BigQuery",
+      "Microsoft Fabric",
+      "Airflow",
+      "Power BI",
+      "Tableau",
+      "AWS · Azure · GCP"
+    ],
+    "faqs": [
+      {
+        "q": "How long does it take to stand up a modern data platform?",
+        "a": "With our PlexusCore accelerator, a governed production platform typically lands in six to eight weeks for the first domain — ingestion, lakehouse storage, transformation and governance included. Full estate migration then proceeds domain by domain, funded by the run-cost savings consolidation frees."
+      },
+      {
+        "q": "We already have a warehouse. Do we need a lakehouse?",
+        "a": "Usually you need convergence, not replacement. Open table formats let your existing warehouse and new workloads share one governed copy of the data, so we typically enable interoperability first and migrate opportunistically — no big-bang rebuild."
+      },
+      {
+        "q": "How do you approach data governance without slowing teams down?",
+        "a": "By making it a platform feature instead of a committee: contracts enforced in pipelines, PII classification and access control automated, lineage captured as a by-product. Teams move faster because trust is default, not negotiated per dataset."
+      },
+      {
+        "q": "Can you work with our existing data team rather than replacing it?",
+        "a": "That is the only way we work. Our pods embed with your engineers, the platform is built in your cloud accounts under your standards, and skills transfer is an explicit deliverable — success is your team running the platform without us."
+      }
+    ],
+    "relatedProduct": "plexuscore"
+  },
+  {
+    "slug": "ai",
+    "name": "Artificial Intelligence",
+    "eyebrow": "Solutions",
+    "headline": "Artificial Intelligence",
+    "heroTagline": "Foundation models made intelligence abundant; evaluation and governance make it dependable. We engineer AI that survives contact with production.",
+    "statement": "The gap between an AI demo and a production system is where most value is lost.",
+    "intro": "We take machine learning and generative AI from promising prototype to reliable production — with the evaluation, MLOps and governance that make the difference between a demo and a dependable system.",
+    "pillars": [
+      {
+        "title": "Applied machine learning",
+        "body": "Forecasting, optimization, personalization and risk models built on rigorous features and honest baselines."
+      },
+      {
+        "title": "Generative AI systems",
+        "body": "RAG pipelines, fine-tuned models and AI copilots engineered with retrieval quality, latency and cost as first-class requirements."
+      },
+      {
+        "title": "Evaluation & governance",
+        "body": "Continuous evaluation harnesses, bias and safety testing, and model governance that satisfies your regulators and your engineers."
+      }
+    ],
+    "capabilitiesTitle": "Features and capabilities",
+    "capabilitiesIntro": "Our team has spent years shipping applied AI inside demanding enterprises — Dataplexor packages that experience into methods that survive contact with production.",
+    "capabilities": [
+      {
+        "title": "AI strategy & use-case portfolio",
+        "body": "Value-ranked use-case portfolios with feasibility scoring, so investment flows to what will actually ship and pay back."
+      },
+      {
+        "title": "ML & GenAI engineering",
+        "body": "From feature stores to inference services: production-grade systems with the reliability of the rest of your stack."
+      },
+      {
+        "title": "LLMOps & evaluation",
+        "body": "Golden datasets, model-graded scoring and regression suites wired into deployment — a failing eval blocks a release."
+      },
+      {
+        "title": "Responsible AI",
+        "body": "Bias audits, explainability, human oversight and documentation aligned to emerging AI regulation."
+      }
+    ],
+    "stats": [
+      {
+        "value": "40+",
+        "label": "AI systems our team has taken to production"
+      },
+      {
+        "value": "3x",
+        "label": "Median ROI on AI portfolios we have rationalized"
+      },
+      {
+        "value": "90%",
+        "label": "Of AI systems we build reach production — not just pilots"
+      },
+      {
+        "value": "100%",
+        "label": "Built with evaluation harnesses from day one"
+      }
+    ],
+    "caseStudy": {
+      "client": "Top-10 North American insurer",
+      "challenge": "Commercial submissions arriving as PDF mountains; underwriters spending mornings re-keying data while quote-turnaround targets slipped and the best risks went to faster competitors.",
+      "approach": "Document-intelligence pipeline with layered extraction models, an evaluation harness built from two thousand labeled real submissions, and confidence-routed human review inside the existing underwriting workbench.",
+      "results": [
+        {
+          "metric": "-65%",
+          "label": "submission triage time"
+        },
+        {
+          "metric": "90 days",
+          "label": "from kickoff to production"
+        },
+        {
+          "metric": "+11pt",
+          "label": "quote ratio on target segments"
+        }
+      ]
+    },
+    "technologies": [
+      "Anthropic Claude",
+      "OpenAI",
+      "AWS Bedrock",
+      "Azure AI Foundry",
+      "Google Vertex AI",
+      "Hugging Face",
+      "PyTorch",
+      "MLflow",
+      "Ray",
+      "LangGraph",
+      "Weights & Biases",
+      "Kubernetes"
+    ],
+    "faqs": [
+      {
+        "q": "How do you decide which AI use cases are worth building?",
+        "a": "We score candidate use cases on value, feasibility and time-to-production against your actual data and systems — not industry averages. The output is a ranked portfolio where the top items have committed owners, measurable outcome metrics and a realistic path to production."
+      },
+      {
+        "q": "What makes your AI systems production-grade rather than demos?",
+        "a": "Evaluation harnesses built before launch, golden datasets from real cases, monitoring wired to release gates, and MLOps discipline throughout. Around a quarter of our engineering effort goes into evaluation — which is precisely why our systems reach and survive production."
+      },
+      {
+        "q": "How do you handle AI regulation like the EU AI Act?",
+        "a": "Compliance evidence is generated as a by-product of the engineering: model registries, evaluation reports, lineage and human-oversight design map directly onto the Act's obligations. We build the documentation into the pipeline so it never goes stale."
+      },
+      {
+        "q": "Which models and vendors do you work with?",
+        "a": "We are vendor-neutral across the major model providers and clouds. Model choice follows the use case — quality, latency, cost and data-residency requirements — and our architectures keep model swaps cheap, because the frontier moves quarterly."
+      }
+    ],
+    "relatedProduct": "plexusiq"
+  },
+  {
+    "slug": "agentic-ai",
+    "name": "Agentic AI",
+    "eyebrow": "Solutions",
+    "headline": "Agentic AI",
+    "heroTagline": "This is the year software stopped waiting for instructions. We build agents that plan, act and execute — and stay inside the lines while they do.",
+    "statement": "The next advantage is not software that answers — it is software that acts.",
+    "intro": "We help enterprises design, build and govern autonomous AI agents that plan, decide and execute across systems — with the guardrails, observability and human oversight that make autonomy safe to scale.",
+    "pillars": [
+      {
+        "title": "Agent design & orchestration",
+        "body": "Single agents and multi-agent systems that decompose real workflows: research, operations, service, engineering."
+      },
+      {
+        "title": "Governed autonomy",
+        "body": "Policy engines, permission models and budget controls on every action — autonomy that is earned with evidence, not assumed."
+      },
+      {
+        "title": "Human-AI operating models",
+        "body": "Escalation paths, approval checkpoints and new role designs so people and agents work as one accountable system."
+      }
+    ],
+    "capabilitiesTitle": "Features and capabilities",
+    "capabilitiesIntro": "Our founders have been building agentic systems since the field began — we combine that frontier experience with enterprise engineering discipline.",
+    "capabilities": [
+      {
+        "title": "Agentic opportunity assessment",
+        "body": "Identify the workflows where volume, latency or complexity exceed human capacity — and quantify the autonomy dividend."
+      },
+      {
+        "title": "Agent engineering",
+        "body": "Tool integration, memory, planning and multi-agent coordination built on robust runtimes — including our AgentMesh product."
+      },
+      {
+        "title": "Safety & guardrails",
+        "body": "Sandboxed execution, declarative policies, full decision logging and hard stops for irreversible operations."
+      },
+      {
+        "title": "Agent operations",
+        "body": "Fleet observability, continuous evaluation and graduated autonomy management as agents scale across the enterprise."
+      }
+    ],
+    "stats": [
+      {
+        "value": "25+",
+        "label": "Agentic systems our team has delivered to production"
+      },
+      {
+        "value": "70%",
+        "label": "Average manual-effort reduction on agentized workflows"
+      },
+      {
+        "value": "100%",
+        "label": "Of agent actions policy-checked and auditable"
+      },
+      {
+        "value": "0",
+        "label": "Unsupervised irreversible actions. Ever."
+      }
+    ],
+    "caseStudy": {
+      "client": "European corporate bank",
+      "challenge": "KYC periodic reviews consuming analyst-days per case with a growing backlog, while the second line demanded more evidence per decision, not less — headcount could not close the gap.",
+      "approach": "AgentMesh agents assembling evidence, screening media and drafting assessments in propose-only mode first; graduated autonomy earned per action class with a complete decision log the validators helped design.",
+      "results": [
+        {
+          "metric": "8x",
+          "label": "faster review cycle times"
+        },
+        {
+          "metric": "100%",
+          "label": "of agent actions policy-checked and logged"
+        },
+        {
+          "metric": "0",
+          "label": "findings on the process in the next exam"
+        }
+      ]
+    },
+    "technologies": [
+      "AgentMesh",
+      "Anthropic Claude",
+      "Model Context Protocol",
+      "LangGraph",
+      "OpenAI",
+      "AWS Bedrock",
+      "Azure AI Foundry",
+      "Temporal",
+      "Kubernetes",
+      "OpenTelemetry"
+    ],
+    "faqs": [
+      {
+        "q": "How is agentic AI different from the copilots we already deployed?",
+        "a": "Copilots draft; agents execute. An agentic system pursues a goal across multiple steps, tools and systems — assembling evidence, taking actions, escalating exceptions — without a human prompting each step. That changes the value equation and the governance requirements simultaneously."
+      },
+      {
+        "q": "How do you keep autonomous agents safe in production?",
+        "a": "Governed autonomy: deterministic policy engines checking every action, sandboxed execution with least-privilege capabilities, budgets and rate limits, complete decision logging, and human hard stops on irreversible operations. Autonomy is earned per action class with measured reliability, never assumed."
+      },
+      {
+        "q": "Where should an enterprise deploy its first agents?",
+        "a": "Workflows with high volume, high reversibility and codifiable judgment: service recovery, evidence assembly, reconciliation, triage. We deliberately avoid irreversible or customer-visible actions until the evaluation baseline proves reliability."
+      },
+      {
+        "q": "Will agents work with our existing systems and permissions?",
+        "a": "Yes — that is most of the engineering. Agents integrate through your existing APIs and access-control model, holding scoped credentials like any other principal. If your identity and permission hygiene needs work first, we will tell you, because agent safety inherits it."
+      }
+    ],
+    "relatedProduct": "agentmesh"
+  },
+  {
+    "slug": "app-building",
+    "name": "Application Building",
+    "eyebrow": "Solutions",
+    "headline": "Application Building",
+    "heroTagline": "Cloud-native, AI-assisted and shipped weekly — modern applications are living products, not projects. We build them to keep changing.",
+    "statement": "Great software is not written once — it is engineered to keep changing.",
+    "intro": "We design and build cloud-native applications — customer experiences, internal platforms and the modernization of the systems they replace — with the engineering discipline that keeps them fast, secure and easy to change for years.",
+    "pillars": [
+      {
+        "title": "Digital experiences",
+        "body": "Web and mobile applications your customers actually enjoy — designed with users, measured in production, iterated weekly."
+      },
+      {
+        "title": "Internal platforms",
+        "body": "Workflow tools, portals and APIs that remove friction from operations — often the fastest ROI in the enterprise."
+      },
+      {
+        "title": "Modernization",
+        "body": "Legacy systems decomposed and rebuilt incrementally — strangler-pattern migrations that never bet the business on a big bang."
+      }
+    ],
+    "capabilitiesTitle": "Features and capabilities",
+    "capabilitiesIntro": "Senior full-stack pods covering product design, engineering, cloud and security — the people who have shipped this two hundred times before, in one accountable team.",
+    "capabilities": [
+      {
+        "title": "Product design & UX",
+        "body": "Research, prototyping and design systems that make complex workflows feel simple — tested with real users before a line of code."
+      },
+      {
+        "title": "Cloud-native engineering",
+        "body": "TypeScript, Python, JVM and Go services on Kubernetes and serverless — with CI/CD, infrastructure as code and observability from day one."
+      },
+      {
+        "title": "API & integration",
+        "body": "Well-designed APIs, event streams and integration layers that make your application landscape composable instead of tangled."
+      },
+      {
+        "title": "Security & reliability",
+        "body": "Threat modeling, automated security testing and SRE practices baked into delivery — not audited in afterwards."
+      }
+    ],
+    "stats": [
+      {
+        "value": "200+",
+        "label": "Applications shipped across our team's careers"
+      },
+      {
+        "value": "<1 wk",
+        "label": "From commit to production on our delivery platforms"
+      },
+      {
+        "value": "99.95%",
+        "label": "Median availability across systems we have operated"
+      },
+      {
+        "value": "60%",
+        "label": "Typical reduction in change lead time after modernization"
+      }
+    ],
+    "caseStudy": {
+      "client": "National healthcare provider network",
+      "challenge": "A patient portal built on a retiring platform, eleven-second page loads, and a two-release-per-year cadence that made every improvement a committee negotiation.",
+      "approach": "Strangler-pattern modernization: new cloud-native experience shipped alongside the legacy core, traffic migrated journey by journey, delivery platform with weekly releases and observability from the first sprint.",
+      "results": [
+        {
+          "metric": "99.95%",
+          "label": "availability since cutover"
+        },
+        {
+          "metric": "Weekly",
+          "label": "release cadence, from twice a year"
+        },
+        {
+          "metric": "+38",
+          "label": "patient NPS on migrated journeys"
+        }
+      ]
+    },
+    "technologies": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Python",
+      "Go",
+      "PostgreSQL",
+      "Kubernetes",
+      "Terraform",
+      "AWS · Azure · GCP",
+      "GitHub Actions",
+      "Playwright"
+    ],
+    "faqs": [
+      {
+        "q": "Do you take over legacy systems or only build new ones?",
+        "a": "Both, and usually together. Our modernization work uses strangler-pattern migrations: new capabilities ship alongside the legacy core, traffic moves incrementally, and the business never bets on a big-bang cutover."
+      },
+      {
+        "q": "How fast do you ship?",
+        "a": "Working software in the first weeks, production releases weekly thereafter. Our delivery platforms include CI/CD, infrastructure as code and observability from day one, so speed comes from engineering discipline rather than corner-cutting."
+      },
+      {
+        "q": "How do you handle security and compliance in delivery?",
+        "a": "Threat modeling at design time, automated security testing in the pipeline, least-privilege infrastructure by default, and audit-ready change management. For regulated clients we build to your control framework and document as we go."
+      },
+      {
+        "q": "What happens after launch?",
+        "a": "Your choice: full handover to your teams with skills transfer, or our managed service running the application under SLAs with a continuous improvement roadmap. Most clients choose a transition period between the two."
+      }
+    ],
+    "relatedProduct": "plexuscore"
+  },
+  {
+    "slug": "product-building",
+    "name": "Product Building",
+    "eyebrow": "Solutions",
+    "headline": "Product Building",
+    "heroTagline": "From validated idea to scaling platform, speed is the moat. We take products zero-to-one and one-to-scale without losing it.",
+    "statement": "From a validated idea to a scaling product — without losing the speed that got you there.",
+    "intro": "We take products from zero to one and from one to scale: discovery, MVP, product-market iteration and the hardening that turns a promising launch into a durable business — for startups, corporate ventures and product companies.",
+    "pillars": [
+      {
+        "title": "Zero to one",
+        "body": "Discovery sprints, rapid prototyping and MVPs that reach real users in weeks — learning fast without building throwaway software."
+      },
+      {
+        "title": "One to scale",
+        "body": "Architecture, performance and team topology for the moment growth arrives — scaling the product and the organization together."
+      },
+      {
+        "title": "AI-native products",
+        "body": "Products with data, ML and agentic capabilities designed in from the start — not sprinkled on top of a finished roadmap."
+      }
+    ],
+    "capabilitiesTitle": "Features and capabilities",
+    "capabilitiesIntro": "We have built products inside startups, scale-ups and ventures across our careers — and operate like a product company on your behalf: outcome roadmaps, weekly releases, metrics tied to revenue.",
+    "capabilities": [
+      {
+        "title": "Product strategy & discovery",
+        "body": "Market and user research, opportunity sizing and outcome-driven roadmaps that decide what not to build."
+      },
+      {
+        "title": "MVP & venture building",
+        "body": "Cross-functional pods that take a concept to a launched, instrumented product — pricing, onboarding and analytics included."
+      },
+      {
+        "title": "Growth engineering",
+        "body": "Experimentation platforms, activation funnels and performance work guided by product analytics, not opinion."
+      },
+      {
+        "title": "Platform hardening",
+        "body": "Multi-tenancy, compliance readiness (SOC 2, ISO 27001), cost engineering and enterprise features that unlock bigger deals."
+      }
+    ],
+    "stats": [
+      {
+        "value": "35+",
+        "label": "Products our team has taken from concept to launch"
+      },
+      {
+        "value": "6-10 wks",
+        "label": "Typical time from kickoff to first users"
+      },
+      {
+        "value": "100%",
+        "label": "Founder-led — the people who scope it build it"
+      },
+      {
+        "value": "$400M+",
+        "label": "Follow-on funding raised by products we helped build"
+      }
+    ],
+    "caseStudy": {
+      "client": "Fintech scale-up (Series A)",
+      "challenge": "A validated lending concept, a term sheet with milestones attached, and no engineering organization — nine months of runway to prove a product in market.",
+      "approach": "Zero-to-one pod covering product, design and engineering; instrumented MVP in market in eight weeks; then scale hardening — multi-tenancy, SOC 2 readiness, cost engineering — as growth arrived.",
+      "results": [
+        {
+          "metric": "8 wks",
+          "label": "kickoff to first funded loans"
+        },
+        {
+          "metric": "200k",
+          "label": "customers in the first year"
+        },
+        {
+          "metric": "Series B",
+          "label": "raised on the metrics the product proved"
+        }
+      ]
+    },
+    "technologies": [
+      "Next.js",
+      "React Native",
+      "PostgreSQL",
+      "Stripe",
+      "Kubernetes",
+      "Terraform",
+      "Anthropic Claude",
+      "OpenAI",
+      "Segment",
+      "Amplitude",
+      "LaunchDarkly",
+      "AWS · Azure · GCP"
+    ],
+    "faqs": [
+      {
+        "q": "Who do you build products for?",
+        "a": "Three profiles: startups taking a validated idea to market, corporates launching ventures outside the core stack, and product companies scaling past their first architecture. The method adapts; the product discipline is constant."
+      },
+      {
+        "q": "How quickly can we get to first users?",
+        "a": "Six to ten weeks from kickoff to a launched, instrumented product is typical — including onboarding, pricing and analytics, not just features. Speed comes from ruthless scope discipline in discovery, which is where we spend the first two weeks."
+      },
+      {
+        "q": "Can you make our product AI-native rather than AI-sprinkled?",
+        "a": "Yes — it is our specialty. AI-native means the data model, evaluation loops and agentic capabilities are designed in from the start, so intelligence compounds with usage instead of being a feature bolted to a finished roadmap."
+      },
+      {
+        "q": "Do you work for equity or outcomes?",
+        "a": "For ventures we believe in, engagement models can include outcome linkage and, selectively, equity components. We will always be straight about which model fits — and when a fixed-scope build is simply the right answer."
+      }
+    ],
+    "relatedProduct": "plexusiq"
+  }
+]

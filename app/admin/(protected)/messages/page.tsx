@@ -9,7 +9,7 @@ export default async function AdminMessagesPage() {
         title="Messages"
         subtitle={`${messages.length} enquir${messages.length === 1 ? "y" : "ies"} received through the contact form.`}
       />
-      <div className="max-w-4xl space-y-4">
+      <div className="space-y-4">
         {messages.length === 0 ? (
           <p className="text-sm text-ink-soft">No messages yet.</p>
         ) : null}

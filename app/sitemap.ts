@@ -1,9 +1,14 @@
 import type { MetadataRoute } from "next";
 import { getPosts, getSettings } from "@/lib/content";
-import { INDUSTRIES, PRODUCTS, SOLUTIONS } from "@/lib/site";
+import { getIndustries, getProducts, getSolutions } from "@/lib/sitecontent";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = (await getSettings()).siteUrl.replace(/\/$/, "");
+  const [SOLUTIONS, INDUSTRIES, PRODUCTS] = await Promise.all([
+    getSolutions(),
+    getIndustries(),
+    getProducts(),
+  ]);
   const now = new Date();
 
   const staticPaths: { path: string; priority: number }[] = [

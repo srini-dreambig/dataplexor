@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PRODUCTS } from "@/lib/site";
+import { getProducts } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 
@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/products" },
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const PRODUCTS = await getProducts();
   return (
     <>
       <PageHero

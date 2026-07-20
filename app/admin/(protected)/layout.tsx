@@ -8,6 +8,10 @@ const ADMIN_NAV = [
   { label: "Dashboard", href: "/admin" },
   { label: "Site settings", href: "/admin/settings" },
   { label: "Home page", href: "/admin/home" },
+  { label: "Solutions", href: "/admin/pages/solutions" },
+  { label: "Industries", href: "/admin/pages/industries" },
+  { label: "Products", href: "/admin/pages/products" },
+  { label: "Shared sections", href: "/admin/pages/sections" },
   { label: "Insights", href: "/admin/insights" },
   { label: "Messages", href: "/admin/messages" },
 ];
@@ -54,19 +58,21 @@ export default async function AdminLayout({
 
       <div className="flex-1">
         {/* mobile bar */}
-        <div className="flex items-center justify-between bg-ink p-4 text-white md:hidden">
+        <div className="bg-ink p-4 text-white md:hidden">
           <Link href="/admin">
             <Logo textClassName="text-base" markClassName="h-6 w-6" />
           </Link>
-          <div className="flex items-center gap-3 text-sm">
+          <div className="mt-3 flex items-center gap-4 overflow-x-auto whitespace-nowrap text-sm">
             {ADMIN_NAV.slice(1).map((i) => (
-              <Link key={i.href} href={i.href} className="text-white/80">
+              <Link key={i.href} href={i.href} className="shrink-0 text-white/80">
                 {i.label.split(" ")[0]}
               </Link>
             ))}
           </div>
         </div>
-        <div className="p-6 sm:p-10">{children}</div>
+        <div className="p-4 sm:p-6">
+          <div className="mx-auto w-full max-w-4xl">{children}</div>
+        </div>
       </div>
     </div>
   );

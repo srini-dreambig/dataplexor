@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { PRODUCTS } from "@/lib/site";
+import { getProducts, getProduct } from "@/lib/sitecontent";
 import { PageHero, CtaBanner, FeatureCard, FaqSection } from "@/components/sections";
 import { Container, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = await getProduct(slug);
   if (!product) return {};
   return {
     title: `${product.name} — ${product.tag}`,
@@ -32,8 +32,9 @@ export default async function ProductPage({
   params: Promise<Params>;
 }) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  const product = await getProduct(slug);
   if (!product) notFound();
+  const PRODUCTS = await getProducts();
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "plexuscore",
+    "name": "PlexusCore",
+    "tag": "Data platform",
+    "headline": "One trusted foundation for all of your data",
+    "summary": "A unified data platform accelerator that stands up ingestion, lakehouse storage, transformation and governance in weeks, not quarters.",
+    "description": "PlexusCore packages the architecture decisions, infrastructure code and governance patterns from the hundred-plus platform builds our founders led before starting Dataplexor into a deployable foundation. It runs on your cloud, with open table formats and no lock-in, and gives every downstream team — analytics, ML, agents — the same trusted building blocks.",
+    "capabilities": [
+      {
+        "title": "Ingestion & streaming",
+        "body": "Batch and real-time pipelines with schema enforcement, quality gates and automatic lineage capture at the edge."
+      },
+      {
+        "title": "Lakehouse storage",
+        "body": "Open-format lakehouse layout with medallion zoning, time travel and cost-optimized lifecycle policies out of the box."
+      },
+      {
+        "title": "Governance & catalog",
+        "body": "Access control, PII classification, data contracts and a searchable catalog wired in from day one — not bolted on later."
+      },
+      {
+        "title": "DataOps automation",
+        "body": "CI/CD for pipelines, environment promotion, observability dashboards and freshness SLAs as code."
+      }
+    ],
+    "stats": [
+      {
+        "value": "6–8 wks",
+        "label": "Typical time to a governed production platform"
+      },
+      {
+        "value": "30%",
+        "label": "Typical run-cost reduction in consolidations our team has led"
+      },
+      {
+        "value": "100%",
+        "label": "Infrastructure as code — portable across AWS, Azure and GCP"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Where does PlexusCore run?",
+        "a": "In your cloud accounts — AWS, Azure or GCP — deployed as infrastructure as code you own. Nothing routes through our infrastructure, and your data never leaves your tenancy."
+      },
+      {
+        "q": "How is it licensed?",
+        "a": "Annual subscription covering the platform, upgrades and support, typically bundled with a fixed-fee deployment engagement. No consumption surprises; pricing scales with domains, not rows."
+      },
+      {
+        "q": "What if we stop using it?",
+        "a": "You keep everything. Storage is open table format, pipelines are standard code in your repositories, and infrastructure is Terraform you control. Exit is a decision, not a project."
+      }
+    ]
+  },
+  {
+    "slug": "plexusiq",
+    "name": "PlexusIQ",
+    "tag": "Decision intelligence",
+    "headline": "From metrics to decisions in one governed layer",
+    "summary": "A decision-intelligence suite that unifies metrics, ML predictions and natural-language analytics on top of your data platform.",
+    "description": "PlexusIQ gives your organization a single semantic layer where every metric is defined once and used everywhere — in dashboards, forecasts and conversational analytics. Business users ask questions in plain language; PlexusIQ answers with governed, explainable numbers backed by lineage you can audit.",
+    "capabilities": [
+      {
+        "title": "Semantic metrics layer",
+        "body": "Version-controlled metric definitions consumed consistently by BI tools, notebooks, APIs and AI assistants."
+      },
+      {
+        "title": "Conversational analytics",
+        "body": "Natural-language questions answered from governed metrics — with the SQL, lineage and confidence shown, not hidden."
+      },
+      {
+        "title": "Forecasting & ML",
+        "body": "Built-in forecasting, anomaly detection and propensity models that publish predictions back into the metrics layer."
+      },
+      {
+        "title": "Decision workflows",
+        "body": "Alerts, approvals and scenario planning that connect insight to the operational systems where decisions execute."
+      }
+    ],
+    "stats": [
+      {
+        "value": "10x",
+        "label": "Faster time-to-answer for business questions"
+      },
+      {
+        "value": "1",
+        "label": "Definition per metric, everywhere it is consumed"
+      },
+      {
+        "value": "85%",
+        "label": "Of routine reporting questions self-served by business users"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does PlexusIQ replace our BI tools?",
+        "a": "No — it feeds them. The semantic layer serves the same governed metrics to your existing BI, notebooks, APIs and the built-in conversational analytics, so adoption starts from the tools people already use."
+      },
+      {
+        "q": "How does conversational analytics stay trustworthy?",
+        "a": "Every answer shows its work: the metric definition used, the generated SQL, the lineage and a confidence signal. Analysts can verify in one click, which is why finance teams sign off on it."
+      },
+      {
+        "q": "What does implementation involve?",
+        "a": "A metrics discovery sprint with your analysts, then the semantic layer built over your existing platform — most clients see their first governed metrics live inside four weeks."
+      }
+    ]
+  },
+  {
+    "slug": "agentmesh",
+    "name": "AgentMesh",
+    "tag": "Agentic AI runtime",
+    "headline": "Run AI agents you can actually trust",
+    "summary": "An orchestration and governance runtime for deploying fleets of AI agents with policy guardrails, observability and human oversight.",
+    "description": "AgentMesh is the control plane for the agentic enterprise. It lets teams compose agents from models, tools and knowledge; enforces declarative policies on every action; and records complete decision traces. Graduated autonomy means agents earn independence with evidence — and every irreversible action keeps a human hand on the switch.",
+    "capabilities": [
+      {
+        "title": "Agent orchestration",
+        "body": "Compose single agents or multi-agent workflows with tool access, memory and structured handoffs between agents and humans."
+      },
+      {
+        "title": "Policy guardrails",
+        "body": "Declarative rules evaluated on every tool call: permissions, budgets, rate limits and hard stops for irreversible operations."
+      },
+      {
+        "title": "Full observability",
+        "body": "Complete traces of inputs, reasoning, actions and outcomes — searchable, auditable and wired to your monitoring stack."
+      },
+      {
+        "title": "Evaluation harness",
+        "body": "Continuous regression suites and model-graded scoring so every prompt, model or tool change is proven before release."
+      }
+    ],
+    "stats": [
+      {
+        "value": "100%",
+        "label": "Of agent actions policy-checked and logged"
+      },
+      {
+        "value": "70%",
+        "label": "Average reduction in manual effort on automated workflows"
+      },
+      {
+        "value": "0",
+        "label": "Irreversible actions without explicit authorization"
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Which model providers does AgentMesh support?",
+        "a": "All major providers — Anthropic, OpenAI, the cloud model platforms — plus private deployments. Policy, logging and evaluation sit above the model layer, so you can switch or mix providers without rebuilding governance."
+      },
+      {
+        "q": "How does AgentMesh satisfy risk and compliance teams?",
+        "a": "Declarative policy rules the second line can read and version, complete decision logs retained as a book of record, graduated autonomy with measured reliability, and hard stops on irreversible actions. It was designed with bank validators in the room."
+      },
+      {
+        "q": "Can we start small?",
+        "a": "That is the intended path: one workflow, propose-only mode, four to six weeks to a measured baseline — then autonomy expands with evidence. The platform grows from one agent to a governed fleet without re-architecture."
+      }
+    ]
+  }
+]
