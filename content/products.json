@@ -2,56 +2,239 @@
   {
     "slug": "plexuscore",
     "name": "PlexusCore",
-    "tag": "Data platform",
-    "headline": "One trusted foundation for all of your data",
-    "summary": "A unified data platform accelerator that stands up ingestion, lakehouse storage, transformation and governance in weeks, not quarters.",
-    "description": "PlexusCore packages the architecture decisions, infrastructure code and governance patterns from the hundred-plus platform builds our founders led before starting Dataplexor into a deployable foundation. It runs on your cloud, with open table formats and no lock-in, and gives every downstream team — analytics, ML, agents — the same trusted building blocks.",
+    "tag": "Agentic data engineering",
+    "headline": "Describe the data you need. PlexusCore builds the pipeline.",
+    "summary": "An agentic data engineering platform — ask for a model, metric or pipeline in plain language and the agent builds it, tests it, and ships it through a human review gate.",
+    "description": "PlexusCore is an agentic data engineering platform. Describe what you need in plain English and the agent explores your warehouse, writes the SQL or dbt, tests it, and ships it through a human review gate — with proof of exactly what it did on every run. It works on top of Snowflake, Databricks, dbt and your Git repo, with no rip-and-replace.",
     "capabilities": [
       {
-        "title": "Ingestion & streaming",
-        "body": "Batch and real-time pipelines with schema enforcement, quality gates and automatic lineage capture at the edge."
+        "title": "Model your data",
+        "body": "Generate staging models, dimensional models and star schemas from a sentence. PlexusCore draws the ER diagram — dims, facts and their relationships — then writes the build SQL."
       },
       {
-        "title": "Lakehouse storage",
-        "body": "Open-format lakehouse layout with medallion zoning, time travel and cost-optimized lifecycle policies out of the box."
+        "title": "Move your data",
+        "body": "Connect sources and warehouses and let PlexusCore build and schedule the pipelines. Extract, load and transform — orchestrated and monitored."
       },
       {
-        "title": "Governance & catalog",
-        "body": "Access control, PII classification, data contracts and a searchable catalog wired in from day one — not bolted on later."
+        "title": "Guard your quality",
+        "body": "Profile tables for nulls, duplicates and freshness, and stand up monitors for the ones that matter — freshness, volume, schema drift and custom SQL assertions."
       },
       {
-        "title": "DataOps automation",
-        "body": "CI/CD for pipelines, environment promotion, observability dashboards and freshness SLAs as code."
+        "title": "Explore and answer",
+        "body": "Ask questions in plain language and get grounded answers from live tables — with the query it ran, not a guess."
+      },
+      {
+        "title": "Track lineage and metrics",
+        "body": "See what feeds a table and what depends on it before you change it. Define governed metrics once and reuse them everywhere."
+      },
+      {
+        "title": "Ship through Git",
+        "body": "Deploy to Snowflake and Databricks, or push to GitHub with two-way sync. Your warehouse and your repo stay in step."
       }
     ],
-    "stats": [
-      {
-        "value": "6–8 wks",
-        "label": "Typical time to a governed production platform"
-      },
-      {
-        "value": "30%",
-        "label": "Typical run-cost reduction in consolidations our team has led"
-      },
-      {
-        "value": "100%",
-        "label": "Infrastructure as code — portable across AWS, Azure and GCP"
-      }
-    ],
+    "stats": [],
     "faqs": [
       {
-        "q": "Where does PlexusCore run?",
-        "a": "In your cloud accounts — AWS, Azure or GCP — deployed as infrastructure as code you own. Nothing routes through our infrastructure, and your data never leaves your tenancy."
+        "q": "Does PlexusCore replace my data warehouse or dbt?",
+        "a": "No. PlexusCore works on top of what you already run — Snowflake, Databricks, dbt, your Git repo. It builds and operates your pipelines; your data never leaves your warehouse."
       },
       {
-        "q": "How is it licensed?",
-        "a": "Annual subscription covering the platform, upgrades and support, typically bundled with a fixed-fee deployment engagement. No consumption surprises; pricing scales with domains, not rows."
+        "q": "Can it make changes on its own?",
+        "a": "Only if you let it. By default, changes go through a human approval gate. You set the autonomy level per workspace — from propose-only to fully autonomous."
       },
       {
-        "q": "What if we stop using it?",
-        "a": "You keep everything. Storage is open table format, pipelines are standard code in your repositories, and infrastructure is Terraform you control. Exit is a decision, not a project."
+        "q": "How do I know what the agent actually did?",
+        "a": "Every run produces a verifiable record of the tools it called, the tables it read and the writes it made — and it's marked Verified only when everything checked out."
+      },
+      {
+        "q": "Which platforms does it generate code for?",
+        "a": "The one you're connected to. Ask on a Snowflake connection and you get Snowflake SQL; ask with dbt connected and you get dbt models. It won't hand you code it can't run."
+      },
+      {
+        "q": "Is my data secure?",
+        "a": "Credentials are encrypted in a secrets vault, access is controlled by role and connection, and every action is audit-logged. PlexusCore operates on your data in place."
       }
-    ]
+    ],
+    "page": {
+      "hero": {
+        "eyebrow": "Agentic data engineering · A dataplexor product",
+        "title": "Describe the data you need. PlexusCore builds the pipeline.",
+        "subtitle": "PlexusCore is an agentic data engineering platform. Ask for a model, a metric or a pipeline in plain language — the agent explores your warehouse, writes the SQL or dbt, tests it, and ships it through a human review gate. Every run comes with proof of exactly what it did.",
+        "primaryCta": {
+          "label": "Request a demo",
+          "href": "/company/contact"
+        },
+        "secondaryCta": {
+          "label": "See how it works",
+          "href": "#how-it-works"
+        },
+        "microcopy": "Works with Snowflake, Databricks, dbt and 600+ sources. No rip-and-replace."
+      },
+      "problem": {
+        "heading": "Data work is bottlenecked on people, not ideas.",
+        "body": [
+          "Every dashboard, model and metric waits in the same queue: a small team of engineers translating requests into SQL, dbt and pipelines by hand. Analysts wait days for a column. Simple changes turn into tickets. And when something ships, no one can say precisely what ran or whether it was checked.",
+          "PlexusCore removes the translation bottleneck without removing the human judgment. The agent does the building; your team does the deciding."
+        ]
+      },
+      "how": {
+        "heading": "Chat in. Reviewed pipeline out.",
+        "intro": "PlexusCore runs a real engineering loop on every request — and shows its work at each step.",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Ask",
+            "body": "Describe what you want: “Build a customer revenue model,” “Profile the orders table for quality issues,” “Sync Salesforce into the warehouse nightly.”"
+          },
+          {
+            "step": "02",
+            "title": "Plan",
+            "body": "The agent restates the goal and lays out a step-by-step plan before touching anything. Ambiguous request? It asks one sharp question instead of guessing."
+          },
+          {
+            "step": "03",
+            "title": "Build",
+            "body": "It inspects your live schema, then writes SQL or dbt in your platform's own dialect — never boilerplate it can't run."
+          },
+          {
+            "step": "04",
+            "title": "Test",
+            "body": "It runs the code, checks row counts, nulls and freshness, and fixes its own errors before handing anything over."
+          },
+          {
+            "step": "05",
+            "title": "Review",
+            "body": "Nothing ships silently. Finished work goes to an approvals inbox for a human to approve, edit or reject."
+          },
+          {
+            "step": "06",
+            "title": "Ship",
+            "body": "On approval, deploy to the warehouse or open a pull request in Git. Every change is versioned and reversible."
+          }
+        ],
+        "closing": "You stay in the loop at exactly one point — the decision to ship."
+      },
+      "capabilities": {
+        "heading": "One platform for the whole data-engineering lifecycle."
+      },
+      "differentiators": [
+        {
+          "eyebrow": "Verified autonomy",
+          "heading": "Autonomy you can audit.",
+          "body": "Most AI tools ask you to trust the output. PlexusCore gives you the receipts. Every run produces a proof-of-work record — which tools it called, which tables it read, which writes it made, and whether they passed. A run is only marked Verified when nothing failed and every write went through the approval gate. If the agent couldn't finish, it says so plainly instead of pretending it did.",
+          "callout": "Every run, logged and verifiable."
+        },
+        {
+          "eyebrow": "Review-first governance",
+          "heading": "The agent proposes. Your team disposes.",
+          "body": "PlexusCore is built so nothing reaches production unreviewed. Writes to your warehouse, dbt mutations and pipeline runs are governed by policy: in suggest-only mode the agent proposes and stops; in approval mode changes wait in an inbox for a human decision; only in fully autonomous mode does it act on its own — and even then, every action is logged. You choose how much rope to give it, per workspace."
+        },
+        {
+          "eyebrow": "Self-learning skills",
+          "heading": "It gets better at your data every week.",
+          "body": "When PlexusCore solves a task well, it can save the recipe as a reusable skill. Skills that succeed repeatedly — with no failures — earn certification, and certified skills replay deterministically: the same request returns the same result, without re-invoking the model. Your platform accumulates a library of proven, repeatable operations tuned to your warehouse — not generic prompts."
+        }
+      ],
+      "integrations": {
+        "heading": "Connect what you already run.",
+        "intro": "PlexusCore speaks to your stack directly — no rip-and-replace.",
+        "groups": [
+          {
+            "label": "Warehouses & lakehouses",
+            "items": "Snowflake, Databricks, DuckDB, Postgres"
+          },
+          {
+            "label": "Transform",
+            "items": "dbt Core and dbt Cloud"
+          },
+          {
+            "label": "Orchestration",
+            "items": "Airflow, Dagster, Prefect"
+          },
+          {
+            "label": "Sources",
+            "items": "600+ connectors, from SaaS apps to databases to object storage"
+          },
+          {
+            "label": "Version control",
+            "items": "GitHub, with bidirectional sync"
+          }
+        ],
+        "footnote": "Don't see yours? Talk to us — the connector catalog is growing."
+      },
+      "security": {
+        "heading": "Enterprise-ready from day one.",
+        "intro": "PlexusCore is built for teams that answer to security and compliance, not just deadlines.",
+        "items": [
+          {
+            "label": "Access",
+            "body": "SSO via OIDC, role-based access control and SCIM user provisioning."
+          },
+          {
+            "label": "Identity",
+            "body": "Multi-factor authentication and per-connection access controls."
+          },
+          {
+            "label": "Secrets",
+            "body": "Credentials stored in a secrets vault, encrypted at rest — never in plain text."
+          },
+          {
+            "label": "Audit",
+            "body": "A complete, exportable audit trail of every action, human or agent."
+          },
+          {
+            "label": "Control",
+            "body": "Policy-gated writes and a human approval inbox on every change."
+          }
+        ],
+        "closing": "Your data stays in your warehouse. PlexusCore operates on it — it doesn't take custody of it."
+      },
+      "audiences": {
+        "heading": "Built for the people who move data.",
+        "items": [
+          {
+            "role": "Data engineers",
+            "body": "Offload the repetitive build work — staging models, tests, backfills — and spend your time on architecture, not tickets."
+          },
+          {
+            "role": "Analytics engineers",
+            "body": "Turn a request into a reviewed dbt model in minutes, with lineage and tests included."
+          },
+          {
+            "role": "Data & analytics leaders",
+            "body": "Cut the backlog and get governance you can prove, without adding headcount."
+          },
+          {
+            "role": "Analysts",
+            "body": "Ask for the table or metric you need in plain language, and get an answer grounded in real data."
+          }
+        ]
+      },
+      "pilot": {
+        "heading": "Start with a guided pilot.",
+        "body": "See PlexusCore build a real pipeline against your own warehouse, in a working session with our team. No rip-and-replace, no long setup.",
+        "primaryCta": {
+          "label": "Request a demo",
+          "href": "/company/contact"
+        },
+        "secondaryCta": {
+          "label": "Talk to sales",
+          "href": "/company/contact"
+        }
+      },
+      "finalCta": {
+        "heading": "Give your data team an agent that ships.",
+        "subhead": "See PlexusCore turn a plain-English request into a reviewed, production-ready pipeline — against your own data.",
+        "primaryCta": {
+          "label": "Request a demo",
+          "href": "/company/contact"
+        },
+        "secondaryCta": {
+          "label": "See how it works",
+          "href": "#how-it-works"
+        }
+      }
+    }
   },
   {
     "slug": "plexusiq",

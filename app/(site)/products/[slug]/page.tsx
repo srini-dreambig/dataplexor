@@ -5,6 +5,7 @@ import { getProducts, getProduct } from "@/lib/sitecontent";
 import { PageHero, CtaBanner, FeatureCard, FaqSection } from "@/components/sections";
 import { Container, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { ProductMark, hasProductMark } from "@/components/ProductLogo";
+import { ProductRichPage } from "@/components/ProductRichPage";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
 import { heroArtForProduct } from "@/lib/art";
@@ -63,6 +64,10 @@ export default async function ProductPage({
           { name: product.name, path: `/products/${product.slug}` },
         ])}
       />
+      {product.page ? (
+        <ProductRichPage product={product} />
+      ) : (
+        <>
       <PageHero
         wave="orbit"
         eyebrow={`Products · ${product.tag}`}
@@ -147,6 +152,8 @@ export default async function ProductPage({
         body="Request a demo on scenarios that look like yours — and a deployment plan for your cloud."
         ctaLabel="Request a demo"
       />
+        </>
+      )}
     </>
   );
 }

@@ -62,7 +62,7 @@
     "caseStudy": {
       "client": "Global 100 consumer goods company",
       "challenge": "Five regional data estates, three warehouse vendors and no shared definition of revenue — every executive meeting started with reconciliation, and the AI roadmap was stalled behind the platform question.",
-      "approach": "PlexusCore lakehouse foundation on open table formats, domain-by-domain migration, one semantic layer for the 40 metrics that run the company, and a data product operating model with named owners.",
+      "approach": "PlexusCore agentic data engineering to build the pipelines and models on your warehouse, domain-by-domain migration, one semantic layer for the 40 metrics that run the company, and a data product operating model with named owners.",
       "results": [
         {
           "metric": "30%",
@@ -95,7 +95,7 @@
     "faqs": [
       {
         "q": "How long does it take to stand up a modern data platform?",
-        "a": "With our PlexusCore accelerator, a governed production platform typically lands in six to eight weeks for the first domain — ingestion, lakehouse storage, transformation and governance included. Full estate migration then proceeds domain by domain, funded by the run-cost savings consolidation frees."
+        "a": "With our PlexusCore agentic data-engineering platform, a governed production pipeline for the first domain typically lands in six to eight weeks — models, tests, quality monitors and governance included. Full estate migration then proceeds domain by domain, funded by the run-cost savings consolidation frees."
       },
       {
         "q": "We already have a warehouse. Do we need a lakehouse?",

@@ -46,7 +46,7 @@ const SERVICES = [
     offerings: [
       {
         title: "Data platform engineering",
-        body: "Lakehouse foundations, streaming pipelines and governance built with our PlexusCore accelerator.",
+        body: "Warehouse-native models, pipelines and quality monitors, built and reviewed with our PlexusCore agentic data-engineering platform.",
       },
       {
         title: "Analytics & BI products",
