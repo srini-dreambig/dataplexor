@@ -4,6 +4,7 @@ import { WaveBackground } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
 import { ProductMark } from "@/components/ProductLogo";
 import { ConceptIcon } from "@/components/ConceptIcon";
+import { ConceptArt, IllustrationCard } from "@/components/ConceptArt";
 import { FeatureCard, FaqSection } from "@/components/sections";
 import {
   Container,
@@ -87,23 +88,13 @@ export function ProductRichPage({ product }: { product: Product }) {
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {page.how.steps.map((s) => (
-              <div
+              <IllustrationCard
                 key={s.step}
-                className="rounded-2xl bg-white p-7 ring-1 ring-line"
-              >
-                <div className="flex items-center justify-between">
-                  <ConceptIcon label={s.title} />
-                  <span className="font-display text-sm font-bold text-brand/40">
-                    {s.step}
-                  </span>
-                </div>
-                <h3 className="mt-5 text-xl font-bold tracking-tight text-ink">
-                  {s.title}
-                </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
-                  {s.body}
-                </p>
-              </div>
+                eyebrow={`Step ${s.step}`}
+                title={s.title}
+                body={s.body}
+                label={s.title}
+              />
             ))}
           </div>
           <p className="mt-10 max-w-3xl text-lg font-semibold leading-relaxed text-brand">
@@ -169,19 +160,23 @@ export function ProductRichPage({ product }: { product: Product }) {
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
             {page.integrations.intro}
           </p>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {page.integrations.groups.map((g) => (
               <div
                 key={g.label}
-                className="rounded-2xl border border-line p-7"
+                className="card-hover group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
-                <ConceptIcon label={g.label} className="mb-4" />
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
-                  {g.label}
-                </p>
-                <p className="mt-2 text-base leading-relaxed text-ink">
-                  {g.items}
-                </p>
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <ConceptArt label={g.label} className="absolute inset-0 h-full w-full" />
+                </div>
+                <div className="p-7">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
+                    {g.label}
+                  </p>
+                  <p className="mt-2 text-base leading-relaxed text-ink">
+                    {g.items}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -207,18 +202,12 @@ export function ProductRichPage({ product }: { product: Product }) {
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {page.security.items.map((item) => (
-              <div
+              <IllustrationCard
                 key={item.label}
-                className="rounded-2xl bg-white p-7 ring-1 ring-line"
-              >
-                <ConceptIcon label={`${item.label} ${item.body}`} className="mb-4" />
-                <h3 className="text-base font-bold tracking-tight text-ink">
-                  {item.label}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  {item.body}
-                </p>
-              </div>
+                title={item.label}
+                body={item.body}
+                label={`${item.label} ${item.body}`}
+              />
             ))}
           </div>
           <p className="mt-10 max-w-3xl text-lg font-semibold leading-relaxed text-brand">
@@ -231,22 +220,15 @@ export function ProductRichPage({ product }: { product: Product }) {
       <section className="bg-white">
         <Container className="py-20 sm:py-24">
           <SectionTitle>{page.audiences.heading}</SectionTitle>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {page.audiences.items.map((a) => (
-              <div
+              <IllustrationCard
                 key={a.role}
-                className="flex gap-4 rounded-2xl border border-line p-7"
-              >
-                <ConceptIcon label={a.role} />
-                <div>
-                  <h3 className="text-lg font-bold tracking-tight text-ink">
-                    {a.role}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    {a.body}
-                  </p>
-                </div>
-              </div>
+                title={a.role}
+                body={a.body}
+                label={a.role}
+                aspect="aspect-[16/10]"
+              />
             ))}
           </div>
         </Container>

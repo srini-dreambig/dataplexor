@@ -9,7 +9,7 @@ import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
 import { heroArtForIndustry } from "@/lib/art";
 import { ConceptArt, conceptForSolution } from "@/components/ConceptArt";
-import { ConceptIcon } from "@/components/ConceptIcon";
+import { ConceptIcon, iconForTitleBody } from "@/components/ConceptIcon";
 
 type Params = { slug: string };
 
@@ -110,15 +110,19 @@ export default async function IndustryPage({
             {industry.useCases.map((useCase, i) => (
               <article
                 key={useCase.title}
-                className="card-hover flex flex-col rounded-2xl bg-white p-7 ring-1 ring-line"
+                className="card-hover flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
-                <div className="flex items-center justify-between">
-                  <ConceptIcon label={`${useCase.title} ${useCase.body}`} />
-                  <span className="font-display text-sm font-bold text-ink-soft/40">
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <ConceptArt
+                    icon={iconForTitleBody(useCase.title, useCase.body)}
+                    className="absolute inset-0 h-full w-full"
+                  />
+                  <span className="absolute right-4 top-3 font-display text-sm font-bold text-ink-soft/50">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="mt-4 text-lg font-bold tracking-tight text-ink">
+                <div className="flex flex-1 flex-col p-7">
+                <h3 className="text-lg font-bold tracking-tight text-ink">
                   {useCase.title}
                 </h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">
@@ -136,6 +140,7 @@ export default async function IndustryPage({
                   <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
                   {useCase.impact}
                 </p>
+                </div>
               </article>
             ))}
           </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero, CtaBanner, FeatureCard, Testimonials, EngageOptions } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile } from "@/components/ui";
-import { ConceptIcon } from "@/components/ConceptIcon";
+import { IllustrationCard } from "@/components/ConceptArt";
 
 export const metadata: Metadata = {
   title: "Services & Consulting",
@@ -159,7 +159,7 @@ export default function ServicesPage() {
       <section className="bg-ink text-white">
         <Container className="py-20 sm:py-24">
           <SectionTitle className="text-white">How we engage</SectionTitle>
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               {
                 step: "01",
@@ -177,14 +177,13 @@ export default function ServicesPage() {
                 body: "We industrialize what works, transfer skills to your teams, and — where you want it — operate the platform under SLAs.",
               },
             ].map((phase) => (
-              <div key={phase.step}>
-                <ConceptIcon label={`${phase.title} ${phase.body}`} dark className="mb-5" />
-                <p className="text-sm font-bold text-teal">{phase.step}</p>
-                <h3 className="mt-2 text-2xl font-bold tracking-tight">
-                  {phase.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-white/75">{phase.body}</p>
-              </div>
+              <IllustrationCard
+                key={phase.step}
+                eyebrow={`Step ${phase.step}`}
+                title={phase.title}
+                body={phase.body}
+                label={phase.title}
+              />
             ))}
           </div>
         </Container>

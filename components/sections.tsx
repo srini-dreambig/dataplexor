@@ -3,8 +3,7 @@ import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
 import { getSections } from "@/lib/sitecontent";
 import { MarkBackdrop } from "@/components/Logo";
-import { ConceptArt, conceptForCategory } from "@/components/ConceptArt";
-import { ConceptIcon } from "@/components/ConceptIcon";
+import { ConceptArt, conceptForCategory, IllustrationCard } from "@/components/ConceptArt";
 import { readingTime, type Post } from "@/lib/content";
 
 export function PageHero({
@@ -249,9 +248,15 @@ export async function EngageOptions({
           {ENTRY_OFFERS.map((offer) => (
             <div
               key={offer.name}
-              className="card-hover flex flex-col rounded-2xl bg-white p-8 ring-1 ring-line"
+              className="card-hover flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
             >
-              <ConceptIcon label={`${offer.name} ${offer.body}`} className="mb-5" />
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <ConceptArt
+                  label={offer.name}
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-8">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand">
                 {offer.duration}
               </p>
@@ -275,6 +280,7 @@ export async function EngageOptions({
                 <PillButton href="/company/contact" className="w-full">
                   {offer.cta}
                 </PillButton>
+              </div>
               </div>
             </div>
           ))}
@@ -332,20 +338,16 @@ export async function DeliveryTimeline({
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-brand sm:text-4xl">
           {title}
         </h2>
-        <div className="mt-12 grid gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {DELIVERY_PHASES.map((p) => (
-            <div key={p.phase} className="border-t-2 border-brand pt-5">
-              <ConceptIcon label={`${p.title} ${p.body}`} className="mb-4" />
-              <p className="font-display text-sm font-bold text-brand">
-                {p.phase}
-              </p>
-              <h3 className="mt-2 text-xl font-bold tracking-tight text-ink">
-                {p.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                {p.body}
-              </p>
-            </div>
+            <IllustrationCard
+              key={p.phase}
+              eyebrow={p.phase}
+              title={p.title}
+              body={p.body}
+              label={p.title}
+              aspect="aspect-[16/9]"
+            />
           ))}
         </div>
       </Container>
@@ -415,11 +417,5 @@ export function CaseStudySnapshot({
 }
 
 export function FeatureCard({ title, body }: { title: string; body: string }) {
-  return (
-    <div className="rounded-2xl border border-line bg-white p-7">
-      <ConceptIcon label={title} className="mb-5" />
-      <h3 className="text-lg font-bold tracking-tight text-ink">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-ink-soft">{body}</p>
-    </div>
-  );
+  return <IllustrationCard title={title} body={body} label={title} />;
 }

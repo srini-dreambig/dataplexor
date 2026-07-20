@@ -12,8 +12,8 @@ import {
   conceptForSolution,
   conceptForProduct,
   conceptForIndustry,
+  IllustrationCard,
 } from "@/components/ConceptArt";
-import { ConceptIcon } from "@/components/ConceptIcon";
 
 export const metadata: Metadata = {
   title: { absolute: "Dataplexor — Data & Analytics, AI and Agentic AI" },
@@ -76,15 +76,15 @@ export default async function HomePage() {
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85">
             {home.advantage.intro}
           </p>
-          <div className="mt-14 grid gap-x-16 gap-y-12 sm:grid-cols-2">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {home.advantage.items.map((item) => (
-              <div key={item.title}>
-                <ConceptIcon label={`${item.title} ${item.body}`} dark className="mb-5" />
-                <h3 className="text-2xl font-bold tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="mt-4 leading-relaxed text-white/85">{item.body}</p>
-              </div>
+              <IllustrationCard
+                key={item.title}
+                title={item.title}
+                body={item.body}
+                label={item.title}
+                aspect="aspect-[24/9]"
+              />
             ))}
           </div>
         </Container>

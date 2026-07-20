@@ -3,8 +3,7 @@ import Link from "next/link";
 import { getIndustries } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
-import { ConceptArt, conceptForIndustry } from "@/components/ConceptArt";
-import { ConceptIcon } from "@/components/ConceptIcon";
+import { ConceptArt, conceptForIndustry, IllustrationCard } from "@/components/ConceptArt";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -90,14 +89,13 @@ export default async function IndustriesPage() {
                 body: "Model risk, privacy and audit requirements are engineered in from the first sprint — the reason our systems reach production in regulated industries.",
               },
             ].map((phase) => (
-              <div key={phase.step}>
-                <ConceptIcon label={`${phase.title} ${phase.body}`} className="mb-4" />
-                <p className="text-sm font-bold text-brand">{phase.step}</p>
-                <h3 className="mt-2 text-2xl font-bold tracking-tight text-ink">
-                  {phase.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-ink-soft">{phase.body}</p>
-              </div>
+              <IllustrationCard
+                key={phase.step}
+                eyebrow={`Step ${phase.step}`}
+                title={phase.title}
+                body={phase.body}
+                label={phase.title}
+              />
             ))}
           </div>
         </Container>

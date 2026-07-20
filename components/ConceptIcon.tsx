@@ -7,7 +7,7 @@ import React from "react";
  */
 
 // Each icon is inner SVG for a 24×24 viewBox, stroke = currentColor.
-const ICONS: Record<string, string> = {
+export const ICONS: Record<string, string> = {
   schema:
     '<rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="14" width="7" height="6" rx="1"/><path d="M10 7h4a3 3 0 0 1 3 3v4"/>',
   flow: '<circle cx="5" cy="12" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="19" cy="12" r="2"/><path d="M6.6 11 10.4 8M13.6 8 17.4 11"/>',
@@ -87,11 +87,28 @@ const RULES: [RegExp, string][] = [
   [/doc|guide|content|article|research|report/i, "doc"],
   [/code|sql|dbt|dialect/i, "code"],
   [/skill|reusable|repeatable|certif|target|outcome|result/i, "target"],
+  // Broad, low-priority rules for abstract card vocabulary (benefits, values).
+  [/remote|flexible|async|hybrid|distributed|anywhere/i, "cloud"],
+  [/equity|founding-stage|ownership|upside|\bstake\b/i, "target"],
+  [/invest|budget|learning|develop|\bgrow/i, "growth"],
+  [/health|medical|dental|vision|wellbeing|parental|benefit|cover/i, "shield"],
+  [/frontier|breakthrough|cutting|frontier/i, "rocket"],
+  [/craft|practitioner|mentor|manager|hands-on/i, "users"],
+  [/evidence|opinion|measure|prove|honest|trust/i, "shieldCheck"],
 ];
 
 export function iconForLabel(label: string): string {
   for (const [re, key] of RULES) if (re.test(label)) return key;
   return "sparkle";
+}
+
+/** Resolve from the title first; fall back to title+body when the title
+ * alone has no keyword. Keeps descriptive titles precise while giving
+ * abstract titles (benefits, values) a meaningful icon from their body. */
+export function iconForTitleBody(title: string, body?: string): string {
+  const fromTitle = iconForLabel(title);
+  if (fromTitle !== "sparkle") return fromTitle;
+  return iconForLabel(`${title} ${body ?? ""}`);
 }
 
 export function ConceptIcon({

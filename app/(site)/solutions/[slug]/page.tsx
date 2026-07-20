@@ -7,8 +7,7 @@ import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
 import { heroArtForSolution } from "@/lib/art";
-import { ConceptArt, conceptForSolution } from "@/components/ConceptArt";
-import { ConceptIcon } from "@/components/ConceptIcon";
+import { ConceptArt, conceptForSolution, IllustrationCard } from "@/components/ConceptArt";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -83,17 +82,14 @@ export default async function SolutionPage({
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-ink-soft">
             {solution.intro}
           </p>
-          <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
             {solution.pillars.map((pillar) => (
-              <div key={pillar.title}>
-                <ConceptIcon label={`${pillar.title} ${pillar.body}`} className="mb-4" />
-                <h3 className="text-xl font-bold tracking-tight text-ink">
-                  {pillar.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                  {pillar.body}
-                </p>
-              </div>
+              <IllustrationCard
+                key={pillar.title}
+                title={pillar.title}
+                body={pillar.body}
+                label={pillar.title}
+              />
             ))}
           </div>
         </Container>

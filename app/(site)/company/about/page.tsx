@@ -3,7 +3,7 @@ import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile } from "@/components/ui";
 import { MarkBackdrop } from "@/components/Logo";
 import { getAbout } from "@/lib/sitecontent";
-import { ConceptIcon } from "@/components/ConceptIcon";
+import { IllustrationCard } from "@/components/ConceptArt";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -113,13 +113,12 @@ export default async function AboutPage() {
           <SectionTitle>What we believe</SectionTitle>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {about.values.map((value) => (
-              <div key={value.title} className="rounded-2xl bg-white p-8 ring-1 ring-line">
-                <ConceptIcon label={`${value.title} ${value.body}`} className="mb-5" />
-                <h3 className="text-xl font-bold tracking-tight text-ink">
-                  {value.title}
-                </h3>
-                <p className="mt-3 leading-relaxed text-ink-soft">{value.body}</p>
-              </div>
+              <IllustrationCard
+                key={value.title}
+                title={value.title}
+                body={value.body}
+                label={value.title}
+              />
             ))}
           </div>
         </Container>
