@@ -1,6 +1,7 @@
 "use client";
 
 import { Field, fieldCls } from "@/components/admin/fields";
+import { ImageField } from "@/components/admin/ImageField";
 
 /**
  * Schema-less recursive form. Renders inputs for any JSON value —
@@ -11,6 +12,7 @@ import { Field, fieldCls } from "@/components/admin/fields";
 type Json = string | number | boolean | null | Json[] | { [key: string]: Json };
 
 const LONG_TEXT = /body|intro|statement|summary|description|quote|challenge|approach|answer|headline|tagline|whynow/i;
+const IMAGE_KEY = /image|photo|cover|avatar|thumbnail|picture/i;
 
 export function labelize(key: string): string {
   const spaced = key
@@ -187,6 +189,16 @@ export function AutoForm({
       {Object.entries(value).map(([key, v]) => {
         if (skipKeys.includes(key)) return null;
         if (typeof v === "string") {
+          if (IMAGE_KEY.test(key)) {
+            return (
+              <ImageField
+                key={key}
+                label={labelize(key)}
+                value={v}
+                onChange={(next) => set(key, next)}
+              />
+            );
+          }
           return (
             <StringField
               key={key}

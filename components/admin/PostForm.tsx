@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Post } from "@/lib/content";
 import { Field, SaveButton, fieldCls } from "@/components/admin/fields";
+import { ImageField } from "@/components/admin/ImageField";
 
 const EMPTY: Post = {
   slug: "",
@@ -90,6 +91,14 @@ export function PostForm({ initial }: { initial?: Post }) {
             <input className={fieldCls} value={post.author} onChange={(e) => set("author", e.target.value)} />
           </Field>
         </div>
+        <Field label="Author role/title (optional, shown under the article)">
+          <input className={fieldCls} value={post.authorRole ?? ""} placeholder="e.g. Chief AI Officer" onChange={(e) => set("authorRole", e.target.value)} />
+        </Field>
+        <ImageField
+          label="Cover image (optional — falls back to generated artwork)"
+          value={post.cover ?? ""}
+          onChange={(v) => set("cover", v)}
+        />
         <Field label="Excerpt (used in cards and SEO description)">
           <textarea required rows={3} className={fieldCls} value={post.excerpt} onChange={(e) => set("excerpt", e.target.value)} />
         </Field>

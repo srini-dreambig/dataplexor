@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "title": "Do the best work of your career on problems that matter",
+    "subtitle": "We are a founding team hiring our first colleagues. Join people with decades in the field, at the moment everything is still being shaped — and shape it with us."
+  },
+  "benefits": [
+    {
+      "title": "Work on the frontier",
+      "body": "Ship production AI and agentic systems most engineers only read about — with the guardrails to do it responsibly."
+    },
+    {
+      "title": "Practitioners lead",
+      "body": "Your managers still write code, run models and sit with clients. Career paths reward craft, not just headcount."
+    },
+    {
+      "title": "Flexible by design",
+      "body": "Remote-first with hubs in San Francisco, New York and London. Async-friendly, meeting-light."
+    },
+    {
+      "title": "Invest in you",
+      "body": "Annual learning budget, conference time, and 10% time for research and open source."
+    },
+    {
+      "title": "Own the upside",
+      "body": "Founding-stage equity for every early hire — join now and own a real piece of what we build."
+    },
+    {
+      "title": "Health, fully covered",
+      "body": "Comprehensive medical, dental and vision for you and your dependents, plus generous parental leave."
+    }
+  ],
+  "openings": [
+    {
+      "title": "Senior Data Engineer",
+      "team": "Platform Engineering",
+      "location": "San Francisco / Remote",
+      "type": "Full-time",
+      "applyHref": "/company/contact"
+    },
+    {
+      "title": "Machine Learning Engineer",
+      "team": "AI Practice",
+      "location": "Remote (US/EU)",
+      "type": "Full-time",
+      "applyHref": "/company/contact"
+    },
+    {
+      "title": "Agentic Systems Engineer",
+      "team": "AgentMesh Product",
+      "location": "San Francisco",
+      "type": "Full-time",
+      "applyHref": "/company/contact"
+    },
+    {
+      "title": "Principal Consultant, Data Strategy",
+      "team": "Consulting & Advisory",
+      "location": "New York / Remote",
+      "type": "Full-time",
+      "applyHref": "/company/contact"
+    },
+    {
+      "title": "Analytics Engineer",
+      "team": "PlexusIQ Product",
+      "location": "Remote (US)",
+      "type": "Full-time",
+      "applyHref": "/company/contact"
+    },
+    {
+      "title": "Engagement Manager",
+      "team": "Consulting & Advisory",
+      "location": "London",
+      "type": "Full-time",
+      "applyHref": "/company/contact"
+    }
+  ],
+  "hiringProcess": [
+    {
+      "step": "01",
+      "title": "Intro conversation",
+      "body": "Thirty minutes with the hiring lead about your work, your goals and whether the role fits. No trick questions."
+    },
+    {
+      "step": "02",
+      "title": "Craft session",
+      "body": "A working session in your discipline — real problems from our practice, done together, not on a whiteboard from memory."
+    },
+    {
+      "step": "03",
+      "title": "Team round",
+      "body": "Meet the people you would work with, including someone outside your discipline. You interview us as much as we interview you."
+    },
+    {
+      "step": "04",
+      "title": "Offer & onboarding",
+      "body": "A clear offer with compensation transparency, and a first-quarter plan that puts you on real client work with a dedicated buddy."
+    }
+  ]
+}

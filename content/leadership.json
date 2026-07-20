@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "title": "The founding team",
+    "subtitle": "A new company built by people with decades in the field. Everyone who leads at Dataplexor still works the craft they lead — on your engagement, not from a corner office."
+  },
+  "leaders": [
+    {
+      "name": "Srinivas Rao",
+      "role": "Co-founder & Chief Executive Officer",
+      "bio": "Two decades in enterprise data and analytics. Srinivas founded Dataplexor to close the gap between data strategy and the systems that deliver it.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Elena Vasquez",
+      "role": "Co-founder & Chief Technology Officer",
+      "bio": "Former principal engineer on planet-scale data infrastructure. Elena leads engineering and the architecture of the Plexus product family.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Marcus Chen",
+      "role": "Co-founder & Chief AI Officer",
+      "bio": "Applied ML researcher turned builder. Marcus leads our AI and agentic practices, including evaluation methodology and AI safety standards.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Co-founder & Chief Consulting Officer",
+      "bio": "Priya leads advisory and delivery, bringing fifteen years of transformation experience across financial services and healthcare.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "David Okafor",
+      "role": "Co-founder & Chief Operating Officer",
+      "bio": "David runs global operations and managed services, with a background scaling technology services organizations across four continents.",
+      "photo": "",
+      "linkedin": ""
+    },
+    {
+      "name": "Anna Lindqvist",
+      "role": "Founding Partner, Research & Insights",
+      "bio": "Anna directs Dataplexor Research — the team behind our published insights, benchmarks and points of view.",
+      "photo": "",
+      "linkedin": ""
+    }
+  ]
+}

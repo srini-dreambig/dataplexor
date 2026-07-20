@@ -6,9 +6,15 @@ import {
   TESTIMONIALS,
   ENTRY_OFFERS,
   DELIVERY_PHASES,
+  ABOUT,
+  LEADERSHIP,
+  CAREERS,
   type Solution,
   type Industry,
   type Product,
+  type AboutContent,
+  type LeadershipContent,
+  type CareersContent,
 } from "@/lib/site";
 
 /**
@@ -63,10 +69,25 @@ export async function getSections(): Promise<SectionsContent> {
   return readDoc<SectionsContent>("sections", DEFAULT_SECTIONS);
 }
 
+export async function getAbout(): Promise<AboutContent> {
+  return readDoc<AboutContent>("about", ABOUT);
+}
+
+export async function getLeadership(): Promise<LeadershipContent> {
+  return readDoc<LeadershipContent>("leadership", LEADERSHIP);
+}
+
+export async function getCareers(): Promise<CareersContent> {
+  return readDoc<CareersContent>("careers", CAREERS);
+}
+
 /** Documents editable through the generic admin content API. */
 export const EDITABLE_DOCS = {
   solutions: { kind: "array" as const, label: "Solutions" },
   industries: { kind: "array" as const, label: "Industries" },
   products: { kind: "array" as const, label: "Products" },
   sections: { kind: "object" as const, label: "Shared sections" },
+  about: { kind: "object" as const, label: "About page" },
+  leadership: { kind: "object" as const, label: "Leadership & team" },
+  careers: { kind: "object" as const, label: "Careers & job postings" },
 };

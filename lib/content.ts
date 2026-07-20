@@ -36,6 +36,8 @@ export type Post = {
   category: string;
   date: string;
   author: string;
+  authorRole?: string;
+  cover?: string;
   excerpt: string;
   body: string;
   takeaways?: string[];
@@ -129,6 +131,8 @@ export function sanitizePost(data: Partial<Post>): Omit<Post, "slug"> | null {
   const takeaways = Array.isArray(data.takeaways)
     ? data.takeaways.map((t) => String(t).trim()).filter(Boolean).slice(0, 8)
     : undefined;
+  const authorRole = String(data.authorRole || "").trim();
+  const cover = String(data.cover || "").trim();
   return {
     title,
     excerpt,
@@ -136,6 +140,8 @@ export function sanitizePost(data: Partial<Post>): Omit<Post, "slug"> | null {
     date,
     category: String(data.category || "General").trim(),
     author: String(data.author || "Dataplexor").trim(),
+    ...(authorRole ? { authorRole } : {}),
+    ...(cover ? { cover } : {}),
     ...(takeaways && takeaways.length ? { takeaways } : {}),
   };
 }

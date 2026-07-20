@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container } from "@/components/ui";
+import { getLeadership } from "@/lib/sitecontent";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -9,66 +10,46 @@ export const metadata: Metadata = {
   alternates: { canonical: "/company/leadership" },
 };
 
-const LEADERS = [
-  {
-    name: "Srinivas Rao",
-    role: "Co-founder & Chief Executive Officer",
-    bio: "Two decades in enterprise data and analytics. Srinivas founded Dataplexor to close the gap between data strategy and the systems that deliver it.",
-    initials: "SR",
-  },
-  {
-    name: "Elena Vasquez",
-    role: "Co-founder & Chief Technology Officer",
-    bio: "Former principal engineer on planet-scale data infrastructure. Elena leads engineering and the architecture of the Plexus product family.",
-    initials: "EV",
-  },
-  {
-    name: "Marcus Chen",
-    role: "Co-founder & Chief AI Officer",
-    bio: "Applied ML researcher turned builder. Marcus leads our AI and agentic practices, including evaluation methodology and AI safety standards.",
-    initials: "MC",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Co-founder & Chief Consulting Officer",
-    bio: "Priya leads advisory and delivery, bringing fifteen years of transformation experience across financial services and healthcare.",
-    initials: "PS",
-  },
-  {
-    name: "David Okafor",
-    role: "Co-founder & Chief Operating Officer",
-    bio: "David runs global operations and managed services, with a background scaling technology services organizations across four continents.",
-    initials: "DO",
-  },
-  {
-    name: "Anna Lindqvist",
-    role: "Founding Partner, Research & Insights",
-    bio: "Anna directs Dataplexor Research — the team behind our published insights, benchmarks and points of view.",
-    initials: "AL",
-  },
-];
+function initials(name: string): string {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0]?.toUpperCase() ?? "")
+    .join("");
+}
 
-export default function LeadershipPage() {
+export default async function LeadershipPage() {
+  const { hero, leaders } = await getLeadership();
   return (
     <>
       <PageHero
         wave="aurora"
         compact
         eyebrow="Company"
-        title="The founding team"
-        subtitle="A new company built by people with decades in the field. Everyone who leads at Dataplexor still works the craft they lead — on your engagement, not from a corner office."
+        title={hero.title}
+        subtitle={hero.subtitle}
       />
       <section className="bg-mist">
         <Container className="py-16 sm:py-20">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {LEADERS.map((leader) => (
+            {leaders.map((leader) => (
               <div
                 key={leader.name}
                 className="rounded-2xl bg-white p-8 ring-1 ring-line"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand text-xl font-bold text-white">
-                  {leader.initials}
-                </div>
+                {leader.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={leader.photo}
+                    alt={leader.name}
+                    className="h-16 w-16 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand text-xl font-bold text-white">
+                    {initials(leader.name)}
+                  </div>
+                )}
                 <h2 className="mt-5 text-xl font-bold tracking-tight text-ink">
                   {leader.name}
                 </h2>
@@ -78,6 +59,16 @@ export default function LeadershipPage() {
                 <p className="mt-4 text-sm leading-relaxed text-ink-soft">
                   {leader.bio}
                 </p>
+                {leader.linkedin ? (
+                  <a
+                    href={leader.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+                  >
+                    LinkedIn
+                  </a>
+                ) : null}
               </div>
             ))}
           </div>

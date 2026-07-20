@@ -1388,3 +1388,152 @@ export const DELIVERY_PHASES = [
     body: "What works is industrialized across domains; skills transfer completes and — where you want it — our managed service takes the pager.",
   },
 ];
+
+export type AboutContent = {
+  hero: { title: string; subtitle: string };
+  mission: string;
+  story: { paragraphs: string[] };
+  stats: { value: string; label: string }[];
+  timeline: { eyebrow: string; title: string; milestones: { year: string; event: string }[] };
+  locations: { city: string; role: string; detail: string }[];
+  values: { title: string; body: string }[];
+  responsibleAi: { title: string; intro: string; commitments: string[] };
+  dataHandling: { title: string; intro: string; commitments: string[] };
+};
+
+export const ABOUT: AboutContent = {
+  hero: {
+    title: "We defy the disciplines to mobilize your data",
+    subtitle:
+      "Dataplexor works at the crossroads of data engineering, applied AI and business strategy to understand, structure and solve the problems that matter most.",
+  },
+  mission:
+    "We unlock the value of data to build products and intelligence that move enterprises — from insight to decision to autonomous action.",
+  story: {
+    paragraphs: [
+      "Dataplexor is new. The people behind it are not. We spent the last two decades inside global consultancies, technology companies and enterprise data teams — designing platforms for banks, shipping AI for retailers and insurers, running transformation programs across every industry we now serve.",
+      "We also spent those decades watching the same failure repeat: strategy sold by partners and delivered by juniors, platforms built to bill hours rather than to be owned, AI programs that demo well and die quietly. We founded Dataplexor in 2026 to do this work the way we always argued it should be done — senior people, working software, evidence over tenure.",
+      "So we are deliberately building a different kind of firm: the founders who scope your engagement deliver it, every method we use was proven somewhere real before we productized it, and the measure of success is what your team can run without us. New company. Decades deep. Nothing to unlearn.",
+    ],
+  },
+  stats: [
+    { value: "2026", label: "Founded in San Francisco" },
+    { value: "80+", label: "Years of combined senior experience" },
+    { value: "18", label: "Industries served across our careers" },
+    { value: "3", label: "Products built from career-proven patterns" },
+  ],
+  timeline: {
+    eyebrow: "The road here",
+    title: "The careers that built Dataplexor",
+    milestones: [
+      { year: "2000s", event: "Our founders cut their teeth building enterprise data warehouses and BI programs inside global consultancies and Fortune 500 data teams." },
+      { year: "2010s", event: "Leading platform practices through the big-data and cloud era — lakehouse migrations, streaming architectures, data organizations built from scratch." },
+      { year: "2020–24", event: "Taking machine learning and then generative AI into production for banks, insurers, retailers and manufacturers — and learning what survives contact with reality." },
+      { year: "2025", event: "First agentic systems delivered into regulated industries across our prior roles — the experience that became the AgentMesh design." },
+      { year: "2026", event: "Dataplexor founded: the patterns of a hundred-plus builds productized, a senior-only team, and nothing to unlearn." },
+    ],
+  },
+  locations: [
+    { city: "San Francisco", role: "Headquarters", detail: "One Market Plaza, Suite 3600 — where the founding team builds products and runs engagements." },
+    { city: "New York", role: "Partner presence", detail: "Founding partners on the ground for financial services and Americas clients." },
+    { city: "London", role: "Partner presence", detail: "Founding partners covering EMEA, EU AI Act advisory and regulated-industry work." },
+  ],
+  values: [
+    { title: "Evidence over opinion", body: "Every recommendation is benchmarked against real data. If we can't measure it, we won't claim it." },
+    { title: "Build what we advise", body: "Strategy and engineering are one practice. Advice that cannot survive contact with production is not advice we give." },
+    { title: "Skills transfer by default", body: "Success means your teams are more capable when we leave than when we arrived." },
+    { title: "Trust is the product", body: "Governed data, evaluated models, guardrailed agents — everything we ship is built to be trusted, audited and explained." },
+  ],
+  responsibleAi: {
+    title: "Responsible AI, by design",
+    intro: "We build systems that make consequential decisions, so we hold ourselves to commitments we are willing to be audited against:",
+    commitments: [
+      "Every model we ship carries an evaluation baseline, monitoring and documented limitations",
+      "Agents operate under policy guardrails with complete decision logs — autonomy is earned with evidence",
+      "Human oversight is real: authority, competence and the practical ability to intervene",
+      "Bias testing and explainability appropriate to the decision, aligned to the EU AI Act and sector regulation",
+      "We decline work we believe causes harm — and we have",
+    ],
+  },
+  dataHandling: {
+    title: "How we handle your data",
+    intro: "Security posture is part of every engagement, not a policy PDF:",
+    commitments: [
+      "Delivery happens in your cloud tenancy — your data never moves into ours",
+      "Least-privilege access, granted per engagement and revoked at handover",
+      "Secure development practice: threat modeling, dependency scanning, audit-ready change history",
+      "Confidentiality by default — NDAs honored in what we publish, down to anonymized case studies",
+      "Data residency and regulatory boundaries respected in architecture, not worked around",
+    ],
+  },
+};
+
+export type LeadershipContent = {
+  hero: { title: string; subtitle: string };
+  leaders: {
+    name: string;
+    role: string;
+    bio: string;
+    photo: string;
+    linkedin: string;
+  }[];
+};
+
+export const LEADERSHIP: LeadershipContent = {
+  hero: {
+    title: "The founding team",
+    subtitle:
+      "A new company built by people with decades in the field. Everyone who leads at Dataplexor still works the craft they lead — on your engagement, not from a corner office.",
+  },
+  leaders: [
+    { name: "Srinivas Rao", role: "Co-founder & Chief Executive Officer", bio: "Two decades in enterprise data and analytics. Srinivas founded Dataplexor to close the gap between data strategy and the systems that deliver it.", photo: "", linkedin: "" },
+    { name: "Elena Vasquez", role: "Co-founder & Chief Technology Officer", bio: "Former principal engineer on planet-scale data infrastructure. Elena leads engineering and the architecture of the Plexus product family.", photo: "", linkedin: "" },
+    { name: "Marcus Chen", role: "Co-founder & Chief AI Officer", bio: "Applied ML researcher turned builder. Marcus leads our AI and agentic practices, including evaluation methodology and AI safety standards.", photo: "", linkedin: "" },
+    { name: "Priya Sharma", role: "Co-founder & Chief Consulting Officer", bio: "Priya leads advisory and delivery, bringing fifteen years of transformation experience across financial services and healthcare.", photo: "", linkedin: "" },
+    { name: "David Okafor", role: "Co-founder & Chief Operating Officer", bio: "David runs global operations and managed services, with a background scaling technology services organizations across four continents.", photo: "", linkedin: "" },
+    { name: "Anna Lindqvist", role: "Founding Partner, Research & Insights", bio: "Anna directs Dataplexor Research — the team behind our published insights, benchmarks and points of view.", photo: "", linkedin: "" },
+  ],
+};
+
+export type CareersContent = {
+  hero: { title: string; subtitle: string };
+  benefits: { title: string; body: string }[];
+  openings: {
+    title: string;
+    team: string;
+    location: string;
+    type: string;
+    applyHref: string;
+  }[];
+  hiringProcess: { step: string; title: string; body: string }[];
+};
+
+export const CAREERS: CareersContent = {
+  hero: {
+    title: "Do the best work of your career on problems that matter",
+    subtitle:
+      "We are a founding team hiring our first colleagues. Join people with decades in the field, at the moment everything is still being shaped — and shape it with us.",
+  },
+  benefits: [
+    { title: "Work on the frontier", body: "Ship production AI and agentic systems most engineers only read about — with the guardrails to do it responsibly." },
+    { title: "Practitioners lead", body: "Your managers still write code, run models and sit with clients. Career paths reward craft, not just headcount." },
+    { title: "Flexible by design", body: "Remote-first with hubs in San Francisco, New York and London. Async-friendly, meeting-light." },
+    { title: "Invest in you", body: "Annual learning budget, conference time, and 10% time for research and open source." },
+    { title: "Own the upside", body: "Founding-stage equity for every early hire — join now and own a real piece of what we build." },
+    { title: "Health, fully covered", body: "Comprehensive medical, dental and vision for you and your dependents, plus generous parental leave." },
+  ],
+  openings: [
+    { title: "Senior Data Engineer", team: "Platform Engineering", location: "San Francisco / Remote", type: "Full-time", applyHref: "/company/contact" },
+    { title: "Machine Learning Engineer", team: "AI Practice", location: "Remote (US/EU)", type: "Full-time", applyHref: "/company/contact" },
+    { title: "Agentic Systems Engineer", team: "AgentMesh Product", location: "San Francisco", type: "Full-time", applyHref: "/company/contact" },
+    { title: "Principal Consultant, Data Strategy", team: "Consulting & Advisory", location: "New York / Remote", type: "Full-time", applyHref: "/company/contact" },
+    { title: "Analytics Engineer", team: "PlexusIQ Product", location: "Remote (US)", type: "Full-time", applyHref: "/company/contact" },
+    { title: "Engagement Manager", team: "Consulting & Advisory", location: "London", type: "Full-time", applyHref: "/company/contact" },
+  ],
+  hiringProcess: [
+    { step: "01", title: "Intro conversation", body: "Thirty minutes with the hiring lead about your work, your goals and whether the role fits. No trick questions." },
+    { step: "02", title: "Craft session", body: "A working session in your discipline — real problems from our practice, done together, not on a whiteboard from memory." },
+    { step: "03", title: "Team round", body: "Meet the people you would work with, including someone outside your discipline. You interview us as much as we interview you." },
+    { step: "04", title: "Offer & onboarding", body: "A clear offer with compensation transparency, and a first-quarter plan that puts you on real client work with a dedicated buddy." },
+  ],
+};

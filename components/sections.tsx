@@ -103,7 +103,7 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={artForCategory(post.category)}
+          src={post.cover || artForCategory(post.category)}
           alt=""
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
           loading="lazy"
@@ -128,9 +128,14 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
         <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-soft">
           {post.excerpt}
         </p>
-        <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-brand">
-          Read more <ArrowIcon />
-        </span>
+        <div className="mt-auto flex items-center justify-between gap-3 pt-6">
+          <span className="truncate text-sm font-medium text-ink-soft">
+            {post.author}
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand">
+            Read more <ArrowIcon />
+          </span>
+        </div>
       </div>
     </Link>
   );

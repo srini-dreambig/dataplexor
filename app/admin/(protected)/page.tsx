@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { getMessages, getPosts, getSettings } from "@/lib/content";
-import { getIndustries, getProducts, getSolutions } from "@/lib/sitecontent";
+import {
+  getIndustries,
+  getProducts,
+  getSolutions,
+  getLeadership,
+  getCareers,
+} from "@/lib/sitecontent";
 import { AdminPageTitle } from "@/components/admin/fields";
 
 export default async function AdminDashboard() {
-  const [posts, messages, settings, solutions, industries, products] =
+  const [posts, messages, settings, solutions, industries, products, leadership, careers] =
     await Promise.all([
       getPosts(),
       getMessages(),
@@ -12,6 +18,8 @@ export default async function AdminDashboard() {
       getSolutions(),
       getIndustries(),
       getProducts(),
+      getLeadership(),
+      getCareers(),
     ]);
 
   const cards = [
@@ -52,9 +60,27 @@ export default async function AdminDashboard() {
       stat: "3 blocks",
     },
     {
+      title: "About page",
+      href: "/admin/pages/about",
+      body: "Mission, story, timeline, offices, values and responsible-AI commitments.",
+      stat: "Company",
+    },
+    {
+      title: "Leadership & team",
+      href: "/admin/pages/leadership",
+      body: "Team members, roles, bios and photos. Add or remove people freely.",
+      stat: `${leadership.leaders.length} people`,
+    },
+    {
+      title: "Careers & jobs",
+      href: "/admin/pages/careers",
+      body: "Careers copy, benefits and open positions with per-role application links.",
+      stat: `${careers.openings.length} openings`,
+    },
+    {
       title: "Insights",
       href: "/admin/insights",
-      body: "Create, edit and delete research articles and blog posts.",
+      body: "Write articles with cover images, authors and key takeaways.",
       stat: `${posts.length} published`,
     },
     {

@@ -44,3 +44,6 @@ next-env.d.ts
 content/messages.json
 
 !.env.example
+
+# Locally-uploaded admin media (production uses the database)
+content/media-*.json

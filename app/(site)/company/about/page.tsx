@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile } from "@/components/ui";
 import { MarkBackdrop } from "@/components/Logo";
+import { getAbout } from "@/lib/sitecontent";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -10,33 +11,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/company/about" },
 };
 
-const VALUES = [
-  {
-    title: "Evidence over opinion",
-    body: "Every recommendation is benchmarked against real data. If we can't measure it, we won't claim it.",
-  },
-  {
-    title: "Build what we advise",
-    body: "Strategy and engineering are one practice. Advice that cannot survive contact with production is not advice we give.",
-  },
-  {
-    title: "Skills transfer by default",
-    body: "Success means your teams are more capable when we leave than when we arrived.",
-  },
-  {
-    title: "Trust is the product",
-    body: "Governed data, evaluated models, guardrailed agents — everything we ship is built to be trusted, audited and explained.",
-  },
-];
-
-export default function AboutPage() {
+export default async function AboutPage() {
+  const about = await getAbout();
   return (
     <>
       <PageHero
         wave="aurora"
         eyebrow="Company"
-        title="We defy the disciplines to mobilize your data"
-        subtitle="Dataplexor works at the crossroads of data engineering, applied AI and business strategy to understand, structure and solve the problems that matter most."
+        title={about.hero.title}
+        subtitle={about.hero.subtitle}
         actions={
           <>
             <PillButton href="/company/careers" variant="teal">
@@ -57,8 +40,7 @@ export default function AboutPage() {
         <Container className="relative py-20 sm:py-24">
           <Eyebrow dark>Our mission</Eyebrow>
           <p className="mt-6 max-w-4xl text-3xl font-semibold leading-snug tracking-tight sm:text-4xl">
-            We unlock the value of data to build products and intelligence that
-            move enterprises — from insight to decision to autonomous action.
+            {about.mission}
           </p>
         </Container>
       </section>
@@ -69,35 +51,15 @@ export default function AboutPage() {
             <div>
               <SectionTitle>Our story</SectionTitle>
               <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
-                <p>
-                  Dataplexor is new. The people behind it are not. We spent the
-                  last two decades inside global consultancies, technology
-                  companies and enterprise data teams — designing platforms for
-                  banks, shipping AI for retailers and insurers, running
-                  transformation programs across every industry we now serve.
-                </p>
-                <p>
-                  We also spent those decades watching the same failure repeat:
-                  strategy sold by partners and delivered by juniors, platforms
-                  built to bill hours rather than to be owned, AI programs that
-                  demo well and die quietly. We founded Dataplexor in 2026 to
-                  do this work the way we always argued it should be done —
-                  senior people, working software, evidence over tenure.
-                </p>
-                <p>
-                  So we are deliberately building a different kind of firm: the
-                  founders who scope your engagement deliver it, every method we
-                  use was proven somewhere real before we productized it, and
-                  the measure of success is what your team can run without us.
-                  New company. Decades deep. Nothing to unlearn.
-                </p>
+                {about.story.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
             </div>
             <div className="grid content-start gap-5 sm:grid-cols-2">
-              <StatTile value="2026" label="Founded in San Francisco" />
-              <StatTile value="80+" label="Years of combined senior experience" />
-              <StatTile value="18" label="Industries served across our careers" />
-              <StatTile value="3" label="Products built from career-proven patterns" />
+              {about.stats.map((s) => (
+                <StatTile key={s.label} value={s.value} label={s.label} />
+              ))}
             </div>
           </div>
         </Container>
@@ -105,18 +67,12 @@ export default function AboutPage() {
 
       <section className="bg-ink text-white">
         <Container className="py-20 sm:py-24">
-          <Eyebrow dark>The road here</Eyebrow>
+          <Eyebrow dark>{about.timeline.eyebrow}</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            The careers that built Dataplexor
+            {about.timeline.title}
           </h2>
           <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
-            {[
-              { year: "2000s", event: "Our founders cut their teeth building enterprise data warehouses and BI programs inside global consultancies and Fortune 500 data teams." },
-              { year: "2010s", event: "Leading platform practices through the big-data and cloud era — lakehouse migrations, streaming architectures, data organizations built from scratch." },
-              { year: "2020–24", event: "Taking machine learning and then generative AI into production for banks, insurers, retailers and manufacturers — and learning what survives contact with reality." },
-              { year: "2025", event: "First agentic systems delivered into regulated industries across our prior roles — the experience that became the AgentMesh design." },
-              { year: "2026", event: "Dataplexor founded: the patterns of a hundred-plus builds productized, a senior-only team, and nothing to unlearn." },
-            ].map((m) => (
+            {about.timeline.milestones.map((m) => (
               <div key={m.year} className="border-t-2 border-teal pt-5">
                 <p className="font-display text-2xl font-bold text-teal">
                   {m.year}
@@ -134,11 +90,7 @@ export default function AboutPage() {
         <Container className="py-20 sm:py-24">
           <SectionTitle>Where we are</SectionTitle>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[
-              { city: "San Francisco", role: "Headquarters", detail: "One Market Plaza, Suite 3600 — where the founding team builds products and runs engagements." },
-              { city: "New York", role: "Partner presence", detail: "Founding partners on the ground for financial services and Americas clients." },
-              { city: "London", role: "Partner presence", detail: "Founding partners covering EMEA, EU AI Act advisory and regulated-industry work." },
-            ].map((o) => (
+            {about.locations.map((o) => (
               <div key={o.city} className="rounded-2xl border border-line p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">
                   {o.role}
@@ -159,7 +111,7 @@ export default function AboutPage() {
         <Container className="py-20 sm:py-24">
           <SectionTitle>What we believe</SectionTitle>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {VALUES.map((value) => (
+            {about.values.map((value) => (
               <div key={value.title} className="rounded-2xl bg-white p-8 ring-1 ring-line">
                 <h3 className="text-xl font-bold tracking-tight text-ink">
                   {value.title}
@@ -175,19 +127,12 @@ export default function AboutPage() {
         <Container className="py-20 sm:py-24">
           <div className="grid gap-14 lg:grid-cols-2">
             <div>
-              <SectionTitle>Responsible AI, by design</SectionTitle>
+              <SectionTitle>{about.responsibleAi.title}</SectionTitle>
               <p className="mt-5 leading-relaxed text-ink-soft">
-                We build systems that make consequential decisions, so we hold
-                ourselves to commitments we are willing to be audited against:
+                {about.responsibleAi.intro}
               </p>
               <ul className="mt-6 space-y-4">
-                {[
-                  "Every model we ship carries an evaluation baseline, monitoring and documented limitations",
-                  "Agents operate under policy guardrails with complete decision logs — autonomy is earned with evidence",
-                  "Human oversight is real: authority, competence and the practical ability to intervene",
-                  "Bias testing and explainability appropriate to the decision, aligned to the EU AI Act and sector regulation",
-                  "We decline work we believe causes harm — and we have",
-                ].map((item) => (
+                {about.responsibleAi.commitments.map((item) => (
                   <li key={item} className="flex gap-3 leading-relaxed text-ink-soft">
                     <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                     {item}
@@ -196,18 +141,12 @@ export default function AboutPage() {
               </ul>
             </div>
             <div>
-              <SectionTitle>How we handle your data</SectionTitle>
+              <SectionTitle>{about.dataHandling.title}</SectionTitle>
               <p className="mt-5 leading-relaxed text-ink-soft">
-                Security posture is part of every engagement, not a policy PDF:
+                {about.dataHandling.intro}
               </p>
               <ul className="mt-6 space-y-4">
-                {[
-                  "Delivery happens in your cloud tenancy — your data never moves into ours",
-                  "Least-privilege access, granted per engagement and revoked at handover",
-                  "Secure development practice: threat modeling, dependency scanning, audit-ready change history",
-                  "Confidentiality by default — NDAs honored in what we publish, down to anonymized case studies",
-                  "Data residency and regulatory boundaries respected in architecture, not worked around",
-                ].map((item) => (
+                {about.dataHandling.commitments.map((item) => (
                   <li key={item} className="flex gap-3 leading-relaxed text-ink-soft">
                     <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
                     {item}

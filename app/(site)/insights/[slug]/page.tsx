@@ -76,7 +76,19 @@ export default async function InsightPage({
         ])}
       />
       <section className="relative isolate text-white">
-        <WaveBackground variant="calm" idPrefix="insight-hero" />
+        {post.cover ? (
+          <>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.cover}
+              alt=""
+              className="absolute inset-0 -z-10 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 -z-10 bg-ink/70" />
+          </>
+        ) : (
+          <WaveBackground variant="calm" idPrefix="insight-hero" />
+        )}
         <Container className="relative py-20 sm:py-28">
           <Link
             href="/insights"
@@ -125,13 +137,18 @@ export default async function InsightPage({
             </div>
             <div className="mt-12 flex items-center gap-4 rounded-2xl bg-mist p-6">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand font-display text-sm font-bold text-white">
-                DR
+                {post.author
+                  .split(/\s+/)
+                  .filter(Boolean)
+                  .slice(0, 2)
+                  .map((w) => w[0]?.toUpperCase() ?? "")
+                  .join("")}
               </span>
               <div>
                 <p className="font-bold text-ink">{post.author}</p>
                 <p className="mt-0.5 text-sm text-ink-soft">
-                  Research and field perspectives from the practitioners who
-                  design, build and run these systems for our clients.
+                  {post.authorRole ||
+                    "Research and field perspectives from the practitioners who design, build and run these systems for our clients."}
                 </p>
               </div>
             </div>

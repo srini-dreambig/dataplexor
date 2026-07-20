@@ -91,6 +91,26 @@ export async function readDoc<T>(name: string, fallback: T): Promise<T> {
   return (await readFileDoc<T>(name)) ?? fallback;
 }
 
+export type MediaFile = { contentType: string; data: string };
+
+const MEDIA_ID = /^[a-z0-9][a-z0-9-]{2,80}\.(jpg|jpeg|png|webp|gif)$/;
+
+export function isValidMediaId(id: string): boolean {
+  return MEDIA_ID.test(id);
+}
+
+/** Uploaded images live in the same content store, keyed `media/<id>`. */
+export async function readMedia(id: string): Promise<MediaFile | undefined> {
+  if (!isValidMediaId(id)) return undefined;
+  const file = await readDoc<MediaFile | null>(`media-${id}`, null);
+  return file ?? undefined;
+}
+
+export async function writeMedia(id: string, file: MediaFile): Promise<void> {
+  if (!isValidMediaId(id)) throw new Error("Invalid media id");
+  await writeDoc(`media-${id}`, file);
+}
+
 export async function writeDoc(name: string, data: unknown): Promise<void> {
   if (dbEnabled) {
     try {
