@@ -98,8 +98,8 @@ export default async function IndustryPage({
             The use cases on every {industry.name} agenda right now
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            Not a lab wishlist — the initiatives our clients are funding this
-            year, with the reason each one became urgent and the impact on the
+            Not a lab wishlist — the initiatives leaders are funding this year,
+            with the reason each one became urgent and the impact on the
             table.
           </p>
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -158,8 +158,8 @@ export default async function IndustryPage({
             ))}
           </div>
           <p className="mt-8 text-xs text-white/50">
-            Results from representative client engagements; outcomes vary by
-            context and baseline.
+            Results from engagements delivered by our team across their careers;
+            anonymized, and outcomes vary by context and baseline.
           </p>
         </Container>
       </section>

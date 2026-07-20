@@ -18,7 +18,7 @@ export default function ProductsPage() {
         wave="orbit"
         eyebrow="Products"
         title="Software that carries our delivery experience inside it"
-        subtitle="Every Dataplexor product began as an accelerator on real client engagements. Today they are supported, versioned platforms — deployable on your cloud, with no lock-in."
+        subtitle="Every Dataplexor product packages patterns our founders proved across a hundred-plus builds in their careers — launched now as supported, versioned platforms, deployable on your cloud with no lock-in."
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">

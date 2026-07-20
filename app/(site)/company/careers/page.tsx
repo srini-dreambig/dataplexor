@@ -24,7 +24,7 @@ const BENEFITS = [
   { title: "Practitioners lead", body: "Your managers still write code, run models and sit with clients. Career paths reward craft, not just headcount." },
   { title: "Flexible by design", body: "Remote-first with hubs in San Francisco, New York and London. Async-friendly, meeting-light." },
   { title: "Invest in you", body: "Annual learning budget, conference time, and 10% time for research and open source." },
-  { title: "Own the upside", body: "Competitive compensation with equity for every full-time role." },
+  { title: "Own the upside", body: "Founding-stage equity for every early hire — join now and own a real piece of what we build." },
   { title: "Health, fully covered", body: "Comprehensive medical, dental and vision for you and your dependents, plus generous parental leave." },
 ];
 
@@ -35,7 +35,7 @@ export default function CareersPage() {
         wave="aurora"
         eyebrow="Careers"
         title="Do the best work of your career on problems that matter"
-        subtitle="We hire people who cross disciplines: engineers who understand the business, strategists who respect the code, researchers who ship."
+        subtitle="We are a founding team hiring our first colleagues. Join people with decades in the field, at the moment everything is still being shaped — and shape it with us."
       />
 
       <section>

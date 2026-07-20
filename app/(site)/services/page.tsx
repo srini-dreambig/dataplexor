@@ -91,10 +91,10 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { value: "150+", label: "Specialists across data engineering, ML and strategy" },
-  { value: "97%", label: "Client retention across multi-year engagements" },
-  { value: "18", label: "Industries served, from finance to manufacturing" },
-  { value: "4.9/5", label: "Average client satisfaction across engagements" },
+  { value: "100%", label: "Senior practitioners — nobody learns the basics on your budget" },
+  { value: "20+ yrs", label: "Average field experience of every engagement lead" },
+  { value: "18", label: "Industries served across our team's careers" },
+  { value: "0", label: "Handoffs from the people who sold to the people who build" },
 ];
 
 export default function ServicesPage() {

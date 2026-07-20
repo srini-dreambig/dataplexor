@@ -12,37 +12,37 @@ export const metadata: Metadata = {
 const LEADERS = [
   {
     name: "Srinivas Rao",
-    role: "Founder & Chief Executive Officer",
+    role: "Co-founder & Chief Executive Officer",
     bio: "Two decades in enterprise data and analytics. Srinivas founded Dataplexor to close the gap between data strategy and the systems that deliver it.",
     initials: "SR",
   },
   {
     name: "Elena Vasquez",
-    role: "Chief Technology Officer",
+    role: "Co-founder & Chief Technology Officer",
     bio: "Former principal engineer on planet-scale data infrastructure. Elena leads engineering and the architecture of the Plexus product family.",
     initials: "EV",
   },
   {
     name: "Marcus Chen",
-    role: "Chief AI Officer",
+    role: "Co-founder & Chief AI Officer",
     bio: "Applied ML researcher turned builder. Marcus leads our AI and agentic practices, including evaluation methodology and AI safety standards.",
     initials: "MC",
   },
   {
     name: "Priya Sharma",
-    role: "Chief Consulting Officer",
+    role: "Co-founder & Chief Consulting Officer",
     bio: "Priya leads advisory and delivery, bringing fifteen years of transformation experience across financial services and healthcare.",
     initials: "PS",
   },
   {
     name: "David Okafor",
-    role: "Chief Operating Officer",
+    role: "Co-founder & Chief Operating Officer",
     bio: "David runs global operations and managed services, with a background scaling technology services organizations across four continents.",
     initials: "DO",
   },
   {
     name: "Anna Lindqvist",
-    role: "VP, Research & Insights",
+    role: "Founding Partner, Research & Insights",
     bio: "Anna directs Dataplexor Research — the team behind our published insights, benchmarks and points of view.",
     initials: "AL",
   },
@@ -55,8 +55,8 @@ export default function LeadershipPage() {
         wave="aurora"
         compact
         eyebrow="Company"
-        title="Leadership"
-        subtitle="Practitioners first. Everyone who leads at Dataplexor still works the craft they lead."
+        title="The founding team"
+        subtitle="A new company built by people with decades in the field. Everyone who leads at Dataplexor still works the craft they lead — on your engagement, not from a corner office."
       />
       <section className="bg-mist">
         <Container className="py-16 sm:py-20">

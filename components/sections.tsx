@@ -273,7 +273,7 @@ export function Testimonials() {
   return (
     <section className="bg-ink text-white">
       <Container className="py-20 sm:py-24">
-        <Eyebrow dark>What clients say</Eyebrow>
+        <Eyebrow dark>What clients say about our people</Eyebrow>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {TESTIMONIALS.map((t) => (
             <figure
@@ -294,8 +294,9 @@ export function Testimonials() {
           ))}
         </div>
         <p className="mt-8 text-xs text-white/40">
-          Perspectives representative of client engagements; roles and
-          organizations anonymized under confidentiality agreements.
+          Perspectives from engagements our founding team delivered in prior
+          roles; roles and organizations anonymized under confidentiality
+          agreements.
         </p>
       </Container>
     </section>
@@ -350,7 +351,7 @@ export function CaseStudySnapshot({
         <div className="overflow-hidden rounded-3xl bg-ink text-white">
           <div className="grid lg:grid-cols-[1.4fr_1fr]">
             <div className="p-10 sm:p-14">
-              <Eyebrow dark>Client story</Eyebrow>
+              <Eyebrow dark>From our team's track record</Eyebrow>
               <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
                 {caseStudy.client}
               </h2>
@@ -388,7 +389,7 @@ export function CaseStudySnapshot({
           </div>
         </div>
         <p className="mt-6 text-xs text-ink-soft/70">
-          Representative engagement; client anonymized under confidentiality.
+          Engagement delivered by Dataplexor team members in prior roles; client anonymized under confidentiality.
         </p>
       </Container>
     </section>

@@ -3,35 +3,56 @@
     "eyebrow": "Data & Analytics · AI · Agentic AI",
     "title": "We bring clarity to enterprise data and intelligence",
     "subtitle": "Dataplexor helps organizations turn fragmented data into trusted analytics, production-grade AI and autonomous agentic systems — through products, services and consulting.",
-    "primaryCta": { "label": "Get in touch", "href": "/company/contact" },
-    "secondaryCta": { "label": "Explore our solutions", "href": "/solutions/data-analytics" },
-    "tertiaryCta": { "label": "View latest research", "href": "/insights" }
+    "primaryCta": {
+      "label": "Get in touch",
+      "href": "/company/contact"
+    },
+    "secondaryCta": {
+      "label": "Explore our solutions",
+      "href": "/solutions/data-analytics"
+    },
+    "tertiaryCta": {
+      "label": "View latest research",
+      "href": "/insights"
+    }
   },
   "stats": [
-    { "value": "120+", "label": "Enterprise data platforms designed, built and modernized" },
-    { "value": "40+", "label": "Production AI and agentic systems running with our clients" },
-    { "value": "18", "label": "Industries served across four continents" },
-    { "value": "97%", "label": "Client retention across multi-year engagements" }
+    {
+      "value": "80+",
+      "label": "Years of combined senior experience on the founding team"
+    },
+    {
+      "value": "120+",
+      "label": "Data platforms and AI systems delivered across our careers"
+    },
+    {
+      "value": "18",
+      "label": "Industries our team has served, from banking to manufacturing"
+    },
+    {
+      "value": "100%",
+      "label": "Senior practitioners on every engagement — no leverage pyramid"
+    }
   ],
   "advantage": {
     "title": "The Dataplexor advantage",
-    "intro": "We work at the crossroads of data engineering, applied AI and business strategy to understand, structure and solve your hardest problems. Our teams combine proprietary accelerators with deep delivery experience across the full data and AI lifecycle.",
+    "intro": "Dataplexor is a new company built by people who are not new to this. We spent our careers designing data platforms, shipping production AI and leading transformations inside global consultancies and technology companies — and founded Dataplexor to do that work the way we always believed it should be done.",
     "items": [
       {
-        "title": "Breadth and depth",
-        "body": "From data platforms and governance to machine learning and autonomous agents — one partner across the full lifecycle, from strategy to run."
+        "title": "Decades deep, day one fresh",
+        "body": "Every practice is led by someone with twenty-plus years in the field — and none of it is weighed down by legacy playbooks, old platform loyalties or a bench to keep busy."
       },
       {
-        "title": "Engineering rigor",
-        "body": "Investor-grade methodologies, reproducible pipelines and rigorous evaluation standards so you can trust every number and every model in production."
+        "title": "Founder-led delivery",
+        "body": "The people who scope your engagement are the people who deliver it. No handoff to a junior team after the sale — that is the model we left big consulting to escape."
       },
       {
-        "title": "Best-in-class methodologies",
-        "body": "Transparent frameworks for data quality, model governance and agent safety, enhanced by advanced tooling and science-driven delivery playbooks."
+        "title": "AI-native from the start",
+        "body": "We are not retrofitting an AI practice onto a BI-era firm. Our methods, accelerators and evaluation discipline were built for the agentic era from the first commit."
       },
       {
-        "title": "Holistic ecosystem view",
-        "body": "We serve builders, operators and executives — delivering a broad view of the data and AI ecosystem for durable strategic advantage."
+        "title": "Evidence over tenure",
+        "body": "We do not ask you to trust a brand. We ask you to judge working software, transparent methods and the track records of the individuals in the room."
       }
     ]
   }

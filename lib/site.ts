@@ -153,7 +153,7 @@ export const PRODUCTS: Product[] = [
     summary:
       "A unified data platform accelerator that stands up ingestion, lakehouse storage, transformation and governance in weeks, not quarters.",
     description:
-      "PlexusCore packages the architecture decisions, infrastructure code and governance patterns from more than a hundred platform builds into a deployable foundation. It runs on your cloud, with open table formats and no lock-in, and gives every downstream team — analytics, ML, agents — the same trusted building blocks.",
+      "PlexusCore packages the architecture decisions, infrastructure code and governance patterns from the hundred-plus platform builds our founders led before starting Dataplexor into a deployable foundation. It runs on your cloud, with open table formats and no lock-in, and gives every downstream team — analytics, ML, agents — the same trusted building blocks.",
     capabilities: [
       {
         title: "Ingestion & streaming",
@@ -174,7 +174,7 @@ export const PRODUCTS: Product[] = [
     ],
     stats: [
       { value: "6–8 wks", label: "Typical time to a governed production platform" },
-      { value: "30%", label: "Average reduction in platform run cost after consolidation" },
+      { value: "30%", label: "Typical run-cost reduction in consolidations our team has led" },
       { value: "100%", label: "Infrastructure as code — portable across AWS, Azure and GCP" },
     ],
     faqs: [
@@ -339,7 +339,7 @@ export const SOLUTIONS: Solution[] = [
     ],
     capabilitiesTitle: "Features and capabilities",
     capabilitiesIntro:
-      "We bring proven blueprints, accelerators and delivery playbooks from more than a hundred data platform engagements across industries.",
+      "We bring blueprints and delivery playbooks proven across a hundred-plus platform engagements in our team's careers — productized so you get the experience without the big-firm overhead.",
     capabilities: [
       {
         title: "Platform strategy & architecture",
@@ -359,10 +359,10 @@ export const SOLUTIONS: Solution[] = [
       },
     ],
     stats: [
-      { value: "120+", label: "Data platforms designed, built or modernized" },
-      { value: "30%", label: "Typical run-cost reduction from platform consolidation" },
-      { value: "18", label: "Industries served across four continents" },
-      { value: "6 wks", label: "Fastest strategy-to-production platform delivery" },
+      { value: "120+", label: "Data platforms delivered across our team's careers" },
+      { value: "30%", label: "Typical run-cost reduction from consolidations we have led" },
+      { value: "18", label: "Industries served across our careers" },
+      { value: "6 wks", label: "Fastest strategy-to-production delivery we have led" },
     ],
     caseStudy: {
       client: "Global 100 consumer goods company",
@@ -421,7 +421,7 @@ export const SOLUTIONS: Solution[] = [
     ],
     capabilitiesTitle: "Features and capabilities",
     capabilitiesIntro:
-      "We leverage years of applied AI delivery to help enterprises ship models that survive contact with production.",
+      "Our team has spent years shipping applied AI inside demanding enterprises — Dataplexor packages that experience into methods that survive contact with production.",
     capabilities: [
       {
         title: "AI strategy & use-case portfolio",
@@ -441,10 +441,10 @@ export const SOLUTIONS: Solution[] = [
       },
     ],
     stats: [
-      { value: "40+", label: "AI systems running in production with our clients" },
+      { value: "40+", label: "AI systems our team has taken to production" },
       { value: "3x", label: "Median ROI on AI portfolios we have rationalized" },
-      { value: "90%", label: "Of our AI engagements reach production — not just pilots" },
-      { value: "24/7", label: "Monitored, evaluated and retrained in operation" },
+      { value: "90%", label: "Of AI systems we build reach production \u2014 not just pilots" },
+      { value: "100%", label: "Built with evaluation harnesses from day one" },
     ],
     caseStudy: {
       client: "Top-10 North American insurer",
@@ -503,7 +503,7 @@ export const SOLUTIONS: Solution[] = [
     ],
     capabilitiesTitle: "Features and capabilities",
     capabilitiesIntro:
-      "We combine frontier-model expertise with enterprise engineering to move agents from lab to line of business.",
+      "Our founders have been building agentic systems since the field began — we combine that frontier experience with enterprise engineering discipline.",
     capabilities: [
       {
         title: "Agentic opportunity assessment",
@@ -523,7 +523,7 @@ export const SOLUTIONS: Solution[] = [
       },
     ],
     stats: [
-      { value: "25+", label: "Agentic systems delivered into production" },
+      { value: "25+", label: "Agentic systems our team has delivered to production" },
       { value: "70%", label: "Average manual-effort reduction on agentized workflows" },
       { value: "100%", label: "Of agent actions policy-checked and auditable" },
       { value: "0", label: "Unsupervised irreversible actions. Ever." },
@@ -585,7 +585,7 @@ export const SOLUTIONS: Solution[] = [
     ],
     capabilitiesTitle: "Features and capabilities",
     capabilitiesIntro:
-      "Full-stack teams covering product design, engineering, cloud infrastructure and security — one pod, one backlog, one accountable delivery.",
+      "Senior full-stack pods covering product design, engineering, cloud and security — the people who have shipped this two hundred times before, in one accountable team.",
     capabilities: [
       {
         title: "Product design & UX",
@@ -605,9 +605,9 @@ export const SOLUTIONS: Solution[] = [
       },
     ],
     stats: [
-      { value: "200+", label: "Applications shipped to production" },
+      { value: "200+", label: "Applications shipped across our team's careers" },
       { value: "<1 wk", label: "From commit to production on our delivery platforms" },
-      { value: "99.95%", label: "Median availability across systems we operate" },
+      { value: "99.95%", label: "Median availability across systems we have operated" },
       { value: "60%", label: "Typical reduction in change lead time after modernization" },
     ],
     caseStudy: {
@@ -667,7 +667,7 @@ export const SOLUTIONS: Solution[] = [
     ],
     capabilitiesTitle: "Features and capabilities",
     capabilitiesIntro:
-      "We operate like a product company on your behalf: outcome roadmaps, weekly releases and metrics that tie engineering to revenue.",
+      "We have built products inside startups, scale-ups and ventures across our careers — and operate like a product company on your behalf: outcome roadmaps, weekly releases, metrics tied to revenue.",
     capabilities: [
       {
         title: "Product strategy & discovery",
@@ -687,9 +687,9 @@ export const SOLUTIONS: Solution[] = [
       },
     ],
     stats: [
-      { value: "35+", label: "Products taken from concept to launch" },
+      { value: "35+", label: "Products our team has taken from concept to launch" },
       { value: "6-10 wks", label: "Typical time from kickoff to first users" },
-      { value: "3", label: "Products of our own — we practice what we deliver" },
+      { value: "100%", label: "Founder-led \u2014 the people who scope it build it" },
       { value: "$400M+", label: "Follow-on funding raised by products we helped build" },
     ],
     caseStudy: {
@@ -1348,7 +1348,7 @@ export const ENTRY_OFFERS = [
 export const TESTIMONIALS = [
   {
     quote:
-      "They are the first partner whose strategy actually compiled. The roadmap came with running code, and the running code came with our engineers trained to own it.",
+      "They are the first team whose strategy actually compiled. The roadmap came with running code, and the running code came with our engineers trained to own it.",
     author: "Chief Technology Officer",
     org: "Global 500 retailer",
   },

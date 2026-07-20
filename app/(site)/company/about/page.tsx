@@ -70,31 +70,34 @@ export default function AboutPage() {
               <SectionTitle>Our story</SectionTitle>
               <div className="mt-6 space-y-5 leading-relaxed text-ink-soft">
                 <p>
-                  Dataplexor was founded on a simple observation: every real
-                  business problem leads across disciplinary boundaries. Data
-                  engineering without strategy builds platforms nobody uses.
-                  Strategy without engineering produces decks nobody can ship.
-                  AI without governance creates risk nobody can carry.
+                  Dataplexor is new. The people behind it are not. We spent the
+                  last two decades inside global consultancies, technology
+                  companies and enterprise data teams — designing platforms for
+                  banks, shipping AI for retailers and insurers, running
+                  transformation programs across every industry we now serve.
                 </p>
                 <p>
-                  So we built a company where those disciplines work as one
-                  practice. Our consultants write code. Our engineers sit in
-                  steering committees. Our researchers test their ideas in
-                  production, on real client systems, under real constraints.
+                  We also spent those decades watching the same failure repeat:
+                  strategy sold by partners and delivered by juniors, platforms
+                  built to bill hours rather than to be owned, AI programs that
+                  demo well and die quietly. We founded Dataplexor in 2026 to
+                  do this work the way we always argued it should be done —
+                  senior people, working software, evidence over tenure.
                 </p>
                 <p>
-                  Today we serve enterprises across finance, healthcare, retail,
-                  manufacturing and the public sector — designing data
-                  platforms, shipping AI systems and deploying governed
-                  autonomous agents that our clients run their businesses on.
+                  So we are deliberately building a different kind of firm: the
+                  founders who scope your engagement deliver it, every method we
+                  use was proven somewhere real before we productized it, and
+                  the measure of success is what your team can run without us.
+                  New company. Decades deep. Nothing to unlearn.
                 </p>
               </div>
             </div>
             <div className="grid content-start gap-5 sm:grid-cols-2">
-              <StatTile value="2016" label="Founded in San Francisco" />
-              <StatTile value="150+" label="Specialists across four continents" />
-              <StatTile value="18" label="Industries served worldwide" />
-              <StatTile value="3" label="Products born from client delivery" />
+              <StatTile value="2026" label="Founded in San Francisco" />
+              <StatTile value="80+" label="Years of combined senior experience" />
+              <StatTile value="18" label="Industries served across our careers" />
+              <StatTile value="3" label="Products built from career-proven patterns" />
             </div>
           </div>
         </Container>
@@ -102,17 +105,17 @@ export default function AboutPage() {
 
       <section className="bg-ink text-white">
         <Container className="py-20 sm:py-24">
-          <Eyebrow dark>Milestones</Eyebrow>
+          <Eyebrow dark>The road here</Eyebrow>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            A decade of compounding capability
+            The careers that built Dataplexor
           </h2>
           <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
             {[
-              { year: "2016", event: "Founded in San Francisco by data engineers and strategists who kept meeting the same gap between advice and delivery." },
-              { year: "2019", event: "First productized accelerator ships — the platform blueprints that would become PlexusCore." },
-              { year: "2022", event: "European delivery hub opens in London; PlexusIQ launches the decision-intelligence practice." },
-              { year: "2024", event: "AgentMesh enters production with first regulated-industry agentic deployments." },
-              { year: "2026", event: "150+ specialists across four continents; agentic systems running in six industries." },
+              { year: "2000s", event: "Our founders cut their teeth building enterprise data warehouses and BI programs inside global consultancies and Fortune 500 data teams." },
+              { year: "2010s", event: "Leading platform practices through the big-data and cloud era — lakehouse migrations, streaming architectures, data organizations built from scratch." },
+              { year: "2020–24", event: "Taking machine learning and then generative AI into production for banks, insurers, retailers and manufacturers — and learning what survives contact with reality." },
+              { year: "2025", event: "First agentic systems delivered into regulated industries across our prior roles — the experience that became the AgentMesh design." },
+              { year: "2026", event: "Dataplexor founded: the patterns of a hundred-plus builds productized, a senior-only team, and nothing to unlearn." },
             ].map((m) => (
               <div key={m.year} className="border-t-2 border-teal pt-5">
                 <p className="font-display text-2xl font-bold text-teal">
@@ -132,9 +135,9 @@ export default function AboutPage() {
           <SectionTitle>Where we are</SectionTitle>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
-              { city: "San Francisco", role: "Headquarters", detail: "One Market Plaza, Suite 3600 — product engineering and AI research." },
-              { city: "New York", role: "East Coast hub", detail: "Financial services and consulting practices for the Americas." },
-              { city: "London", role: "European hub", detail: "EMEA delivery, EU AI Act advisory and regulated-industry work." },
+              { city: "San Francisco", role: "Headquarters", detail: "One Market Plaza, Suite 3600 — where the founding team builds products and runs engagements." },
+              { city: "New York", role: "Partner presence", detail: "Founding partners on the ground for financial services and Americas clients." },
+              { city: "London", role: "Partner presence", detail: "Founding partners covering EMEA, EU AI Act advisory and regulated-industry work." },
             ].map((o) => (
               <div key={o.city} className="rounded-2xl border border-line p-8">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand">

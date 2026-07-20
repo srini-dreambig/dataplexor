@@ -175,10 +175,11 @@ export default async function HomePage() {
       {/* Stats */}
       <section className="bg-mist">
         <Container className="py-20 sm:py-24">
-          <SectionTitle>Proof, not promises</SectionTitle>
+          <SectionTitle>The company is new. The experience is not.</SectionTitle>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            We measure ourselves the way we teach clients to measure their data
-            and AI portfolios: on outcomes in production.
+            Dataplexor launched in 2026 — built by practitioners who spent
+            their careers delivering exactly this work. Judge us on the track
+            records of the people in the room.
           </p>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {home.stats.map((stat) => (
@@ -201,8 +202,8 @@ export default async function HomePage() {
             <div>
               <Eyebrow dark>Products</Eyebrow>
               <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                Accelerators we productized
-                <br className="hidden sm:block" /> from a decade of delivery
+                Career-proven patterns,
+                <br className="hidden sm:block" /> productized from day one
               </h2>
             </div>
             <PillButton href="/products" variant="outline">
