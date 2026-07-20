@@ -6,8 +6,13 @@ import { MarkBackdrop } from "@/components/Logo";
 import { Container, Eyebrow, PillButton, SectionTitle, StatTile, ArrowIcon } from "@/components/ui";
 import { CtaBanner, InsightCard, Testimonials, EngageOptions } from "@/components/sections";
 import { getSolutions, getProducts, getIndustries } from "@/lib/sitecontent";
-import { artForSolution, artForProduct, artForIndustry } from "@/lib/art";
 import { ProductMark, hasProductMark } from "@/components/ProductLogo";
+import {
+  ConceptArt,
+  conceptForSolution,
+  conceptForProduct,
+  conceptForIndustry,
+} from "@/components/ConceptArt";
 
 export const metadata: Metadata = {
   title: { absolute: "Dataplexor — Data & Analytics, AI and Agentic AI" },
@@ -104,13 +109,9 @@ export default async function HomePage() {
                     i < 3 ? "aspect-[16/9]" : "aspect-[24/9]"
                   }`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={artForSolution(solution.slug)}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                    loading="lazy"
-                    draggable={false}
+                  <ConceptArt
+                    concept={conceptForSolution(solution.slug)}
+                    className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-8">
@@ -154,13 +155,9 @@ export default async function HomePage() {
                 className="card-hover group flex items-center gap-5 rounded-2xl border border-line p-4 pr-6 hover:border-brand"
               >
                 <div className="relative h-20 w-24 shrink-0 overflow-hidden rounded-xl">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={artForIndustry(industry.slug)}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.06]"
-                    loading="lazy"
-                    draggable={false}
+                  <ConceptArt
+                    concept={conceptForIndustry(industry.slug)}
+                    className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.06]"
                   />
                 </div>
                 <div className="min-w-0 flex-1">
@@ -224,13 +221,9 @@ export default async function HomePage() {
                 className="group overflow-hidden rounded-2xl border border-white/15 bg-white/5 transition-colors hover:border-teal/60 hover:bg-white/10"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={artForProduct(product.slug)}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                    loading="lazy"
-                    draggable={false}
+                  <ConceptArt
+                    concept={conceptForProduct(product.slug)}
+                    className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="p-8">

@@ -3,7 +3,7 @@ import { Container, Eyebrow, PillButton, ArrowIcon } from "@/components/ui";
 import { WaveBackground, type WaveVariant } from "@/components/WaveBackground";
 import { getSections } from "@/lib/sitecontent";
 import { MarkBackdrop } from "@/components/Logo";
-import { artForCategory } from "@/lib/art";
+import { ConceptArt, conceptForCategory } from "@/components/ConceptArt";
 import { readingTime, type Post } from "@/lib/content";
 
 export function PageHero({
@@ -101,14 +101,21 @@ export function InsightCard({ post, featured = false }: { post: Post; featured?:
           featured ? "aspect-[24/9]" : "aspect-[16/9]"
         }`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={post.cover || artForCategory(post.category)}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-          loading="lazy"
-          draggable={false}
-        />
+        {post.cover ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={post.cover}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+            loading="lazy"
+            draggable={false}
+          />
+        ) : (
+          <ConceptArt
+            concept={conceptForCategory(post.category)}
+            className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
+          />
+        )}
       </div>
       <div className={`flex flex-1 flex-col p-6 ${featured ? "sm:p-8" : "sm:p-7"}`}>
         <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-brand">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getIndustries } from "@/lib/sitecontent";
 import { PageHero, CtaBanner } from "@/components/sections";
 import { Container, Eyebrow, PillButton, SectionTitle, ArrowIcon } from "@/components/ui";
-import { artForIndustry } from "@/lib/art";
+import { ConceptArt, conceptForIndustry } from "@/components/ConceptArt";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -42,13 +42,9 @@ export default async function IndustriesPage() {
                 className="card-hover group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-line"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={artForIndustry(industry.slug)}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                    loading="lazy"
-                    draggable={false}
+                  <ConceptArt
+                    concept={conceptForIndustry(industry.slug)}
+                    className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-7">

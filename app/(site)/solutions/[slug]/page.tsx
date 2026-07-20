@@ -6,7 +6,8 @@ import { PageHero, CtaBanner, FeatureCard, FaqSection, TechStrip, CaseStudySnaps
 import { MarkBackdrop } from "@/components/Logo";
 import { JsonLd, breadcrumbList } from "@/lib/seo";
 import { getSettings } from "@/lib/content";
-import { artForSolution, heroArtForSolution } from "@/lib/art";
+import { heroArtForSolution } from "@/lib/art";
+import { ConceptArt, conceptForSolution } from "@/components/ConceptArt";
 import { Container, PillButton, SectionTitle, StatTile, Eyebrow, ArrowIcon } from "@/components/ui";
 
 type Params = { slug: string };
@@ -158,13 +159,9 @@ export default async function SolutionPage({
                 className="card-hover group overflow-hidden rounded-2xl border border-line bg-white"
               >
                 <div className="relative aspect-[24/9] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={artForSolution(s.slug)}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                    loading="lazy"
-                    draggable={false}
+                  <ConceptArt
+                    concept={conceptForSolution(s.slug)}
+                    className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                   />
                 </div>
                 <div className="p-8">

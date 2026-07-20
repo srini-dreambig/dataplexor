@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { Logo } from "@/components/Logo";
 import { NAV } from "@/lib/site";
 import { Container, ArrowIcon } from "@/components/ui";
-import { artForSolution, artForIndustry, artForProduct } from "@/lib/art";
 import { ProductMark, hasProductMark } from "@/components/ProductLogo";
+import { ConceptArt, conceptForHref } from "@/components/ConceptArt";
 
 /** Product slug for a menu href, when it points at a product with a mark. */
 function productMarkSlug(href: string): string | null {
@@ -33,23 +33,6 @@ function Chevron({ open = false }: { open?: boolean }) {
       />
     </svg>
   );
-}
-
-/** Artwork shown in the mega-menu preview panel for a given link. */
-function artForHref(href: string): string {
-  if (href.startsWith("/solutions/")) {
-    return artForSolution(href.split("/")[2]);
-  }
-  if (href.startsWith("/industries/")) {
-    return artForIndustry(href.split("/")[2]);
-  }
-  if (href.startsWith("/products/")) {
-    return artForProduct(href.split("/")[2]);
-  }
-  if (href.startsWith("/industries")) return "/art/plexus-blue.jpg";
-  if (href.startsWith("/products")) return "/art/plexus-blue.jpg";
-  if (href.startsWith("/services")) return "/art/plexus-violet.jpg";
-  return "/art/ribbon-violet.jpg";
 }
 
 export function Header({ announcement, announcementHref }: {
@@ -197,12 +180,9 @@ export function Header({ announcement, announcementHref }: {
                             className="group flex flex-col overflow-hidden rounded-xl bg-mist ring-1 ring-line"
                           >
                             <div className="relative aspect-[16/10] overflow-hidden">
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={artForHref(active.href)}
-                                alt=""
-                                className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
-                                draggable={false}
+                              <ConceptArt
+                                concept={conceptForHref(active.href)}
+                                className="absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-[1.04]"
                               />
                             </div>
                             <div className="flex flex-1 flex-col p-4">
