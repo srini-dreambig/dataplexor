@@ -20,7 +20,7 @@ export default async function IndustriesPage() {
         wave="horizon"
         eyebrow="Industries"
         title="Deep in your domain, not just your data"
-        subtitle="Technology only compounds when it meets industry context. Our teams pair data and AI engineering with practitioners who have run the workflows they now transform."
+        subtitle="Technology only compounds when it meets industry context — the workflows, regulations and margin structures that decide where data and AI actually pay. Our teams pair senior data and AI engineering with practitioners who have run the very operations they now transform, so the work lands on the outcomes your sector measures — not a generic playbook borrowed from someone else's."
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">

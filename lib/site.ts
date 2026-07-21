@@ -508,7 +508,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Data & Analytics",
     eyebrow: "Solutions",
     headline: "Data & Analytics",
-    heroTagline: "Open table formats won, semantic layers went mainstream, and AI made trusted data non-negotiable. We build the foundations this new era runs on.",
+    heroTagline: "The data stack is being rebuilt in real time: open table formats have won, the semantic layer has become the source of truth, and every AI copilot is only as good as the governed data beneath it. Yet most organizations are still data-rich and decision-poor — drowning in dashboards nobody fully trusts. We build the lakehouse foundations, data contracts and semantic layers that finally make every number in your business mean the same thing.",
     statement:
       "Before organizations can act on their data, they must be able to trust it.",
     intro:
@@ -590,7 +590,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Artificial Intelligence",
     eyebrow: "Solutions",
     headline: "Artificial Intelligence",
-    heroTagline: "Foundation models made intelligence abundant; evaluation and governance make it dependable. We engineer AI that survives contact with production.",
+    heroTagline: "Foundation models made intelligence abundant overnight — and quietly moved the hard problem downstream. The distance between a demo that dazzles and a system that survives production is where most AI programs die: hallucinations, runaway inference cost, silent model drift, and a compliance team that was never in the room. We engineer the RAG architectures, evaluation harnesses, MLOps and guardrails that turn generative potential into AI your business can actually depend on.",
     statement:
       "The gap between an AI demo and a production system is where most value is lost.",
     intro:
@@ -672,7 +672,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Agentic AI",
     eyebrow: "Solutions",
     headline: "Agentic AI",
-    heroTagline: "This is the year software stopped waiting for instructions. We build agents that plan, act and execute \u2014 and stay inside the lines while they do.",
+    heroTagline: "This is the year software stopped waiting for instructions. Agents that plan, call tools and act on their own are moving from research demos into real operations \u2014 and bringing the question every board is now asking: how do you let software act autonomously without losing control of it? We build agentic systems with policy guardrails, complete decision trails and graduated autonomy, so your agents earn trust with evidence long before they touch production.",
     statement:
       "The next advantage is not software that answers — it is software that acts.",
     intro:
@@ -754,7 +754,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Application Building",
     eyebrow: "Solutions",
     headline: "Application Building",
-    heroTagline: "Cloud-native, AI-assisted and shipped weekly \u2014 modern applications are living products, not projects. We build them to keep changing.",
+    heroTagline: "Software is no longer shipped and forgotten \u2014 it is a living product, released weekly, reshaped by AI, and judged on how fast it can change. The teams winning today treat every application as a platform: cloud-native, observable and built to absorb tomorrow\u2019s requirements without a rewrite. We design and engineer those applications \u2014 and modernize the legacy they replace \u2014 so speed and reliability stop being a trade-off.",
     statement:
       "Great software is not written once — it is engineered to keep changing.",
     intro:
@@ -836,7 +836,7 @@ export const SOLUTIONS: Solution[] = [
     name: "Product Building",
     eyebrow: "Solutions",
     headline: "Product Building",
-    heroTagline: "From validated idea to scaling platform, speed is the moat. We take products zero-to-one and one-to-scale without losing it.",
+    heroTagline: "Between a validated idea and a category-defining platform lies the graveyard of good products that scaled too slowly or shipped too much. In a market where AI has collapsed the cost of building, speed and judgment are the only durable moats left. We take products zero-to-one and one-to-scale — discovery, MVP, product-market fit and the hardening that turns a promising launch into a lasting business.",
     statement:
       "From a validated idea to a scaling product — without losing the speed that got you there.",
     intro:
@@ -934,7 +934,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "retail",
     name: "Retail & E-commerce",
     headline: "Retail & E-commerce",
-    heroTagline: "Generative search is rewriting discovery, agents are running the aisles, and retail media runs on first-party data. Margin now compounds through data.",
+    heroTagline: "Generative search is quietly rewriting how customers discover products, agents are starting to run the aisles, and retail media — built entirely on first-party data — has become the industry’s fastest-growing profit line. The winners are no longer the biggest catalogs; they are the ones that turn every click, basket and return into margin. We help retailers unify their data and put AI to work on the decisions that move the P&L: demand, price, personalization and service.",
     statement: "Every margin point in retail now runs through data.",
     intro:
       "From demand forecasting and dynamic pricing to personalization and agent-assisted service, we help retailers turn first-party data into the margin and loyalty advantages the market no longer gives away.",
@@ -1020,7 +1020,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "banking",
     name: "Banking & Financial Services",
     headline: "Banking & Financial Services",
-    heroTagline: "Instant payment rails, real-time fraud defense and agentic operations under model-risk scrutiny \u2014 the next efficiency wave belongs to banks that automate with an audit trail.",
+    heroTagline: "Payments have gone instant, fraud now moves in milliseconds, and agentic operations are compressing cost centers that stood for decades \u2014 all under the unblinking gaze of model risk and the regulator. The next efficiency wave belongs to the banks that can automate boldly and prove every decision. We build the governed data platforms, explainable models and audit-ready agentic workflows that let financial institutions move fast without moving off-side.",
     statement: "In banking, the constraint is not ambition — it is auditability.",
     intro:
       "We build data platforms, AI models and agentic workflows that satisfy model risk management and regulators by design — so banks can automate boldly without ever losing the audit trail.",
@@ -1106,7 +1106,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "insurance",
     name: "Insurance",
     headline: "Insurance",
-    heroTagline: "Document intelligence is digitizing the submission desk while climate risk reprices the book. Underwriting is becoming a data discipline.",
+    heroTagline: "Document intelligence is digitizing the submission desk, climate volatility is repricing entire books overnight, and the moat is shifting from actuarial tables to data pipelines. Underwriting, claims and service are becoming, at their core, data disciplines. We help insurers modernize that core — pricing risk sharper, settling claims faster, and keeping every model defensible under regulatory and fair-lending scrutiny.",
     statement: "Underwriting is a data business wearing a paper costume.",
     intro:
       "We help insurers digitize the core — underwriting, claims and service — with data platforms and AI that price risk sharper, settle claims faster and keep every decision explainable to regulators and reinsurers.",
@@ -1192,7 +1192,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "healthcare",
     name: "Healthcare & Life Sciences",
     headline: "Healthcare & Life Sciences",
-    heroTagline: "Ambient AI is giving clinicians their evenings back and prior authorization is finally being automated. Healthcare's data decade has arrived.",
+    heroTagline: "Ambient AI is handing clinicians their evenings back, prior authorization is finally being automated, and a decade of locked-up clinical data is beginning to open \u2014 carefully. Healthcare's data moment has arrived, but trust, privacy and safety are the deployment environment here, not an afterthought. We build interoperable, clinically-aware platforms and AI for providers, payers and life-sciences organizations \u2014 engineered from the first sprint for the standards this industry answers to.",
     statement: "In healthcare, trust is the deployment environment.",
     intro:
       "We build interoperable data platforms and clinically-aware AI for providers, payers and life-sciences organizations — engineered for privacy, safety and the scrutiny that patient impact demands.",
@@ -1278,7 +1278,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "manufacturing",
     name: "Manufacturing & Supply Chain",
     headline: "Manufacturing & Supply Chain",
-    heroTagline: "IT and OT are converging into industrial intelligence \u2014 predictive quality, supply chain digital twins and copilots on the factory floor.",
+    heroTagline: "The factory floor is quietly becoming the most valuable data center a manufacturer owns. IT and OT are converging into industrial intelligence \u2014 predictive quality, asset reliability, supply-chain digital twins and copilots that put decades of tribal knowledge at every operator\u2019s fingertips. We connect the machines, the ERP and the shop floor into platforms that turn industrial data exhaust into uptime, yield and a supply chain that bends without breaking.",
     statement: "The factory floor is the most underused data center you own.",
     intro:
       "We connect OT and IT data into platforms that power predictive quality, asset reliability and resilient supply chains — turning industrial data exhaust into throughput and uptime.",
@@ -1364,7 +1364,7 @@ export const INDUSTRIES: Industry[] = [
     slug: "telecom-media",
     name: "Telecom & Media",
     headline: "Telecom & Media",
-    heroTagline: "Network telemetry at 5G scale, agentic service journeys and engagement economics \u2014 operators are turning network data into the product itself.",
+    heroTagline: "Networks generate an ocean of telemetry at 5G scale, and the operators pulling ahead are the ones turning that exhaust into the product itself. Agentic service journeys are collapsing the cost of care, while engagement economics increasingly decide who owns the customer relationship. We help operators and media companies monetize network and audience data \u2014 churn and ARPU intelligence, autonomous network optimization, and experiences that keep subscribers close.",
     statement: "Networks generate the data; the winners operationalize it.",
     intro:
       "We help operators and media companies monetize network and audience data — churn and ARPU intelligence, network optimization and AI-powered customer operations at telco scale.",
@@ -1595,7 +1595,7 @@ export const ABOUT: AboutContent = {
   hero: {
     title: "We defy the disciplines to mobilize your data",
     subtitle:
-      "Dataplexor works at the crossroads of data engineering, applied AI and business strategy to understand, structure and solve the problems that matter most.",
+      "Dataplexor works at the crossroads of data engineering, applied AI and business strategy — the exact place where most transformations get stuck. We exist to understand the problems that genuinely move a business, structure the data and intelligence around them, and build the systems that solve them for good.",
   },
   mission:
     "We unlock the value of data to build products and intelligence that move enterprises — from insight to decision to autonomous action.",
@@ -1702,7 +1702,7 @@ export const CAREERS: CareersContent = {
   hero: {
     title: "Do the best work of your career on problems that matter",
     subtitle:
-      "Join a team of people with decades in the field, at a moment when everything is still being shaped — and shape it with us.",
+      "The most interesting problems in data and AI are not in a lab — they are in production, under real constraints, for people who depend on the answer. Join a team of practitioners with decades in the field, at a moment when everything is still being shaped, and do the best work of your career on problems that actually matter.",
   },
   benefits: [
     { title: "Work on the frontier", body: "Ship production AI and agentic systems most engineers only read about — with the guardrails to do it responsibly." },

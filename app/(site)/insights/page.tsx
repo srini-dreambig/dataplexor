@@ -21,7 +21,7 @@ export default async function InsightsPage() {
         compact
         eyebrow="Research & Insights"
         title="Stay ahead of changing technology"
-        subtitle="Practical research and field perspectives on data, analytics, AI and the agentic enterprise — written by the people who build these systems."
+        subtitle="The data and AI landscape reinvents itself every few months — new models, new regulations, new playbooks, and a great deal of noise in between. These are the field notes, benchmarks and hard-won perspectives from the practitioners who actually design, build and run these systems: signal for the people doing the work."
       />
       <section className="bg-mist">
         <Container className="py-16 sm:py-20">

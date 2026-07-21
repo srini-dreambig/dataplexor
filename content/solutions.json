@@ -4,7 +4,7 @@
     "name": "Data & Analytics",
     "eyebrow": "Solutions",
     "headline": "Data & Analytics",
-    "heroTagline": "Open table formats won, semantic layers went mainstream, and AI made trusted data non-negotiable. We build the foundations this new era runs on.",
+    "heroTagline": "The data stack is being rebuilt in real time: open table formats have won, the semantic layer has become the source of truth, and every AI copilot is only as good as the governed data beneath it. Yet most organizations are still data-rich and decision-poor — drowning in dashboards nobody fully trusts. We build the lakehouse foundations, data contracts and semantic layers that finally make every number in your business mean the same thing.",
     "statement": "Before organizations can act on their data, they must be able to trust it.",
     "intro": "We design, build and run modern data platforms and analytics capabilities — from lakehouse foundations and governance to semantic layers and self-service BI — so every decision in your organization starts from the same trusted numbers.",
     "pillars": [
@@ -117,7 +117,7 @@
     "name": "Artificial Intelligence",
     "eyebrow": "Solutions",
     "headline": "Artificial Intelligence",
-    "heroTagline": "Foundation models made intelligence abundant; evaluation and governance make it dependable. We engineer AI that survives contact with production.",
+    "heroTagline": "Foundation models made intelligence abundant overnight — and quietly moved the hard problem downstream. The distance between a demo that dazzles and a system that survives production is where most AI programs die: hallucinations, runaway inference cost, silent model drift, and a compliance team that was never in the room. We engineer the RAG architectures, evaluation harnesses, MLOps and guardrails that turn generative potential into AI your business can actually depend on.",
     "statement": "The gap between an AI demo and a production system is where most value is lost.",
     "intro": "We take machine learning and generative AI from promising prototype to reliable production — with the evaluation, MLOps and governance that make the difference between a demo and a dependable system.",
     "pillars": [
@@ -230,7 +230,7 @@
     "name": "Agentic AI",
     "eyebrow": "Solutions",
     "headline": "Agentic AI",
-    "heroTagline": "This is the year software stopped waiting for instructions. We build agents that plan, act and execute — and stay inside the lines while they do.",
+    "heroTagline": "This is the year software stopped waiting for instructions. Agents that plan, call tools and act on their own are moving from research demos into real operations — and bringing the question every board is now asking: how do you let software act autonomously without losing control of it? We build agentic systems with policy guardrails, complete decision trails and graduated autonomy, so your agents earn trust with evidence long before they touch production.",
     "statement": "The next advantage is not software that answers — it is software that acts.",
     "intro": "We help enterprises design, build and govern autonomous AI agents that plan, decide and execute across systems — with the guardrails, observability and human oversight that make autonomy safe to scale.",
     "pillars": [
@@ -341,7 +341,7 @@
     "name": "Application Building",
     "eyebrow": "Solutions",
     "headline": "Application Building",
-    "heroTagline": "Cloud-native, AI-assisted and shipped weekly — modern applications are living products, not projects. We build them to keep changing.",
+    "heroTagline": "Software is no longer shipped and forgotten — it is a living product, released weekly, reshaped by AI, and judged on how fast it can change. The teams winning today treat every application as a platform: cloud-native, observable and built to absorb tomorrow’s requirements without a rewrite. We design and engineer those applications — and modernize the legacy they replace — so speed and reliability stop being a trade-off.",
     "statement": "Great software is not written once — it is engineered to keep changing.",
     "intro": "We design and build cloud-native applications — customer experiences, internal platforms and the modernization of the systems they replace — with the engineering discipline that keeps them fast, secure and easy to change for years.",
     "pillars": [
@@ -454,7 +454,7 @@
     "name": "Product Building",
     "eyebrow": "Solutions",
     "headline": "Product Building",
-    "heroTagline": "From validated idea to scaling platform, speed is the moat. We take products zero-to-one and one-to-scale without losing it.",
+    "heroTagline": "Between a validated idea and a category-defining platform lies the graveyard of good products that scaled too slowly or shipped too much. In a market where AI has collapsed the cost of building, speed and judgment are the only durable moats left. We take products zero-to-one and one-to-scale — discovery, MVP, product-market fit and the hardening that turns a promising launch into a lasting business.",
     "statement": "From a validated idea to a scaling product — without losing the speed that got you there.",
     "intro": "We take products from zero to one and from one to scale: discovery, MVP, product-market iteration and the hardening that turns a promising launch into a durable business — for startups, corporate ventures and product companies.",
     "pillars": [

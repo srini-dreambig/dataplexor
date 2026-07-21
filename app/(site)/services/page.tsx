@@ -105,7 +105,7 @@ export default function ServicesPage() {
         wave="rise"
         eyebrow="Services & Consulting"
         title="One partner from strategy to run"
-        subtitle="Consulting, engineering and managed operations for data, analytics, AI and agentic systems — one accountable team across the whole lifecycle."
+        subtitle="Most data and AI ambitions die in the handoffs — between the deck that sold the vision and the team that has to build it, between the pilot that impressed and the platform that has to run at 3am. Dataplexor collapses those seams: strategy, engineering and managed operations, delivered by one senior team that stays accountable from the first workshop to the system live in production."
         actions={
           <>
             <PillButton href="/company/contact" variant="teal">
