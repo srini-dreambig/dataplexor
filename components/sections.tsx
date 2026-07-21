@@ -7,7 +7,6 @@ import { ConceptArt, conceptForCategory, IllustrationCard } from "@/components/C
 import { readingTime, type Post } from "@/lib/content";
 
 export function PageHero({
-  eyebrow,
   title,
   subtitle,
   actions,
@@ -15,6 +14,7 @@ export function PageHero({
   wave = "flow",
   bgImage,
 }: {
+  /** Accepted for backward compatibility but no longer rendered. */
   eyebrow?: string;
   title: string;
   subtitle?: string;
@@ -30,11 +30,6 @@ export function PageHero({
       <Container
         className={`relative ${compact ? "py-20 sm:py-24" : "py-24 sm:py-32"}`}
       >
-        {eyebrow ? (
-          <div className="mb-5">
-            <Eyebrow dark>{eyebrow}</Eyebrow>
-          </div>
-        ) : null}
         <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
           {title}
         </h1>

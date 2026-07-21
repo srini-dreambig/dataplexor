@@ -37,8 +37,7 @@ export default async function HomePage() {
       <section className="relative isolate text-white">
         <WaveBackground variant="flow" idPrefix="home-hero" />
         <Container className="relative py-28 sm:py-40">
-          <Eyebrow dark>{home.hero.eyebrow}</Eyebrow>
-          <h1 className="mt-5 max-w-4xl text-4xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="max-w-4xl text-4xl font-bold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">
             {home.hero.title}
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/80">

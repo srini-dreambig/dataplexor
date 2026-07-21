@@ -2,7 +2,6 @@ import Link from "next/link";
 import type { Product } from "@/lib/site";
 import { WaveBackground } from "@/components/WaveBackground";
 import { MarkBackdrop } from "@/components/Logo";
-import { ProductMark } from "@/components/ProductLogo";
 import { ConceptIcon } from "@/components/ConceptIcon";
 import { ConceptArt, IllustrationCard } from "@/components/ConceptArt";
 import { FeatureCard, FaqSection } from "@/components/sections";
@@ -32,12 +31,6 @@ export function ProductRichPage({ product }: { product: Product }) {
           idPrefix="plexuscore-hero"
         />
         <Container className="relative py-24 sm:py-32">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-teal ring-1 ring-white/20">
-              <ProductMark slug={product.slug} className="h-7 w-7" />
-            </span>
-            <Eyebrow dark>{page.hero.eyebrow}</Eyebrow>
-          </div>
           <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
             {page.hero.title}
           </h1>
